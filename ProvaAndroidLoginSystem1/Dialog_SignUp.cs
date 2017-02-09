@@ -46,7 +46,7 @@ namespace ProvaAndroidLoginSystem1
             mtxtEmail = view.FindViewById<EditText>(Resource.Id.txtEmail);
             mtxtPassword = view.FindViewById<EditText>(Resource.Id.txtPassword);
             mbtnSignUp = view.FindViewById<Button>(Resource.Id.btnSignUp);
-            db.createDataBase();
+            //db.createDataBase();
 
             return view;
         }
@@ -76,7 +76,7 @@ namespace ProvaAndroidLoginSystem1
         private void LoadData()
         {
             ListPerson = db.selectTable();
-            var adapter = new ListViewAdapter(this, )
+            /*var adapter = new ListViewAdapter(this, )*/
         }
     }
 }
