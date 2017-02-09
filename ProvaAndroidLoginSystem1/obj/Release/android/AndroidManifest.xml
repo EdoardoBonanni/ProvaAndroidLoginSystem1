@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="Provalogin1.provalogin" android:versionCode="1" android:versionName="1.0" android:installLocation="auto">
+  <!--suppress UsesMinSdkAttributes-->
+  <uses-sdk android:minSdkVersion="16" />
+  <application android:label="ProvaLogin1" android:name="android.app.Application" android:allowBackup="true" android:icon="@drawable/icon">
+    <activity android:icon="@drawable/icon" android:label="ProvaAndroidLoginSystem1" android:name="md563df4e71a8812e9648467cdc77c65256.MainActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="Provalogin1.provalogin.mono.MonoRuntimeProvider.__mono_init__" />
+  </application>
+</manifest>
