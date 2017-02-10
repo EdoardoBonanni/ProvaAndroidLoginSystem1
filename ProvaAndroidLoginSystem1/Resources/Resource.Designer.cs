@@ -91,23 +91,29 @@ namespace ProvaAndroidLoginSystem1
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f070004
-			public const int ListView = 2131165188;
-			
 			// aapt resource value: 0x7f070003
 			public const int btnDialogEmail = 2131165187;
 			
-			// aapt resource value: 0x7f070006
-			public const int btnSignIn = 2131165190;
-			
 			// aapt resource value: 0x7f070008
-			public const int btnSignUp = 2131165192;
+			public const int btnSignIn = 2131165192;
 			
-			// aapt resource value: 0x7f070009
-			public const int progressBar1 = 2131165193;
+			// aapt resource value: 0x7f07000a
+			public const int btnSignUp = 2131165194;
+			
+			// aapt resource value: 0x7f07000b
+			public const int progressBar1 = 2131165195;
+			
+			// aapt resource value: 0x7f070004
+			public const int textView1 = 2131165188;
 			
 			// aapt resource value: 0x7f070005
-			public const int txtCreateAccount = 2131165189;
+			public const int textView2 = 2131165189;
+			
+			// aapt resource value: 0x7f070006
+			public const int textView3 = 2131165190;
+			
+			// aapt resource value: 0x7f070007
+			public const int txtCreateAccount = 2131165191;
 			
 			// aapt resource value: 0x7f070001
 			public const int txtEmail = 2131165185;
@@ -115,8 +121,8 @@ namespace ProvaAndroidLoginSystem1
 			// aapt resource value: 0x7f070000
 			public const int txtFirstName = 2131165184;
 			
-			// aapt resource value: 0x7f070007
-			public const int txtORt = 2131165191;
+			// aapt resource value: 0x7f070009
+			public const int txtORt = 2131165193;
 			
 			// aapt resource value: 0x7f070002
 			public const int txtPassword = 2131165186;
@@ -138,7 +144,10 @@ namespace ProvaAndroidLoginSystem1
 			public const int dialog_sign_up = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int Main = 2130903041;
+			public const int list_view_dataTemplate = 2130903041;
+			
+			// aapt resource value: 0x7f030002
+			public const int Main = 2130903042;
 			
 			static Layout()
 			{

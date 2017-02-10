@@ -12,6 +12,7 @@ using Android.Widget;
 using Android.Database.Sqlite;
 using ProvaAndroidLoginSystem1.Resources.DataHelper;
 using ProvaAndroidLoginSystem1.Resources.Model;
+using ProvaAndroidLoginSystem1.Resources;
 
 namespace ProvaAndroidLoginSystem1
 {
@@ -33,37 +34,59 @@ namespace ProvaAndroidLoginSystem1
         private TextView mtxtEmail;
         private TextView mtxtPassword;
         private Button mbtnSignUp;
-        DataBase db = new DataBase();
+        private DataBase db;
         private ListView mListview;
         private List<Person> ListPerson;
+    
+
         public event EventHandler<OnSignUpEventArgs> onSignUpComplete;
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             base.OnCreateView(inflater, container, savedInstanceState);
+            
+            db = new DataBase();
+            db.createDataBase();
             var view = inflater.Inflate(Resource.Layout.dialog_sign_up, container, false);
             mtxtFirstName = view.FindViewById<EditText>(Resource.Id.txtFirstName);
             mtxtEmail = view.FindViewById<EditText>(Resource.Id.txtEmail);
             mtxtPassword = view.FindViewById<EditText>(Resource.Id.txtPassword);
-            mbtnSignUp = view.FindViewById<Button>(Resource.Id.btnSignUp);
-            //db.createDataBase();
-
+            mbtnSignUp = view.FindViewById<Button>(Resource.Id.btnDialogEmail);
+            //LoadData();
+            /*mListview.ItemClick += (s, e) => {
+                for (int i = 0; i < mListview.Count; i++)
+                {
+                    if (e.Position == i)
+                        mListview.GetChildAt(i).SetBackgroundColor(Android.Graphics.Color.DarkGray);
+                    else
+                        mListview.GetChildAt(i).SetBackgroundColor(Android.Graphics.Color.Transparent);
+                }
+                
+                var txtname = e.View.FindViewById<TextView>(Resource.Id.textView1);
+                var txtemail = e.View.FindViewById<TextView>(Resource.Id.textView2);
+                var txtpassword = e.View.FindViewById<TextView>(Resource.Id.textView3);
+            };*/
+            mbtnSignUp.Click += mbtnSignUp_Click;
             return view;
         }
 
         void mbtnSignUp_Click(object sender, EventArgs e)
         {
-            onSignUpComplete.Invoke(this, new OnSignUpEventArgs(mtxtFirstName.Text, mtxtEmail.Text, mtxtPassword.Text));
-            mbtnSignUp.Click += delegate
+            try
             {
-                Person person = new Person()
+                //onSignUpComplete.Invoke(this, new OnSignUpEventArgs(mtxtFirstName.Text, mtxtEmail.Text, mtxtPassword.Text));
+                mbtnSignUp.Click += delegate
                 {
-                    Firstname = mtxtFirstName.Text,
-                    Email = mtxtEmail.Text,
-                    Password = mtxtPassword.Text
+                    Person person = new Person()
+                    {
+                        Firstname = mtxtFirstName.Text,
+                        Email = mtxtEmail.Text,
+                        Password = mtxtPassword.Text
+                    };
+                    db.InsertIntoTable(person);
+                    LoadData();
                 };
-                db.InsertIntoTable(person);
-            };
+            }catch(Exception ex) { }
         }
 
         public override void OnActivityCreated(Bundle savedInstanceState)
@@ -75,8 +98,12 @@ namespace ProvaAndroidLoginSystem1
 
         private void LoadData()
         {
-            ListPerson = db.selectTable();
-            /*var adapter = new ListViewAdapter(this, )*/
+            try
+            {
+                ListPerson = db.selectTable();
+                var adapter = new ListViewAdapter(this, ListPerson);
+                mListview.Adapter = adapter;
+            }catch(Exception ex) { }
         }
     }
 }
