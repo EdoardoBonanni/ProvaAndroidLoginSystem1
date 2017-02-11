@@ -2,7 +2,7 @@
 <xs:schema xmlns:android="http://schemas.android.com/apk/res/android" attributeFormDefault="qualified" elementFormDefault="unqualified" targetNamespace="http://schemas.android.com/apk/res/android" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:annotation>
     <xs:documentation>v23</xs:documentation>
-    <xs:documentation>31/01/2017 16:36:10</xs:documentation>
+    <xs:documentation>10/02/2017 22:51:44</xs:documentation>
   </xs:annotation>
   <xs:attribute name="accessibilityLiveRegion">
     <xs:annotation>
@@ -16899,7 +16899,11 @@
             <xs:enumeration value="@id/btnDialogEmail" />
             <xs:enumeration value="@id/btnSignIn" />
             <xs:enumeration value="@id/btnSignUp" />
+            <xs:enumeration value="@id/listView1" />
             <xs:enumeration value="@id/progressBar1" />
+            <xs:enumeration value="@id/textView1" />
+            <xs:enumeration value="@id/textView2" />
+            <xs:enumeration value="@id/textView3" />
             <xs:enumeration value="@id/txtCreateAccount" />
             <xs:enumeration value="@id/txtEmail" />
             <xs:enumeration value="@id/txtFirstName" />
@@ -20201,6 +20205,8 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@anim/slide_right" />
+            <xs:enumeration value="@anim/slide_up" />
             <xs:enumeration value="@android:anim/accelerate_decelerate_interpolator" />
             <xs:enumeration value="@android:anim/accelerate_interpolator" />
             <xs:enumeration value="@android:anim/anticipate_interpolator" />
@@ -31730,6 +31736,7 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@style/dialog_animation" />
             <xs:enumeration value="@style/XamarinDesignerCustomAppliedTheme" />
             <xs:enumeration value="@android:style/Animation" />
             <xs:enumeration value="@android:style/Animation.Activity" />
@@ -38576,6 +38583,7 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@style/dialog_animation" />
             <xs:enumeration value="@style/XamarinDesignerCustomAppliedTheme" />
             <xs:enumeration value="@android:style/Animation" />
             <xs:enumeration value="@android:style/Animation.Activity" />

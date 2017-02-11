@@ -28,7 +28,7 @@ namespace ProvaAndroidLoginSystem1
             mPassword = password;
         }
     }
-    class Dialog_SignUp : DialogFragment
+    public class Dialog_SignUp : DialogFragment
     {
         private TextView mtxtFirstName;
         private TextView mtxtEmail;
@@ -37,7 +37,6 @@ namespace ProvaAndroidLoginSystem1
         private DataBase db;
         private ListView mListview;
         private List<Person> ListPerson;
-    
 
         public event EventHandler<OnSignUpEventArgs> onSignUpComplete;
 
@@ -52,7 +51,7 @@ namespace ProvaAndroidLoginSystem1
             mtxtEmail = view.FindViewById<EditText>(Resource.Id.txtEmail);
             mtxtPassword = view.FindViewById<EditText>(Resource.Id.txtPassword);
             mbtnSignUp = view.FindViewById<Button>(Resource.Id.btnDialogEmail);
-            //LoadData();
+            mListview = view.FindViewById<ListView>(Resource.Id.listView1);
             /*mListview.ItemClick += (s, e) => {
                 for (int i = 0; i < mListview.Count; i++)
                 {
@@ -84,9 +83,10 @@ namespace ProvaAndroidLoginSystem1
                         Password = mtxtPassword.Text
                     };
                     db.InsertIntoTable(person);
-                    LoadData();
+                    //LoadData();
                 };
-            }catch(Exception ex) { }
+            }
+            catch(Exception ex) { }
         }
 
         public override void OnActivityCreated(Bundle savedInstanceState)
