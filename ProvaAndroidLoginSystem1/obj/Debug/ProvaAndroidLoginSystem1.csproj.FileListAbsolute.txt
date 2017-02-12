@@ -56,5 +56,6 @@ C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Debug\System.IO.Compression.dll.mdb
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\android\assets\SQLite-net.dll.mdb
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\android\assets\System.IO.Compression.dll.mdb
+C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\res\layout\listviewlayout.xml
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\ProvaAndroidLoginSystem1.dll.mdb
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Debug\ProvaAndroidLoginSystem1.dll.mdb

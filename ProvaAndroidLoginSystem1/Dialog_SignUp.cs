@@ -34,6 +34,7 @@ namespace ProvaAndroidLoginSystem1
         private TextView mtxtEmail;
         private TextView mtxtPassword;
         private Button mbtnSignUp;
+        private Button mbtnDatabase;
         private DataBase db;
         private ListView mListview;
         private List<Person> ListPerson;
@@ -51,7 +52,7 @@ namespace ProvaAndroidLoginSystem1
             mtxtEmail = view.FindViewById<EditText>(Resource.Id.txtEmail);
             mtxtPassword = view.FindViewById<EditText>(Resource.Id.txtPassword);
             mbtnSignUp = view.FindViewById<Button>(Resource.Id.btnDialogEmail);
-            mListview = view.FindViewById<ListView>(Resource.Id.listView1);
+            mbtnDatabase = view.FindViewById<Button>(Resource.Id.btnDatabase);
             /*mListview.ItemClick += (s, e) => {
                 for (int i = 0; i < mListview.Count; i++)
                 {
@@ -66,6 +67,14 @@ namespace ProvaAndroidLoginSystem1
                 var txtpassword = e.View.FindViewById<TextView>(Resource.Id.textView3);
             };*/
             mbtnSignUp.Click += mbtnSignUp_Click;
+            mbtnDatabase.Click += (object sender, EventArgs args) =>
+            {
+                ViewDatabase viewdatabase = new ViewDatabase();
+                var myIntent = new Intent(Context, typeof(ViewDatabase));
+                StartActivityForResult(myIntent, 0);
+                /*viewdatabase.StartActivity(typeof(Activity));*/
+
+            };
             return view;
         }
 
@@ -83,7 +92,6 @@ namespace ProvaAndroidLoginSystem1
                         Password = mtxtPassword.Text
                     };
                     db.InsertIntoTable(person);
-                    //LoadData();
                 };
             }
             catch(Exception ex) { }
@@ -96,14 +104,6 @@ namespace ProvaAndroidLoginSystem1
             Dialog.Window.Attributes.WindowAnimations = Resource.Style.dialog_animation;
         }
 
-        private void LoadData()
-        {
-            try
-            {
-                ListPerson = db.selectTable();
-                var adapter = new ListViewAdapter(this, ListPerson);
-                mListview.Adapter = adapter;
-            }catch(Exception ex) { }
-        }
+        
     }
 }

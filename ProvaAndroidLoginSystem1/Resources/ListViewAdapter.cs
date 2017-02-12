@@ -22,10 +22,10 @@ namespace ProvaAndroidLoginSystem1.Resources
     }
     public class ListViewAdapter:BaseAdapter
     {
-        private DialogFragment dialog;
+        private Activity dialog;
         private List<Person> lstPerson;
         
-        public ListViewAdapter(DialogFragment dialog, List<Person> lstperson)
+        public ListViewAdapter(Activity dialog, List<Person> lstperson)
         {
             this.dialog = dialog;
             this.lstPerson = lstperson;
@@ -51,7 +51,7 @@ namespace ProvaAndroidLoginSystem1.Resources
 
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
-            var view = convertView ?? dialog.Activity.LayoutInflater.Inflate(Resource.Layout.list_view_dataTemplate, parent, false);
+            var view = convertView ?? dialog.LayoutInflater.Inflate(Resource.Layout.list_view_dataTemplate, parent, false);
             var txtname = view.FindViewById<TextView>(Resource.Id.txtFirstName);
             var txtemail = view.FindViewById<TextView>(Resource.Id.txtEmail);
             var txtpassword = view.FindViewById<TextView>(Resource.Id.txtPassword);

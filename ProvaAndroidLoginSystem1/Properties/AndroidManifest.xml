@@ -1,5 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="Provalogin1.provalogin" android:versionCode="1" android:versionName="1.0" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="16" />
-	<application android:label="ProvaLogin1"></application>
+	<application android:label="ProvaLogin1">
+    <activity
+      android:name=".ViewDatabase"
+      android:label="ViewDatabase">
+    </activity>
+  </application>
 </manifest>
