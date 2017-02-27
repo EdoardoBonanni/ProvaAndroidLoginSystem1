@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#DEDEDC"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:minWidth="300dp"
+    android:minHeight="400dp">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:id="@+id/relativeLayoutTextSignIn">
+        <EditText
+            android:inputType="textEmailAddress"
+            android:id="@+id/txtEmailSignIn"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@drawable/edit_text_file"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="25dp"
+            android:hint="Email"
+            android:paddingLeft="10dp"
+            android:textColor="#000" />
+        <EditText
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:id="@+id/txtPasswordSignIn"
+            android:background="@drawable/edit_text_file"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:hint="Password"
+            android:paddingLeft="10dp"
+            android:textColor="#000"
+            android:layout_below="@id/txtEmailSignIn" />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtPasswordSignIn"
+            android:layout_marginTop="15dp"
+            android:id="@+id/relativeLayoutButtonSignIn">
+            <Button
+                android:text="Sign In"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnSignIn"
+                android:textSize="20dp"
+                android:textColor="#FFF"
+                android:textStyle="bold"
+                android:paddingBottom="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="2dp"
+                android:height="70dp"
+                android:background="@drawable/ButtonSignUpStyle"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="30dp" />
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

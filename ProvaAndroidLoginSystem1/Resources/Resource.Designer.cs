@@ -94,26 +94,29 @@ namespace ProvaAndroidLoginSystem1
 			// aapt resource value: 0x7f070006
 			public const int btnDatabase = 2131165190;
 			
-			// aapt resource value: 0x7f070005
-			public const int btnDialogEmail = 2131165189;
-			
 			// aapt resource value: 0x7f07000c
 			public const int btnSignIn = 2131165196;
 			
-			// aapt resource value: 0x7f07000e
-			public const int btnSignUp = 2131165198;
+			// aapt resource value: 0x7f070005
+			public const int btnSignUp = 2131165189;
 			
 			// aapt resource value: 0x7f07000a
 			public const int listView1 = 2131165194;
 			
-			// aapt resource value: 0x7f07000f
-			public const int progressBar1 = 2131165199;
+			// aapt resource value: 0x7f07000e
+			public const int progressBar1 = 2131165198;
 			
 			// aapt resource value: 0x7f070004
 			public const int relativeLayout1 = 2131165188;
 			
 			// aapt resource value: 0x7f070000
 			public const int relativeLayout2 = 2131165184;
+			
+			// aapt resource value: 0x7f070012
+			public const int relativeLayoutButtonSignIn = 2131165202;
+			
+			// aapt resource value: 0x7f07000f
+			public const int relativeLayoutTextSignIn = 2131165199;
 			
 			// aapt resource value: 0x7f070007
 			public const int textView1 = 2131165191;
@@ -130,6 +133,9 @@ namespace ProvaAndroidLoginSystem1
 			// aapt resource value: 0x7f070002
 			public const int txtEmail = 2131165186;
 			
+			// aapt resource value: 0x7f070010
+			public const int txtEmailSignIn = 2131165200;
+			
 			// aapt resource value: 0x7f070001
 			public const int txtFirstName = 2131165185;
 			
@@ -138,6 +144,9 @@ namespace ProvaAndroidLoginSystem1
 			
 			// aapt resource value: 0x7f070003
 			public const int txtPassword = 2131165187;
+			
+			// aapt resource value: 0x7f070011
+			public const int txtPasswordSignIn = 2131165201;
 			
 			static Id()
 			{
@@ -163,6 +172,9 @@ namespace ProvaAndroidLoginSystem1
 			
 			// aapt resource value: 0x7f030003
 			public const int Main = 2130903043;
+			
+			// aapt resource value: 0x7f030004
+			public const int SignInLayout = 2130903044;
 			
 			static Layout()
 			{

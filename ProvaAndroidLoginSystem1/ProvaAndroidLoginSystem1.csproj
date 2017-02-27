@@ -96,6 +96,7 @@
     <Compile Include="Resources\Model\Person.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\SignInActivity.cs" />
     <Compile Include="Resources\SignUpActivity.cs" />
     <Compile Include="Resources\ViewDatabase.cs" />
   </ItemGroup>
@@ -111,6 +112,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\ListViewLayout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\SignInLayout.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

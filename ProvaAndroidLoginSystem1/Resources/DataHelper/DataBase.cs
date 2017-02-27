@@ -19,6 +19,11 @@ namespace ProvaAndroidLoginSystem1.Resources.DataHelper
     {
         string folder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
 
+
+        public DataBase()
+        {
+
+        }
         public bool createDataBase()
         {
             try
@@ -42,8 +47,13 @@ namespace ProvaAndroidLoginSystem1.Resources.DataHelper
             {
                 using (var connection = new SQLiteConnection(System.IO.Path.Combine(folder, "Persons.db")))
                 {
-                    connection.Insert(person);
-                    return true;
+                    List<Person> test = selectTable().Where(a => a.Email == person.Email).ToList();
+                    if (test.Count == 0)
+                    {
+                        connection.Insert(person);
+                        return true;
+                    }
+                    return false;
                 }
             }
             catch (SQLiteException ex)
@@ -69,7 +79,7 @@ namespace ProvaAndroidLoginSystem1.Resources.DataHelper
             }
         }
 
-        public bool UpdateTable(Person person)
+        public bool UpdateRowTable(Person person)
         {
             try
             {
@@ -86,13 +96,30 @@ namespace ProvaAndroidLoginSystem1.Resources.DataHelper
             }
         }
 
-        public bool DeleteTable(Person person)
+        public bool DeleteRowTable(Person person)
         {
             try
             {
                 using (var connection = new SQLiteConnection(System.IO.Path.Combine(folder, "Persons.db")))
                 {
                     connection.Delete(person);
+                    return true;
+                }
+            }
+            catch (SQLiteException ex)
+            {
+                Log.Info("SQLiteException", ex.Message);
+                return false;
+            }
+        }
+
+        public bool DeleteAllRowTable()
+        {
+            try
+            {
+                using (var connection = new SQLiteConnection(System.IO.Path.Combine(folder, "Persons.db")))
+                {
+                    connection.DeleteAll<Person>();
                     return true;
                 }
             }
@@ -111,6 +138,27 @@ namespace ProvaAndroidLoginSystem1.Resources.DataHelper
                 {
                     connection.Query<Person>("Select * From Person Where Id=?", Id);
                     return true;
+                }
+            }
+            catch (SQLiteException ex)
+            {
+                Log.Info("SQLiteException", ex.Message);
+                return false;
+            }
+        }
+
+        public bool Login(Person person)
+        {
+            try
+            {
+                using (var connection = new SQLiteConnection(System.IO.Path.Combine(folder, "Persons.db")))
+                {
+                    var listPerson = connection.Query<Person>("Select * From Person Where Email=? AND Password=?", person.Email, person.Password);
+                    if(listPerson.Count > 0)
+                    {
+                        return true;
+                    }
+                    return false;  
                 }
             }
             catch (SQLiteException ex)

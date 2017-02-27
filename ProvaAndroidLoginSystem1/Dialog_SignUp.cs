@@ -51,7 +51,7 @@ namespace ProvaAndroidLoginSystem1
             mtxtFirstName = view.FindViewById<EditText>(Resource.Id.txtFirstName);
             mtxtEmail = view.FindViewById<EditText>(Resource.Id.txtEmail);
             mtxtPassword = view.FindViewById<EditText>(Resource.Id.txtPassword);
-            mbtnSignUp = view.FindViewById<Button>(Resource.Id.btnDialogEmail);
+            mbtnSignUp = view.FindViewById<Button>(Resource.Id.btnSignUp);
             mbtnDatabase = view.FindViewById<Button>(Resource.Id.btnDatabase);
             /*mListview.ItemClick += (s, e) => {
                 for (int i = 0; i < mListview.Count; i++)

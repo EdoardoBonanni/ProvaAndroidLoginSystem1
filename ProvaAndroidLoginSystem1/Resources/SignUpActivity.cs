@@ -11,6 +11,7 @@ using Android.Views;
 using Android.Widget;
 using ProvaAndroidLoginSystem1.Resources.DataHelper;
 using ProvaAndroidLoginSystem1.Resources.Model;
+using Android.Views.InputMethods;
 
 namespace ProvaAndroidLoginSystem1.Resources
 {
@@ -27,7 +28,7 @@ namespace ProvaAndroidLoginSystem1.Resources
         }
     }
 
-    [Activity(Label = "ViewDatabase")]
+    [Activity(Label = "SignUp")]
     class SignUpActivity : Activity
     {
         private TextView mtxtFirstName;
@@ -36,6 +37,7 @@ namespace ProvaAndroidLoginSystem1.Resources
         private Button mbtnSignUp;
         private Button mbtnDatabase;
         private DataBase db;
+        private InputMethodManager imm;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -43,20 +45,24 @@ namespace ProvaAndroidLoginSystem1.Resources
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.dialog_sign_up);
+
             db = new DataBase();
             db.createDataBase();
+
+            imm = (InputMethodManager)GetSystemService(Context.InputMethodService);
+
             mtxtFirstName = FindViewById<EditText>(Resource.Id.txtFirstName);
             mtxtEmail = FindViewById<EditText>(Resource.Id.txtEmail);
             mtxtPassword = FindViewById<EditText>(Resource.Id.txtPassword);
-            mbtnSignUp = FindViewById<Button>(Resource.Id.btnDialogEmail);
+            mbtnSignUp = FindViewById<Button>(Resource.Id.btnSignUp);
             mbtnDatabase = FindViewById<Button>(Resource.Id.btnDatabase);
+
             mbtnSignUp.Click += mbtnSignUp_Click;
             mbtnDatabase.Click += (object sender, EventArgs args) =>
             {
-                //ViewDatabase viewdatabase = new ViewDatabase();
+                ViewDatabase viewdatabase = new ViewDatabase();
                 Intent openPage1 = new Intent(this, typeof(ViewDatabase));
                 this.StartActivity(openPage1);
-
             };
         }
 
@@ -65,16 +71,27 @@ namespace ProvaAndroidLoginSystem1.Resources
             try
             {
                 //onSignUpComplete.Invoke(this, new OnSignUpEventArgs(mtxtFirstName.Text, mtxtEmail.Text, mtxtPassword.Text));
-                mbtnSignUp.Click += delegate
+                Person person = new Person()
                 {
-                    Person person = new Person()
-                    {
-                        Firstname = mtxtFirstName.Text,
-                        Email = mtxtEmail.Text,
-                        Password = mtxtPassword.Text
-                    };
-                    db.InsertIntoTable(person);
+                    Firstname = mtxtFirstName.Text,
+                    Email = mtxtEmail.Text,
+                    Password = mtxtPassword.Text
                 };
+
+                imm.HideSoftInputFromWindow(mtxtFirstName.WindowToken, 0);
+                imm.HideSoftInputFromWindow(mtxtEmail.WindowToken, 0);
+                imm.HideSoftInputFromWindow(mtxtPassword.WindowToken, 0);
+
+                if (!db.InsertIntoTable(person))
+                {
+                    Toast.MakeText(this, "Email già utilizzata", ToastLength.Long).Show();
+                }
+                else
+                {
+                    mtxtFirstName.Text = "";
+                    mtxtEmail.Text = "";
+                    mtxtPassword.Text = "";
+                }
             }
             catch (Exception ex) { }
         }

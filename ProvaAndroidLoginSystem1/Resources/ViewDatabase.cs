@@ -26,9 +26,11 @@ namespace ProvaAndroidLoginSystem1.Resources
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.ListViewLayout);
-            db = new DataBase();
-            LoadData();
             listview1 = FindViewById<ListView>(Resource.Id.listView1);
+            db = new DataBase();
+            //db.DeleteAllRowTable();
+            ListPerson = new List<Person>();
+            LoadData();
 
         }
 

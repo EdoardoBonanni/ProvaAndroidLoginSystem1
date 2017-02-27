@@ -20,8 +20,11 @@ namespace ProvaAndroidLoginSystem1.Resources.Model
 
         public string Firstname { get; set; }
 
+        [Unique]
         public string Email { get; set; }
 
         public string Password { get; set; }
+
+        public Person() { }
     }
 }
