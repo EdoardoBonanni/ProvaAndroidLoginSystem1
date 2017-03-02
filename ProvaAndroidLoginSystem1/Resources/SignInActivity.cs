@@ -58,6 +58,8 @@ namespace ProvaAndroidLoginSystem1.Resources
                 if (db.Login(person))
                 {
                     Toast.MakeText(this, "Login Successful", ToastLength.Long).Show();
+                    Intent Home = new Intent(this, typeof(HomeActivity));
+                    this.StartActivity(Home);
                 }
                 else
                 {

@@ -61,8 +61,8 @@ namespace ProvaAndroidLoginSystem1.Resources
             mbtnDatabase.Click += (object sender, EventArgs args) =>
             {
                 ViewDatabase viewdatabase = new ViewDatabase();
-                Intent openPage1 = new Intent(this, typeof(ViewDatabase));
-                this.StartActivity(openPage1);
+                Intent Database = new Intent(this, typeof(ViewDatabase));
+                this.StartActivity(Database);
             };
         }
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="Provalogin1.provalogin" android:versionCode="1" android:versionName="1.0" android:installLocation="auto">
   <!--suppress UsesMinSdkAttributes-->
-  <uses-sdk android:minSdkVersion="16" />
+  <uses-sdk android:minSdkVersion="11" />
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
   <application android:label="ProvaLogin1" android:name="android.app.Application" android:allowBackup="true" android:debuggable="true">
@@ -13,6 +13,8 @@
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
+    <activity android:label="HomeActivity" android:name="md53792a7b3124ac761b0cadb2590bc20e8.HomeActivity" />
+    <activity android:label="SendMessageActivity" android:name="md53792a7b3124ac761b0cadb2590bc20e8.SendMessageActivity" />
     <activity android:label="SignInActivity" android:name="md53792a7b3124ac761b0cadb2590bc20e8.SignInActivity" />
     <activity android:label="SignUp" android:name="md53792a7b3124ac761b0cadb2590bc20e8.SignUpActivity" />
     <activity android:label="ViewDatabase" android:name="md53792a7b3124ac761b0cadb2590bc20e8.ViewDatabase" />

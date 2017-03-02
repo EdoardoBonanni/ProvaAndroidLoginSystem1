@@ -11,13 +11,15 @@ C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\SQLitePCLRaw.provider.e_sqlite3.dll
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\SQLite-net.xml
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\SQLite-net.dll.mdb
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\ProvaAndroidLoginSystem1.csprojResolveAssemblyReference.cache
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\ProvaAndroidLoginSystem1.dll
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\ProvaAndroidLoginSystem1.pdb
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\bin\Provalogin1.provalogin.apk
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\res\layout\dialog_sign_up.xml
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\res\layout\list_view_datatemplate.xml
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\res\layout\listviewlayout.xml
+C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\res\layout\signinlayout.xml
+C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\res\layout\homelayout.xml
+C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\res\layout\chatlayout.xml
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\res\layout\main.xml
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\res\values\strings.xml
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\res\drawable\icon.png

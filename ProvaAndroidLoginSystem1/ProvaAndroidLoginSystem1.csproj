@@ -16,7 +16,7 @@
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v7.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -92,10 +92,12 @@
     <Compile Include="Dialog_SignUp.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\DataHelper\DataBase.cs" />
+    <Compile Include="Resources\HomeActivity.cs" />
     <Compile Include="Resources\ListViewAdapter.cs" />
     <Compile Include="Resources\Model\Person.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\SendMessageActivity.cs" />
     <Compile Include="Resources\SignInActivity.cs" />
     <Compile Include="Resources\SignUpActivity.cs" />
     <Compile Include="Resources\ViewDatabase.cs" />
@@ -115,6 +117,12 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\SignInLayout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\HomeLayout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ChatLayout.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
