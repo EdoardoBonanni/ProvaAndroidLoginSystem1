@@ -12,6 +12,10 @@ using Android.Widget;
 using ProvaAndroidLoginSystem1.Resources.DataHelper;
 using ProvaAndroidLoginSystem1.Resources.Model;
 using Android.Views.InputMethods;
+using System.Threading.Tasks;
+using System.Net;
+using System.Net.Http;
+using Newtonsoft.Json;
 
 namespace ProvaAndroidLoginSystem1.Resources
 {
@@ -37,6 +41,7 @@ namespace ProvaAndroidLoginSystem1.Resources
         private Button mbtnSignUp;
         private Button mbtnDatabase;
         private DataBase db;
+        private HTTPClient client;
         private InputMethodManager imm;
 
         public static string CreateMD5(string input)
@@ -67,6 +72,8 @@ namespace ProvaAndroidLoginSystem1.Resources
             db = new DataBase();
             db.createDataBase();
 
+            client = new HTTPClient();
+
             imm = (InputMethodManager)GetSystemService(Context.InputMethodService);
 
             mtxtFirstName = FindViewById<EditText>(Resource.Id.txtFirstName);
@@ -84,7 +91,24 @@ namespace ProvaAndroidLoginSystem1.Resources
             };
         }
 
-        void mbtnSignUp_Click(object sender, EventArgs e)
+        public async Task RegisterAsync(Person person)
+        {
+            var uri = new Uri("https://mobileapi-edobona98.c9users.io/Login/register.php");
+            var json = JsonConvert.SerializeObject(person);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            HttpResponseMessage response = null;
+            response = await client.Client.PostAsync(uri, content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                
+
+            }
+
+        }
+
+        async void mbtnSignUp_Click(object sender, EventArgs e)
         {
             try
             {
@@ -100,6 +124,9 @@ namespace ProvaAndroidLoginSystem1.Resources
                 imm.HideSoftInputFromWindow(mtxtNickname.WindowToken, 0);
                 imm.HideSoftInputFromWindow(mtxtPassword.WindowToken, 0);
 
+                await RegisterAsync(person);
+ 
+                /*
                 if (!db.InsertIntoTable(person))
                 {
                     Toast.MakeText(this, "Nickname già utilizzato", ToastLength.Long).Show();
@@ -110,6 +137,7 @@ namespace ProvaAndroidLoginSystem1.Resources
                     mtxtNickname.Text = "";
                     mtxtPassword.Text = "";
                 }
+                */
             }
             catch (Exception ex) { }
         }

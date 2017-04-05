@@ -49,7 +49,7 @@ namespace ProvaAndroidLoginSystem1
             db.createDataBase();
             var view = inflater.Inflate(Resource.Layout.dialog_sign_up, container, false);
             mtxtFirstName = view.FindViewById<EditText>(Resource.Id.txtFirstName);
-            mtxtEmail = view.FindViewById<EditText>(Resource.Id.txtEmail);
+            mtxtEmail = view.FindViewById<EditText>(Resource.Id.txtNickname);
             mtxtPassword = view.FindViewById<EditText>(Resource.Id.txtPassword);
             mbtnSignUp = view.FindViewById<Button>(Resource.Id.btnSignUp);
             mbtnDatabase = view.FindViewById<Button>(Resource.Id.btnDatabase);

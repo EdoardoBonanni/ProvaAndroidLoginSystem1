@@ -42,9 +42,9 @@ public final class R {
         public static final int textView3=0x7f070012;
         public static final int txtChat=0x7f070004;
         public static final int txtCreateAccount=0x7f070014;
-        public static final int txtEmail=0x7f070007;
-        public static final int txtEmailSignIn=0x7f070019;
         public static final int txtFirstName=0x7f070006;
+        public static final int txtNickname=0x7f070007;
+        public static final int txtNicknameSignIn=0x7f070019;
         public static final int txtORHome=0x7f07000e;
         public static final int txtORt=0x7f070016;
         public static final int txtPassword=0x7f070008;
