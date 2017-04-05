@@ -21,9 +21,26 @@ namespace ProvaAndroidLoginSystem1.Resources
     {
         private DataBase db;
         private InputMethodManager imm;
-        private TextView mtxtEmail;
+        private TextView mtxtNickname;
         private TextView mtxtPassword;
         private Button mbtnSignIn;
+        public static string CreateMD5(string input)
+        {
+            // Use input string to calculate MD5 hash
+            using (System.Security.Cryptography.MD5 md5 = System.Security.Cryptography.MD5.Create())
+            {
+                byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(input);
+                byte[] hashBytes = md5.ComputeHash(inputBytes);
+
+                // Convert the byte array to hexadecimal string
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < hashBytes.Length; i++)
+                {
+                    sb.Append(hashBytes[i].ToString("X2"));
+                }
+                return sb.ToString();
+            }
+        }
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -36,7 +53,7 @@ namespace ProvaAndroidLoginSystem1.Resources
 
             imm = (InputMethodManager)GetSystemService(Context.InputMethodService);
             
-            mtxtEmail = FindViewById<EditText>(Resource.Id.txtEmailSignIn);
+            mtxtNickname = FindViewById<EditText>(Resource.Id.txtNicknameSignIn);
             mtxtPassword = FindViewById<EditText>(Resource.Id.txtPasswordSignIn);
             mbtnSignIn = FindViewById<Button>(Resource.Id.btnSignIn);
 
@@ -49,10 +66,10 @@ namespace ProvaAndroidLoginSystem1.Resources
             {
                 Person person = new Person()
                 {
-                    Email = mtxtEmail.Text,
-                    Password = mtxtPassword.Text
+                    Nickname = mtxtNickname.Text,
+                    Password = CreateMD5(mtxtPassword.Text)
                 };
-                imm.HideSoftInputFromWindow(mtxtEmail.WindowToken, 0);
+                imm.HideSoftInputFromWindow(mtxtNickname.WindowToken, 0);
                 imm.HideSoftInputFromWindow(mtxtPassword.WindowToken, 0);
 
                 if (db.Login(person))
@@ -69,4 +86,6 @@ namespace ProvaAndroidLoginSystem1.Resources
             catch (Exception ex) { }
         }
     }
+
+    
 }

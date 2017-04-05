@@ -17,7 +17,7 @@ namespace ProvaAndroidLoginSystem1.Resources
     public class ViewHolder : Java.Lang.Object
     {
         public TextView txtname;
-        public TextView txtemail;
+        public TextView txtNickname;
         public TextView txtpassword;
     }
     public class ListViewAdapter:BaseAdapter
@@ -53,11 +53,11 @@ namespace ProvaAndroidLoginSystem1.Resources
         {
             var view = convertView ?? dialog.LayoutInflater.Inflate(Resource.Layout.list_view_dataTemplate, parent, false);
             var txtname = view.FindViewById<TextView>(Resource.Id.textView1);
-            var txtemail = view.FindViewById<TextView>(Resource.Id.textView2);
+            var txtnickname = view.FindViewById<TextView>(Resource.Id.textView2);
             var txtpassword = view.FindViewById<TextView>(Resource.Id.textView3);
 
             txtname.Text = lstPerson[position].Firstname;
-            txtemail.Text = lstPerson[position].Email;
+            txtnickname.Text = lstPerson[position].Nickname;
             txtpassword.Text = lstPerson[position].Password;
 
             return view;

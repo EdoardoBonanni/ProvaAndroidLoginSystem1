@@ -47,7 +47,7 @@ namespace ProvaAndroidLoginSystem1.Resources.DataHelper
             {
                 using (var connection = new SQLiteConnection(System.IO.Path.Combine(folder, "Persons.db")))
                 {
-                    List<Person> test = selectTable().Where(a => a.Email == person.Email).ToList();
+                    List<Person> test = selectTable().Where(a => a.Nickname == person.Nickname).ToList();
                     if (test.Count == 0)
                     {
                         connection.Insert(person);
@@ -85,7 +85,7 @@ namespace ProvaAndroidLoginSystem1.Resources.DataHelper
             {
                 using (var connection = new SQLiteConnection(System.IO.Path.Combine(folder, "Persons.db")))
                 {
-                    connection.Query<Person>("UPDATE Person set Firstname=?, Email=?, Password=? Where Id=?", person.Firstname, person.Email, person.Password, person.Id);
+                    connection.Query<Person>("UPDATE Person set Firstname=?, Nickname=?, Password=? Where Id=?", person.Firstname, person.Nickname, person.Password, person.Id);
                     return true;
                 }
             }
@@ -153,7 +153,7 @@ namespace ProvaAndroidLoginSystem1.Resources.DataHelper
             {
                 using (var connection = new SQLiteConnection(System.IO.Path.Combine(folder, "Persons.db")))
                 {
-                    var listPerson = connection.Query<Person>("Select * From Person Where Email=? AND Password=?", person.Email, person.Password);
+                    var listPerson = connection.Query<Person>("Select * From Person Where Nickname=? AND Password=?", person.Nickname, person.Password);
                     if(listPerson.Count > 0)
                     {
                         return true;

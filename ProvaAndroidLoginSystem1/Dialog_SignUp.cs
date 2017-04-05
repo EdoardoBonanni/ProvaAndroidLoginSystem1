@@ -88,7 +88,7 @@ namespace ProvaAndroidLoginSystem1
                     Person person = new Person()
                     {
                         Firstname = mtxtFirstName.Text,
-                        Email = mtxtEmail.Text,
+                        Nickname = mtxtEmail.Text,
                         Password = mtxtPassword.Text
                     };
                     db.InsertIntoTable(person);

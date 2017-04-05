@@ -151,14 +151,14 @@ namespace ProvaAndroidLoginSystem1
 			// aapt resource value: 0x7f070014
 			public const int txtCreateAccount = 2131165204;
 			
-			// aapt resource value: 0x7f070007
-			public const int txtEmail = 2131165191;
-			
-			// aapt resource value: 0x7f070019
-			public const int txtEmailSignIn = 2131165209;
-			
 			// aapt resource value: 0x7f070006
 			public const int txtFirstName = 2131165190;
+			
+			// aapt resource value: 0x7f070007
+			public const int txtNickname = 2131165191;
+			
+			// aapt resource value: 0x7f070019
+			public const int txtNicknameSignIn = 2131165209;
 			
 			// aapt resource value: 0x7f07000e
 			public const int txtORHome = 2131165198;

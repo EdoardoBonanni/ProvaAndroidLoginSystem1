@@ -18,12 +18,12 @@ namespace ProvaAndroidLoginSystem1.Resources
     public class OnSignUpEventArgs : EventArgs
     {
         public string mFirstName { get; set; }
-        public string mEmail { get; set; }
+        public string mNickname { get; set; }
         public string mPassword { get; set; }
-        public OnSignUpEventArgs(string firstname, string email, string password) : base()
+        public OnSignUpEventArgs(string firstname, string nickname, string password) : base()
         {
             mFirstName = firstname;
-            mEmail = email;
+            mNickname= nickname;
             mPassword = password;
         }
     }
@@ -32,12 +32,30 @@ namespace ProvaAndroidLoginSystem1.Resources
     class SignUpActivity : Activity
     {
         private TextView mtxtFirstName;
-        private TextView mtxtEmail;
+        private TextView mtxtNickname;
         private TextView mtxtPassword;
         private Button mbtnSignUp;
         private Button mbtnDatabase;
         private DataBase db;
         private InputMethodManager imm;
+
+        public static string CreateMD5(string input)
+        {
+            // Use input string to calculate MD5 hash
+            using (System.Security.Cryptography.MD5 md5 = System.Security.Cryptography.MD5.Create())
+            {
+                byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(input);
+                byte[] hashBytes = md5.ComputeHash(inputBytes);
+
+                // Convert the byte array to hexadecimal string
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < hashBytes.Length; i++)
+                {
+                    sb.Append(hashBytes[i].ToString("X2"));
+                }
+                return sb.ToString();
+            }
+        }
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -52,7 +70,7 @@ namespace ProvaAndroidLoginSystem1.Resources
             imm = (InputMethodManager)GetSystemService(Context.InputMethodService);
 
             mtxtFirstName = FindViewById<EditText>(Resource.Id.txtFirstName);
-            mtxtEmail = FindViewById<EditText>(Resource.Id.txtEmail);
+            mtxtNickname = FindViewById<EditText>(Resource.Id.txtNickname);
             mtxtPassword = FindViewById<EditText>(Resource.Id.txtPassword);
             mbtnSignUp = FindViewById<Button>(Resource.Id.btnSignUp);
             mbtnDatabase = FindViewById<Button>(Resource.Id.btnDatabase);
@@ -74,22 +92,22 @@ namespace ProvaAndroidLoginSystem1.Resources
                 Person person = new Person()
                 {
                     Firstname = mtxtFirstName.Text,
-                    Email = mtxtEmail.Text,
-                    Password = mtxtPassword.Text
+                    Nickname = mtxtNickname.Text,
+                    Password = CreateMD5(mtxtPassword.Text)
                 };
 
                 imm.HideSoftInputFromWindow(mtxtFirstName.WindowToken, 0);
-                imm.HideSoftInputFromWindow(mtxtEmail.WindowToken, 0);
+                imm.HideSoftInputFromWindow(mtxtNickname.WindowToken, 0);
                 imm.HideSoftInputFromWindow(mtxtPassword.WindowToken, 0);
 
                 if (!db.InsertIntoTable(person))
                 {
-                    Toast.MakeText(this, "Email già utilizzata", ToastLength.Long).Show();
+                    Toast.MakeText(this, "Nickname già utilizzato", ToastLength.Long).Show();
                 }
                 else
                 {
                     mtxtFirstName.Text = "";
-                    mtxtEmail.Text = "";
+                    mtxtNickname.Text = "";
                     mtxtPassword.Text = "";
                 }
             }

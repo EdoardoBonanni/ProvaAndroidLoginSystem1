@@ -24,15 +24,14 @@
             android:textColor="#000" />
         <EditText
             android:layout_below="@id/txtFirstName"
-            android:inputType="textEmailAddress"
             android:layout_width="match_parent"
             android:layout_height="35dp"
-            android:id="@+id/txtEmail"
+            android:id="@+id/txtNickname"
             android:background="@drawable/edit_text_file"
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:hint="Email"
+            android:hint="Nickname"
             android:paddingLeft="10dp"
             android:textColor="#000" />
         <EditText
@@ -46,7 +45,7 @@
             android:hint="Password"
             android:paddingLeft="10dp"
             android:textColor="#000"
-            android:layout_below="@id/txtEmail" />
+            android:layout_below="@id/txtNickname" />
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
