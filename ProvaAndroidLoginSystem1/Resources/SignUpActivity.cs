@@ -16,6 +16,7 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Net.Http;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace ProvaAndroidLoginSystem1.Resources
 {
@@ -91,19 +92,23 @@ namespace ProvaAndroidLoginSystem1.Resources
             };
         }
 
-        public async Task RegisterAsync(Person person)
+        public async Task<HttpResponseMessage> RegisterAsync(Person person)
         {
-            var uri = new Uri("https://mobileapi-edobona98.c9users.io/Login/register.php");
+            var uri = new Uri("http://services.groupkt.com/state/get/IND/UP");
             var json = JsonConvert.SerializeObject(person);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
             HttpResponseMessage response = null;
-            response = await client.Client.PostAsync(uri, content);
-
-            if (response.IsSuccessStatusCode)
+            try
             {
-                
-
+                response = await client.Client.GetAsync(uri);
+                return response;
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                Console.WriteLine(ex.InnerException);
+                return new HttpResponseMessage(HttpStatusCode.InternalServerError);
             }
 
         }
@@ -124,8 +129,16 @@ namespace ProvaAndroidLoginSystem1.Resources
                 imm.HideSoftInputFromWindow(mtxtNickname.WindowToken, 0);
                 imm.HideSoftInputFromWindow(mtxtPassword.WindowToken, 0);
 
-                await RegisterAsync(person);
- 
+                var response = await RegisterAsync(person);
+                if (response.IsSuccessStatusCode)
+                {
+                    var result = await response.Content.ReadAsStringAsync();
+                    var boh = JObject.Parse(result)["RestResponse"].ToString();
+                }
+                else
+                {
+
+                }
                 /*
                 if (!db.InsertIntoTable(person))
                 {
@@ -139,7 +152,9 @@ namespace ProvaAndroidLoginSystem1.Resources
                 }
                 */
             }
-            catch (Exception ex) { }
+            catch (Exception ex) {
+                Console.WriteLine(ex.InnerException);
+            }
         }
     }
 }
