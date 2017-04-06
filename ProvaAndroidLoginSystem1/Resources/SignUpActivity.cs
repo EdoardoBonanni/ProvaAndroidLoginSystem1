@@ -17,6 +17,7 @@ using System.Net;
 using System.Net.Http;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Net.Http.Headers;
 
 namespace ProvaAndroidLoginSystem1.Resources
 {
@@ -94,14 +95,21 @@ namespace ProvaAndroidLoginSystem1.Resources
 
         public async Task<HttpResponseMessage> RegisterAsync(Person person)
         {
-            var uri = new Uri("http://services.groupkt.com/state/get/IND/UP");
+            var uri = new Uri("http://mobileapi-edobona98.c9users.io/Login/register.php");
             var json = JsonConvert.SerializeObject(person);
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            /*var content = new StringContent(@"{""Firstname"" : ""ciao"", ""Nickname"" : ""ciao"", ""Password"" : ""ciao""}", Encoding.UTF8, "application/json");*/
+
+            var content = new FormUrlEncodedContent(new[]
+            {
+                new KeyValuePair<string, string>("Firstname", person.Firstname),
+                new KeyValuePair<string, string>("Nickname", person.Nickname),
+                new KeyValuePair<string, string>("Password", person.Password)
+            });
 
             HttpResponseMessage response = null;
             try
             {
-                response = await client.Client.GetAsync(uri);
+                response = await client.Client.PostAsync(uri, content);
                 return response;
             }
             catch(Exception ex)
@@ -130,14 +138,15 @@ namespace ProvaAndroidLoginSystem1.Resources
                 imm.HideSoftInputFromWindow(mtxtPassword.WindowToken, 0);
 
                 var response = await RegisterAsync(person);
+                var result = await response.Content.ReadAsStringAsync();
                 if (response.IsSuccessStatusCode)
                 {
-                    var result = await response.Content.ReadAsStringAsync();
-                    var boh = JObject.Parse(result)["RestResponse"].ToString();
+                    var jwt = JObject.Parse(result)["JWT"].ToString();
                 }
                 else
                 {
-
+                    var error = JObject.Parse(result)["error"].ToString();
+                    Toast.MakeText(this, error, ToastLength.Long).Show();
                 }
                 /*
                 if (!db.InsertIntoTable(person))
