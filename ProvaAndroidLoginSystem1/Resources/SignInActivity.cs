@@ -27,7 +27,6 @@ namespace ProvaAndroidLoginSystem1.Resources
         private TextView mtxtNickname;
         private TextView mtxtPassword;
         private Button mbtnSignIn;
-        private HTTPClient client;
 
         public static string CreateMD5(string input)
         {
@@ -54,8 +53,6 @@ namespace ProvaAndroidLoginSystem1.Resources
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.SignInLayout);
 
-            client = new HTTPClient();
-
             imm = (InputMethodManager)GetSystemService(Context.InputMethodService);
             
             mtxtNickname = FindViewById<EditText>(Resource.Id.txtNicknameSignIn);
@@ -80,7 +77,7 @@ namespace ProvaAndroidLoginSystem1.Resources
             HttpResponseMessage response = null;
             try
             {
-                response = await client.Client.PostAsync(uri, content);
+                response = await MainActivity.client.Client.PostAsync(uri, content);
                 return response;
             }
             catch (Exception ex)
@@ -118,7 +115,9 @@ namespace ProvaAndroidLoginSystem1.Resources
                     Toast.MakeText(this, error, ToastLength.Long).Show();
                 }
             }
-            catch (Exception ex) { }
+            catch (Exception ex) {
+                Console.WriteLine(ex.InnerException);
+            }
         }
     }
 

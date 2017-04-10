@@ -20,19 +20,6 @@ using System.Net.Http.Headers;
 
 namespace ProvaAndroidLoginSystem1.Resources
 {
-    public class OnSignUpEventArgs : EventArgs
-    {
-        public string mFirstName { get; set; }
-        public string mNickname { get; set; }
-        public string mPassword { get; set; }
-        public OnSignUpEventArgs(string firstname, string nickname, string password) : base()
-        {
-            mFirstName = firstname;
-            mNickname= nickname;
-            mPassword = password;
-        }
-    }
-
     [Activity(Label = "SignUp")]
     class SignUpActivity : Activity
     {
@@ -40,7 +27,6 @@ namespace ProvaAndroidLoginSystem1.Resources
         private TextView mtxtNickname;
         private TextView mtxtPassword;
         private Button mbtnSignUp;
-        private HTTPClient client;
         private InputMethodManager imm;
 
         public static string CreateMD5(string input)
@@ -63,12 +49,9 @@ namespace ProvaAndroidLoginSystem1.Resources
 
         protected override void OnCreate(Bundle bundle)
         {
-            base.OnCreate(bundle);
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.dialog_sign_up);
-
-            client = new HTTPClient();
 
             imm = (InputMethodManager)GetSystemService(Context.InputMethodService);
 
@@ -78,6 +61,8 @@ namespace ProvaAndroidLoginSystem1.Resources
             mbtnSignUp = FindViewById<Button>(Resource.Id.btnSignUp);
 
             mbtnSignUp.Click += mbtnSignUp_Click;
+
+            base.OnCreate(bundle);
         }
 
         public async Task<HttpResponseMessage> RegisterAsync(Person person)
@@ -95,7 +80,7 @@ namespace ProvaAndroidLoginSystem1.Resources
             HttpResponseMessage response = null;
             try
             {
-                response = await client.Client.PostAsync(uri, content);
+                response = await MainActivity.client.Client.PostAsync(uri, content);
                 return response;
             }
             catch(Exception ex)

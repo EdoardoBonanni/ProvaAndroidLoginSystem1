@@ -96,7 +96,6 @@
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\HomeActivity.cs" />
-    <Compile Include="Resources\ListViewAdapter.cs" />
     <Compile Include="Resources\Model\HTTPClient.cs" />
     <Compile Include="Resources\Model\Person.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
