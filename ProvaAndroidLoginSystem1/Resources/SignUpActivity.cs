@@ -9,7 +9,6 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using ProvaAndroidLoginSystem1.Resources.DataHelper;
 using ProvaAndroidLoginSystem1.Resources.Model;
 using Android.Views.InputMethods;
 using System.Threading.Tasks;
@@ -41,8 +40,6 @@ namespace ProvaAndroidLoginSystem1.Resources
         private TextView mtxtNickname;
         private TextView mtxtPassword;
         private Button mbtnSignUp;
-        private Button mbtnDatabase;
-        private DataBase db;
         private HTTPClient client;
         private InputMethodManager imm;
 
@@ -71,9 +68,6 @@ namespace ProvaAndroidLoginSystem1.Resources
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.dialog_sign_up);
 
-            db = new DataBase();
-            db.createDataBase();
-
             client = new HTTPClient();
 
             imm = (InputMethodManager)GetSystemService(Context.InputMethodService);
@@ -82,25 +76,17 @@ namespace ProvaAndroidLoginSystem1.Resources
             mtxtNickname = FindViewById<EditText>(Resource.Id.txtNickname);
             mtxtPassword = FindViewById<EditText>(Resource.Id.txtPassword);
             mbtnSignUp = FindViewById<Button>(Resource.Id.btnSignUp);
-            mbtnDatabase = FindViewById<Button>(Resource.Id.btnDatabase);
 
             mbtnSignUp.Click += mbtnSignUp_Click;
-            mbtnDatabase.Click += (object sender, EventArgs args) =>
-            {
-                ViewDatabase viewdatabase = new ViewDatabase();
-                Intent Database = new Intent(this, typeof(ViewDatabase));
-                this.StartActivity(Database);
-            };
         }
 
         public async Task<HttpResponseMessage> RegisterAsync(Person person)
         {
-            var uri = new Uri("http://mobileapi-edobona98.c9users.io/Login/register.php");
+            var uri = new Uri("http://mobileapi-edobona98.c9users.io/utente");
             var json = JsonConvert.SerializeObject(person);
-            /*var content = new StringContent(@"{""Firstname"" : ""ciao"", ""Nickname"" : ""ciao"", ""Password"" : ""ciao""}", Encoding.UTF8, "application/json");*/
-
             var content = new FormUrlEncodedContent(new[]
             {
+                new KeyValuePair<string, string>("method", "register"),
                 new KeyValuePair<string, string>("Firstname", person.Firstname),
                 new KeyValuePair<string, string>("Nickname", person.Nickname),
                 new KeyValuePair<string, string>("Password", person.Password)
@@ -114,7 +100,6 @@ namespace ProvaAndroidLoginSystem1.Resources
             }
             catch(Exception ex)
             {
-                Console.WriteLine(ex.ToString());
                 Console.WriteLine(ex.InnerException);
                 return new HttpResponseMessage(HttpStatusCode.InternalServerError);
             }
@@ -125,7 +110,11 @@ namespace ProvaAndroidLoginSystem1.Resources
         {
             try
             {
-                //onSignUpComplete.Invoke(this, new OnSignUpEventArgs(mtxtFirstName.Text, mtxtEmail.Text, mtxtPassword.Text));
+                if(mtxtFirstName.Text.Equals("") || this.mtxtNickname.Text.Equals("") || this.mtxtPassword.Text.Equals(""))
+                {
+                    Toast.MakeText(this, "All the textboxs must be filled", ToastLength.Long).Show();
+                    return;
+                }
                 Person person = new Person()
                 {
                     Firstname = mtxtFirstName.Text,
@@ -142,24 +131,14 @@ namespace ProvaAndroidLoginSystem1.Resources
                 if (response.IsSuccessStatusCode)
                 {
                     var jwt = JObject.Parse(result)["JWT"].ToString();
+                    Intent Home = new Intent(this, typeof(HomeActivity));
+                    this.StartActivity(Home);
                 }
                 else
                 {
                     var error = JObject.Parse(result)["error"].ToString();
                     Toast.MakeText(this, error, ToastLength.Long).Show();
                 }
-                /*
-                if (!db.InsertIntoTable(person))
-                {
-                    Toast.MakeText(this, "Nickname già utilizzato", ToastLength.Long).Show();
-                }
-                else
-                {
-                    mtxtFirstName.Text = "";
-                    mtxtNickname.Text = "";
-                    mtxtPassword.Text = "";
-                }
-                */
             }
             catch (Exception ex) {
                 Console.WriteLine(ex.InnerException);
