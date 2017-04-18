@@ -9,12 +9,19 @@
         android:layout_height="match_parent"
         android:background="#E2E2E2"
         android:layout_alignParentTop="true"
-        android:layout_above="@+id/llContainer">
+        android:layout_above="@+id/llContainer" >
         <LinearLayout
             android:id="@+id/llChatMessages"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical" />
+            android:orientation="vertical">
+            <ListView
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/listViewChatMessage" />
+        </LinearLayout>
     </ScrollView>
     <LinearLayout
         android:id="@id/llContainer"
@@ -23,12 +30,12 @@
         android:orientation="vertical"
         android:layout_alignParentBottom="true">
         <Button
-            android:id="@+id/btnSend"
+            android:id="@+id/btnSendMessage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Send" />
         <EditText
-            android:id="@+id/txtChat"
+            android:id="@+id/txtChatMessage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#000"
