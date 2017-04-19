@@ -42,7 +42,7 @@ namespace ProvaAndroidLoginSystem1
 
         public override long GetItemId(int position)
         {
-            return lstChat[position].Id;
+            throw new NotImplementedException();
         }
 
         public override View GetView(int position, View convertView, ViewGroup parent)
