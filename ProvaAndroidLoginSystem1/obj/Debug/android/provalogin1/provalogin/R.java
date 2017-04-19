@@ -22,6 +22,7 @@ public final class R {
         public static final int progressbarstyle=0x7f020004;
     }
     public static final class id {
+<<<<<<< HEAD
         public static final int btnDatabase=0x7f07000c;
         public static final int btnLogout=0x7f07000d;
         public static final int btnSendFileHome=0x7f070011;
@@ -52,15 +53,38 @@ public final class R {
         public static final int txtPassword=0x7f070009;
         public static final int txtPasswordSignIn=0x7f07001c;
         public static final int txtSelectActivity=0x7f07000e;
+=======
+        public static final int btnSend=0x7f070003;
+        public static final int btnSendFileHome=0x7f07000e;
+        public static final int btnSendMessageHome=0x7f07000c;
+        public static final int btnSignIn=0x7f070010;
+        public static final int btnSignUp=0x7f07000a;
+        public static final int llChatMessages=0x7f070002;
+        public static final int llContainer=0x7f070001;
+        public static final int progressBar1=0x7f070012;
+        public static final int relativeLayout1=0x7f070009;
+        public static final int relativeLayout2=0x7f070005;
+        public static final int relativeLayoutButtonSignIn=0x7f070016;
+        public static final int relativeLayoutTextSignIn=0x7f070013;
+        public static final int scrollView=0x7f070000;
+        public static final int txtChat=0x7f070004;
+        public static final int txtCreateAccount=0x7f07000f;
+        public static final int txtFirstName=0x7f070006;
+        public static final int txtNickname=0x7f070007;
+        public static final int txtNicknameSignIn=0x7f070014;
+        public static final int txtORHome=0x7f07000d;
+        public static final int txtORt=0x7f070011;
+        public static final int txtPassword=0x7f070008;
+        public static final int txtPasswordSignIn=0x7f070015;
+        public static final int txtSelectActivity=0x7f07000b;
+>>>>>>> 14ab1ed9cdff5c00d30978800e73ed30d1fae6d8
     }
     public static final class layout {
         public static final int chatlayout=0x7f030000;
         public static final int dialog_sign_up=0x7f030001;
         public static final int homelayout=0x7f030002;
-        public static final int list_view_datatemplate=0x7f030003;
-        public static final int listviewlayout=0x7f030004;
-        public static final int main=0x7f030005;
-        public static final int signinlayout=0x7f030006;
+        public static final int main=0x7f030003;
+        public static final int signinlayout=0x7f030004;
     }
     public static final class string {
         public static final int ApplicationName=0x7f050001;

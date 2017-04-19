@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Paths>
   <Jars></Jars>
+<<<<<<< HEAD
   <ResolvedResourceDirectories>
     <ResolvedResourceDirectory>C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\__library_projects__\SQLitePCL.raw\library_project_imports\res</ResolvedResourceDirectory>
     <ResolvedResourceDirectory>C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\__library_projects__\SQLitePCLRaw.batteries_green\library_project_imports\res</ResolvedResourceDirectory>
@@ -26,4 +27,10 @@
     <ResolvedResourceDirectoryStamp>C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\__library_projects__\SQLitePCLRaw.lib.e_sqlite3.stamp</ResolvedResourceDirectoryStamp>
     <ResolvedResourceDirectoryStamp>C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\__library_projects__\SQLitePCLRaw.provider.e_sqlite3.stamp</ResolvedResourceDirectoryStamp>
   </ResolvedResourceDirectoryStamps>
+=======
+  <ResolvedResourceDirectories />
+  <ResolvedAssetDirectories />
+  <ResolvedEnvironmentFiles />
+  <ResolvedResourceDirectoryStamps />
+>>>>>>> 14ab1ed9cdff5c00d30978800e73ed30d1fae6d8
 </Paths>
