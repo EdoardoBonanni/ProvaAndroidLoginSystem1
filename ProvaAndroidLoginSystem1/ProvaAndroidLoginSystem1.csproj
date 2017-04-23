@@ -94,6 +94,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+    <Compile Include="Dialog_SignUp.cs" />
+    <Compile Include="ListViewChatAdapter.cs" />
+=======
+>>>>>>> 14ab1ed9cdff5c00d30978800e73ed30d1fae6d8
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\HomeActivity.cs" />
     <Compile Include="Resources\Model\HTTPClient.cs" />

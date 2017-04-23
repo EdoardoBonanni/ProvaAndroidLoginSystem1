@@ -17,6 +17,8 @@ namespace ProvaAndroidLoginSystem1.Resources
     {
         private Button mBtnMessage;
         private Button mBtnFile;
+        private Button mbtnLogout;
+
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -25,8 +27,10 @@ namespace ProvaAndroidLoginSystem1.Resources
             SetContentView(Resource.Layout.HomeLayout);
             mBtnMessage = FindViewById<Button>(Resource.Id.btnSendMessageHome);
             mBtnFile = FindViewById<Button>(Resource.Id.btnSendFileHome);
+            mbtnLogout = FindViewById<Button>(Resource.Id.btnLogout);
             mBtnMessage.Click += mbtnMessage_Click;
             mBtnFile.Click += mbtnFile_Click;
+            mbtnLogout.Click += mbtnLogout_Click;
         }
         void mbtnMessage_Click(object sender, EventArgs e)
         {
@@ -37,6 +41,12 @@ namespace ProvaAndroidLoginSystem1.Resources
         void mbtnFile_Click(object sender, EventArgs e)
         {
             
+        }
+
+        void mbtnLogout_Click(object sender, EventArgs e)
+        {
+            Intent returnToLogin = new Intent(this, typeof(SignInActivity));
+            this.StartActivity(returnToLogin);
         }
     }
 }

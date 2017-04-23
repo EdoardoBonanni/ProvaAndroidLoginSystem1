@@ -2,7 +2,11 @@
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <AndroidDesignerPreferredDevice>Nexus 5</AndroidDesignerPreferredDevice>
+<<<<<<< HEAD
+    <SelectedDevice>Android_Accelerated_x86</SelectedDevice>
+=======
     <SelectedDevice>HUAWEI Y635-L21</SelectedDevice>
+>>>>>>> 14ab1ed9cdff5c00d30978800e73ed30d1fae6d8
     <DefaultDevice>Android_Accelerated_x86</DefaultDevice>
   </PropertyGroup>
 </Project>
