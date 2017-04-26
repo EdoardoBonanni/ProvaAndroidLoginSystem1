@@ -12,8 +12,9 @@ using Android.Widget;
 
 namespace ProvaAndroidLoginSystem1.Resources
 {
-    [Activity(Label = "HomeActivity")]
+    [Activity(Label = "HomeActivity", MainLauncher = true, Icon = "@drawable/icon")]
     class HomeActivity : Activity
+
     {
         private Button mBtnMessage;
         private Button mBtnFile;
@@ -30,7 +31,7 @@ namespace ProvaAndroidLoginSystem1.Resources
         }
         void mbtnMessage_Click(object sender, EventArgs e)
         {
-            Intent Message = new Intent(this, typeof(SendMessageActivity));
+            Intent Message = new Intent(this, typeof(ChatActivity));
             this.StartActivity(Message);
         }
 

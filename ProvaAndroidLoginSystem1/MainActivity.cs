@@ -9,7 +9,7 @@ using ProvaAndroidLoginSystem1.Resources.Model;
 
 namespace ProvaAndroidLoginSystem1
 {
-    [Activity(Label = "ProvaAndroidLoginSystem1", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "", Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
         public static HTTPClient client;

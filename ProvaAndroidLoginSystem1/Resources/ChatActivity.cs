@@ -20,8 +20,14 @@ namespace ProvaAndroidLoginSystem1.Resources
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            SetContentView(Resource.Layout.ChatLayout);
             btnSend = FindViewById<Button>(Resource.Id.btnSend);
-            // Create your application here
+            btnSend.Click += btnSend_Click;
+        }
+
+        void btnSend_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

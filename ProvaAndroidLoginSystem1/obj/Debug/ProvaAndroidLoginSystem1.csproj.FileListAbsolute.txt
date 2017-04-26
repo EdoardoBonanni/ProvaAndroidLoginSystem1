@@ -15,8 +15,6 @@ C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\ProvaAndroidLoginSystem1.pdb
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\android\bin\Provalogin1.provalogin.apk
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\res\layout\dialog_sign_up.xml
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\res\layout\list_view_datatemplate.xml
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\res\layout\listviewlayout.xml
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\res\layout\signinlayout.xml
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\res\layout\homelayout.xml
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\res\layout\chatlayout.xml
@@ -70,7 +68,6 @@ C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\android\assets\Mono.CSharp.dll.mdb
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\android\assets\System.Numerics.dll.mdb
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\android\assets\System.Runtime.Serialization.Primitives.dll.mdb
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\ProvaAndroidLoginSystem1.dll.mdb
 C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Debug\ProvaAndroidLoginSystem1.dll
 C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Debug\ProvaAndroidLoginSystem1.pdb
 C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Debug\Provalogin1.provalogin.apk
@@ -142,4 +139,5 @@ C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\Prov
 C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\android\assets\System.Xml.dll.mdb
 C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\android\assets\System.Xml.Linq.dll.mdb
 C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\ProvaAndroidLoginSystem1.dll.mdb
-C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Debug\ProvaAndroidLoginSystem1.dll.mdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\ProvaAndroidLoginSystem1.dll.mdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Debug\ProvaAndroidLoginSystem1.dll.mdb
