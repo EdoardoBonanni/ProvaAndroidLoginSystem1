@@ -16,8 +16,9 @@ namespace ProvaAndroidLoginSystem1
     public class MainActivity : Activity
     {
         public static HTTPClient client;
-        private Button mBtnSignUp;
-        private Button mBtnSignIn;
+        private Button mBtnSearch;
+        private Button mBtnCancel;
+        private ListView mLstPeers;
 
         public bool IsWifiP2PEnabled { get; set; }
 
@@ -36,42 +37,32 @@ namespace ProvaAndroidLoginSystem1
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
-            mBtnSignUp = FindViewById<Button>(Resource.Id.btnSignUp);
-            mBtnSignIn = FindViewById<Button>(Resource.Id.btnSignIn);
+            mBtnSearch = FindViewById<Button>(Resource.Id.btnP2pSearch);
+            mBtnCancel = FindViewById<Button>(Resource.Id.btnCancelSearch);
+            mLstPeers = FindViewById<ListView>(Resource.Id.lstPeers);
 
-            //mBtnSignUp.Click += mBtnSignUp_Click;
-
-            mBtnSignIn.Click += mbtnSignIn_Click;
+            mBtnSearch.Click += mBtnSearch_Click;
+            mBtnCancel.Click += mBtnCancel_Click;
 
             intentFilter.AddAction(WifiP2pManager.WifiP2pStateChangedAction);
             intentFilter.AddAction(WifiP2pManager.WifiP2pPeersChangedAction);
             intentFilter.AddAction(WifiP2pManager.WifiP2pConnectionChangedAction);
             intentFilter.AddAction(WifiP2pManager.WifiP2pThisDeviceChangedAction);
-            //intentFilter.AddAction(WifiP2pManager.WifiP2pDiscoveryChangedAction);
 
             manager = (WifiP2pManager)GetSystemService(WifiP2pService);
             channel = manager.Initialize(this, MainLooper, null);
         }
 
-        /*
-        void mBtnSignUp_Click(object sender, EventArgs e)
+        private void mBtnCancel_Click(object sender, EventArgs e)
         {
-            Intent SignUp = new Intent(this, typeof(SignUpActivity));
-            this.StartActivity(SignUp);
-            this.OverridePendingTransition(Android.Resource.Animation.SlideInLeft, Android.Resource.Animation.SlideOutRight);
-
+            manager.StopPeerDiscovery(channel, new ActionListener("Ricerca fermata"));
         }
-        */
 
-        void mbtnSignIn_Click(object sender, EventArgs e)
+        void mBtnSearch_Click(object sender, EventArgs e)
         {
-            /*
-            Intent SignIn = new Intent(this, typeof(SignInActivity));
-            this.StartActivity(SignIn);
-            */
             if (IsWifiP2PEnabled)
             {
-                manager.DiscoverPeers(channel, new ActionListener());
+                manager.DiscoverPeers(channel, new ActionListener("Ricerca..."));
             }
             else
             {
@@ -79,10 +70,15 @@ namespace ProvaAndroidLoginSystem1
             }
         }
 
+        public void test()
+        {
+            mLstPeers.Adapter = new PeersAdapter(this, peerListener.Peers);
+        }
+
         protected override void OnResume()
         {
             base.OnResume();
-            peerListener = new PeerListener();
+            peerListener = new PeerListener(this);
             receiver = new WiFiDirectBroadcastReceiver(manager, channel, this, peerListener);
             RegisterReceiver(receiver, intentFilter);
         }

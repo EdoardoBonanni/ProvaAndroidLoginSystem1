@@ -1,3 +1,7 @@
+p2p_project.PeersAdapter, p2p project;md5869785c10f580142a1973b002e482efd.PeersAdapter
+p2p_project.PeersAdapter, p2p project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5869785c10f580142a1973b002e482efd.PeersAdapter
+p2p_project.PeersAdapter;md5869785c10f580142a1973b002e482efd.PeersAdapter
+p2p_project.PeersAdapter;md5869785c10f580142a1973b002e482efd.PeersAdapter
 p2p_project.ActionListener, p2p project;md5869785c10f580142a1973b002e482efd.ActionListener
 p2p_project.ActionListener, p2p project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5869785c10f580142a1973b002e482efd.ActionListener
 p2p_project.ActionListener;md5869785c10f580142a1973b002e482efd.ActionListener

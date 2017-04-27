@@ -11,12 +11,19 @@ using Android.Views;
 using Android.Widget;
 using Android.Net.Wifi.P2p;
 using static Android.Net.Wifi.P2p.WifiP2pManager;
+using ProvaAndroidLoginSystem1;
 
 namespace p2p_project.Resources
 {
     class PeerListener : Java.Lang.Object, IPeerListListener
     {
         private List<WifiP2pDevice> peers = new List<WifiP2pDevice>();
+        private MainActivity mainActivity;
+
+        public PeerListener(MainActivity activity)
+        {
+            this.mainActivity = activity;
+        }
 
         public void OnPeersAvailable(WifiP2pDeviceList peerList)
         {
@@ -31,6 +38,7 @@ namespace p2p_project.Resources
                 // available peers, trigger an update. 
 
                 // Notify the adapter.
+                mainActivity.test();
 
                 // Perform any other updates needed based on the new list of
                 // peers connected to the Wi-Fi P2P network.
@@ -42,6 +50,6 @@ namespace p2p_project.Resources
             }
         }
 
-        public List<WifiP2pDevice> Peers { get; set; }
+        public List<WifiP2pDevice> Peers { get { return this.peers; } }
     }
 }

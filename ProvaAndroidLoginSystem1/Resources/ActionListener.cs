@@ -18,14 +18,21 @@ namespace p2p_project
 {
     class ActionListener : Java.Lang.Object, IActionListener
     {
+        private String message;
+
+        public ActionListener(String msg)
+        {
+            this.message = msg;
+        }
+
         public void OnFailure([GeneratedEnum] WifiP2pFailureReason reason)
         {
-            
+            Toast.MakeText(Application.Context, "Errore: " + reason.ToString(), ToastLength.Long).Show();
         }
 
         public void OnSuccess()
         {
-            Toast.MakeText(Application.Context, "Ricerca...", ToastLength.Long).Show();
+            Toast.MakeText(Application.Context, message, ToastLength.Long).Show();
         }
     }
 }

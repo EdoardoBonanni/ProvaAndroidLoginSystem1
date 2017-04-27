@@ -24,6 +24,13 @@ public class PeerListener
 			mono.android.TypeManager.Activate ("p2p_project.Resources.PeerListener, p2p project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "", this, new java.lang.Object[] {  });
 	}
 
+	public PeerListener (md587ad3ac64fbc991d5ecd8dfeb9429049.MainActivity p0) throws java.lang.Throwable
+	{
+		super ();
+		if (getClass () == PeerListener.class)
+			mono.android.TypeManager.Activate ("p2p_project.Resources.PeerListener, p2p project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "ProvaAndroidLoginSystem1.MainActivity, p2p project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", this, new java.lang.Object[] { p0 });
+	}
+
 
 	public void onPeersAvailable (android.net.wifi.p2p.WifiP2pDeviceList p0)
 	{

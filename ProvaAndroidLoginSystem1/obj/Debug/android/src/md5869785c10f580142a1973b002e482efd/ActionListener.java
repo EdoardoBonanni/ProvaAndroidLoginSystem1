@@ -25,6 +25,13 @@ public class ActionListener
 			mono.android.TypeManager.Activate ("p2p_project.ActionListener, p2p project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "", this, new java.lang.Object[] {  });
 	}
 
+	public ActionListener (java.lang.String p0) throws java.lang.Throwable
+	{
+		super ();
+		if (getClass () == ActionListener.class)
+			mono.android.TypeManager.Activate ("p2p_project.ActionListener, p2p project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "System.String, mscorlib, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e", this, new java.lang.Object[] { p0 });
+	}
+
 
 	public void onFailure (int p0)
 	{
