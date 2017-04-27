@@ -11,6 +11,8 @@ using Android.Views;
 using Android.Widget;
 using Android.Net.Wifi.P2p;
 using ProvaAndroidLoginSystem1.Resources;
+using ProvaAndroidLoginSystem1;
+using static Android.Net.Wifi.P2p.WifiP2pManager;
 
 namespace p2p_project.Resources
 {
@@ -21,21 +23,21 @@ namespace p2p_project.Resources
 
         private WifiP2pManager mManager;
         private WifiP2pManager.Channel mChannel;
-        private HomeActivity mActivity;
+        private MainActivity mActivity;
+        private PeerListener peerListener;
 
         public WiFiDirectBroadcastReceiver(WifiP2pManager manager, WifiP2pManager.Channel channel,
-                HomeActivity activity)
+                MainActivity activity, PeerListener peerListener)
         {
             this.mManager = manager;
             this.mChannel = channel;
             this.mActivity = activity;
+            this.peerListener = peerListener;
         }
 
         public override void OnReceive(Context context, Intent intent)
         {
             String action = intent.Action;
-
-            
 
             if (WifiP2pManager.WifiP2pStateChangedAction.Equals(action))
             {
@@ -60,9 +62,29 @@ namespace p2p_project.Resources
                 // callback on PeerListListener.onPeersAvailable()
                 if (mManager != null)
                 {
-                    mManager.RequestPeers(mChannel, null);
+                    mManager.RequestPeers(mChannel, peerListener);
                 }
             }
+            /*
+            else if (WifiP2pManager.WifiP2pDiscoveryChangedAction.Equals(action))
+            {
+
+                var state = intent.GetIntExtra(WifiP2pManager.ExtraDiscoveryState, -1);
+
+                if(state == WifiP2pManager.WifiP2pDiscoveryStarted)
+                {
+                    // Call WifiP2pManager.requestPeers() to get a list of current peers
+
+                    // request available peers from the wifi p2p manager. This is an
+                    // asynchronous call and the calling activity is notified with a
+                    // callback on PeerListListener.onPeersAvailable()
+                    if (mManager != null)
+                    {
+                        mManager.RequestPeers(mChannel, peerListener);
+                    }
+                }
+            }
+            */
             else if (WifiP2pManager.WifiP2pConnectionChangedAction.Equals(action))
             {
                 // Respond to new connection or disconnections

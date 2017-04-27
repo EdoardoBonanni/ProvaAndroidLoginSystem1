@@ -8,6 +8,7 @@ using Android.Content;
 using ProvaAndroidLoginSystem1.Resources.Model;
 using p2p_project;
 using Android.Net.Wifi.P2p;
+using p2p_project.Resources;
 
 namespace ProvaAndroidLoginSystem1
 {
@@ -24,6 +25,8 @@ namespace ProvaAndroidLoginSystem1
         private IntentFilter intentFilter = new IntentFilter();
         private WifiP2pManager.Channel channel;
         private BroadcastReceiver receiver;
+        private PeerListener peerListener;
+
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -33,24 +36,23 @@ namespace ProvaAndroidLoginSystem1
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
-            /*
             mBtnSignUp = FindViewById<Button>(Resource.Id.btnSignUp);
             mBtnSignIn = FindViewById<Button>(Resource.Id.btnSignIn);
 
-            mBtnSignUp.Click += mBtnSignUp_Click;
-            mBtnSignIn.Click += mbtnSignIn_Click;*/
+            //mBtnSignUp.Click += mBtnSignUp_Click;
+
+            mBtnSignIn.Click += mbtnSignIn_Click;
 
             intentFilter.AddAction(WifiP2pManager.WifiP2pStateChangedAction);
             intentFilter.AddAction(WifiP2pManager.WifiP2pPeersChangedAction);
             intentFilter.AddAction(WifiP2pManager.WifiP2pConnectionChangedAction);
             intentFilter.AddAction(WifiP2pManager.WifiP2pThisDeviceChangedAction);
+            //intentFilter.AddAction(WifiP2pManager.WifiP2pDiscoveryChangedAction);
 
             manager = (WifiP2pManager)GetSystemService(WifiP2pService);
             channel = manager.Initialize(this, MainLooper, null);
         }
 
-
-        
         /*
         void mBtnSignUp_Click(object sender, EventArgs e)
         {
@@ -59,13 +61,37 @@ namespace ProvaAndroidLoginSystem1
             this.OverridePendingTransition(Android.Resource.Animation.SlideInLeft, Android.Resource.Animation.SlideOutRight);
 
         }
+        */
 
         void mbtnSignIn_Click(object sender, EventArgs e)
         {
+            /*
             Intent SignIn = new Intent(this, typeof(SignInActivity));
             this.StartActivity(SignIn);
+            */
+            if (IsWifiP2PEnabled)
+            {
+                manager.DiscoverPeers(channel, new ActionListener());
+            }
+            else
+            {
+                Toast.MakeText(this, "WiFi Direct non abilitato", ToastLength.Long).Show();
+            }
         }
-        */
+
+        protected override void OnResume()
+        {
+            base.OnResume();
+            peerListener = new PeerListener();
+            receiver = new WiFiDirectBroadcastReceiver(manager, channel, this, peerListener);
+            RegisterReceiver(receiver, intentFilter);
+        }
+
+        protected override void OnPause()
+        {
+            base.OnPause();
+            UnregisterReceiver(receiver);
+        }
     }
  }
 
