@@ -1,28 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="Provalogin1.provalogin" android:versionCode="1" android:versionName="1.0" android:installLocation="auto">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="p2p.p2p" android:versionCode="1" android:versionName="1.0" android:installLocation="auto">
   <!--suppress UsesMinSdkAttributes-->
-  <uses-sdk android:minSdkVersion="11" />
-  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-sdk android:minSdkVersion="14" />
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-  <application android:label="ProvaLogin1" android:name="android.app.Application" android:allowBackup="true" android:debuggable="true">
+  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+  <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+  <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <application android:label="Chat p2p" android:name="android.app.Application" android:allowBackup="true" android:debuggable="true">
     <activity android:name=".ViewDatabase" android:label="ViewDatabase"></activity>
     <activity android:name=".SignInActivity" android:label="SignInActivity"></activity>
-    <activity android:icon="@drawable/icon" android:label="" android:name="md563df4e71a8812e9648467cdc77c65256.MainActivity" />
-    <activity android:label="ChatActivity" android:name="md53792a7b3124ac761b0cadb2590bc20e8.ChatActivity" />
-    <activity android:icon="@drawable/icon" android:label="HomeActivity" android:name="md53792a7b3124ac761b0cadb2590bc20e8.HomeActivity">
+    <activity android:icon="@drawable/icon" android:label="" android:name="md587ad3ac64fbc991d5ecd8dfeb9429049.MainActivity" />
+    <activity android:label="ChatActivity" android:name="md5589b17e39cf80bf285194150f7ef410e.ChatActivity" />
+    <activity android:icon="@drawable/icon" android:label="Chat P2P" android:name="md5589b17e39cf80bf285194150f7ef410e.HomeActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
-    <activity android:label="SignInActivity" android:name="md53792a7b3124ac761b0cadb2590bc20e8.SignInActivity" />
-    <activity android:label="SignUp" android:name="md53792a7b3124ac761b0cadb2590bc20e8.SignUpActivity" />
-    <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="Provalogin1.provalogin.mono.MonoRuntimeProvider.__mono_init__" />
+    <activity android:label="SignInActivity" android:name="md5589b17e39cf80bf285194150f7ef410e.SignInActivity" />
+    <activity android:label="SignUp" android:name="md5589b17e39cf80bf285194150f7ef410e.SignUpActivity" />
+    <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="p2p.p2p.mono.MonoRuntimeProvider.__mono_init__" />
     <!--suppress ExportedReceiver-->
     <receiver android:name="mono.android.Seppuku">
       <intent-filter>
         <action android:name="mono.android.intent.action.SEPPUKU" />
-        <category android:name="mono.android.intent.category.SEPPUKU.Provalogin1.provalogin" />
+        <category android:name="mono.android.intent.category.SEPPUKU.p2p.p2p" />
       </intent-filter>
     </receiver>
   </application>

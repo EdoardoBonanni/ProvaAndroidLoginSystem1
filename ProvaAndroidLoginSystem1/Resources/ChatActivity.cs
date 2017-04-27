@@ -9,10 +9,11 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using p2p_project;
 
 namespace ProvaAndroidLoginSystem1.Resources
 {
-    [Activity(Label = "ChatActivity")]
+    [Activity(Label = "Chat P2P")]
     public class ChatActivity : Activity
     {
         private Button btnSend;
