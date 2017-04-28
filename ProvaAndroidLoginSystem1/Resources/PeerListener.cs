@@ -38,7 +38,7 @@ namespace p2p_project.Resources
                 // available peers, trigger an update. 
 
                 // Notify the adapter.
-                mainActivity.test();
+                mainActivity.notifyAdapter();
 
                 // Perform any other updates needed based on the new list of
                 // peers connected to the Wi-Fi P2P network.
@@ -50,6 +50,6 @@ namespace p2p_project.Resources
             }
         }
 
-        public List<WifiP2pDevice> Peers { get { return this.peers; } }
+        public List<WifiP2pDevice> Peers { get { return this.peers; } set { this.peers = value; } }
     }
 }

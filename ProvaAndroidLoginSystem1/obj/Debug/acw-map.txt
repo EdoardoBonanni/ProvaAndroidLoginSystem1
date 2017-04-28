@@ -6,6 +6,10 @@ p2p_project.ActionListener, p2p project;md5869785c10f580142a1973b002e482efd.Acti
 p2p_project.ActionListener, p2p project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5869785c10f580142a1973b002e482efd.ActionListener
 p2p_project.ActionListener;md5869785c10f580142a1973b002e482efd.ActionListener
 p2p_project.ActionListener;md5869785c10f580142a1973b002e482efd.ActionListener
+p2p_project.Resources.ConnectionInfoListener, p2p project;md55debec2523a555e8b74559a56bd3d108.ConnectionInfoListener
+p2p_project.Resources.ConnectionInfoListener, p2p project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md55debec2523a555e8b74559a56bd3d108.ConnectionInfoListener
+p2p_project.Resources.ConnectionInfoListener;md55debec2523a555e8b74559a56bd3d108.ConnectionInfoListener
+p2p_project.resources.ConnectionInfoListener;md55debec2523a555e8b74559a56bd3d108.ConnectionInfoListener
 p2p_project.Resources.PeerListener, p2p project;md55debec2523a555e8b74559a56bd3d108.PeerListener
 p2p_project.Resources.PeerListener, p2p project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md55debec2523a555e8b74559a56bd3d108.PeerListener
 p2p_project.Resources.PeerListener;md55debec2523a555e8b74559a56bd3d108.PeerListener

@@ -9,6 +9,8 @@ using ProvaAndroidLoginSystem1.Resources.Model;
 using p2p_project;
 using Android.Net.Wifi.P2p;
 using p2p_project.Resources;
+using Android.Net.Wifi;
+using System.Collections.Generic;
 
 namespace ProvaAndroidLoginSystem1
 {
@@ -43,6 +45,7 @@ namespace ProvaAndroidLoginSystem1
 
             mBtnSearch.Click += mBtnSearch_Click;
             mBtnCancel.Click += mBtnCancel_Click;
+            mLstPeers.ItemClick += mLstPeers_ItemClick;
 
             intentFilter.AddAction(WifiP2pManager.WifiP2pStateChangedAction);
             intentFilter.AddAction(WifiP2pManager.WifiP2pPeersChangedAction);
@@ -51,6 +54,18 @@ namespace ProvaAndroidLoginSystem1
 
             manager = (WifiP2pManager)GetSystemService(WifiP2pService);
             channel = manager.Initialize(this, MainLooper, null);
+        }
+
+        private void mLstPeers_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            WifiP2pDevice peerClicked = peerListener.Peers[e.Position];
+
+            WifiP2pConfig config = new WifiP2pConfig();
+
+            config.DeviceAddress = peerClicked.DeviceAddress;
+            config.Wps.Setup = WpsInfo.Pbc;
+
+            manager.Connect(channel, config, new ActionListener("Connessione..."));
         }
 
         private void mBtnCancel_Click(object sender, EventArgs e)
@@ -70,9 +85,21 @@ namespace ProvaAndroidLoginSystem1
             }
         }
 
-        public void test()
+        public void notifyAdapter()
         {
             mLstPeers.Adapter = new PeersAdapter(this, peerListener.Peers);
+        }
+
+        public void changeActivity()
+        {
+            Intent Home = new Intent(this, typeof(HomeActivity));
+            this.StartActivity(Home);
+        }
+
+        public void resetData()
+        {
+            peerListener.Peers = new List<WifiP2pDevice>();
+            this.notifyAdapter();
         }
 
         protected override void OnResume()

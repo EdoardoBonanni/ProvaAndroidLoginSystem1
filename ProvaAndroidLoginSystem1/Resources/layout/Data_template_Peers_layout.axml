@@ -9,7 +9,7 @@
     <TextView
         android:text="Peer"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textcolor="black"
+        android:textColor="FFFFFF"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/txtPeer" />

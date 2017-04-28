@@ -50,7 +50,7 @@ namespace p2p_project.Resources
                 else
                 {
                     mActivity.IsWifiP2PEnabled = false;
-                    //mActivity.ResetData(); Cancella tutti i peer scoperti
+                    mActivity.resetData();
                 }
             }
             else if (WifiP2pManager.WifiP2pPeersChangedAction.Equals(action))
@@ -65,26 +65,6 @@ namespace p2p_project.Resources
                     mManager.RequestPeers(mChannel, peerListener);
                 }
             }
-            /*
-            else if (WifiP2pManager.WifiP2pDiscoveryChangedAction.Equals(action))
-            {
-
-                var state = intent.GetIntExtra(WifiP2pManager.ExtraDiscoveryState, -1);
-
-                if(state == WifiP2pManager.WifiP2pDiscoveryStarted)
-                {
-                    // Call WifiP2pManager.requestPeers() to get a list of current peers
-
-                    // request available peers from the wifi p2p manager. This is an
-                    // asynchronous call and the calling activity is notified with a
-                    // callback on PeerListListener.onPeersAvailable()
-                    if (mManager != null)
-                    {
-                        mManager.RequestPeers(mChannel, peerListener);
-                    }
-                }
-            }
-            */
             else if (WifiP2pManager.WifiP2pConnectionChangedAction.Equals(action))
             {
                 // Respond to new connection or disconnections
@@ -98,12 +78,12 @@ namespace p2p_project.Resources
                 {
                     // we are connected with the other device, request connection
                     // info to find group owner IP
-                    mManager.RequestConnectionInfo(mChannel, null);
+                    mManager.RequestConnectionInfo(mChannel, new ConnectionInfoListener(mActivity));
                 }
                 else
                 {
                     // It's a disconnect
-                    //mActivity.ResetData();
+                    mActivity.resetData();
                 }
             }
             else if (WifiP2pManager.WifiP2pThisDeviceChangedAction.Equals(action))

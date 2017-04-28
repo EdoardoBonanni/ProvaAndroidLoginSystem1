@@ -98,6 +98,7 @@
     <Compile Include="PeersAdapter.cs" />
     <Compile Include="Resources\ActionListener.cs" />
     <Compile Include="Resources\ChatActivity.cs" />
+    <Compile Include="Resources\ConnectionInfoListener.cs" />
     <Compile Include="Resources\HomeActivity.cs" />
     <Compile Include="Resources\Model\HTTPClient.cs" />
     <Compile Include="Resources\Model\Person.cs" />
