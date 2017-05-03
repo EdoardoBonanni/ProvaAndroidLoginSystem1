@@ -99,6 +99,8 @@
     <Compile Include="Resources\ActionListener.cs" />
     <Compile Include="Resources\ChatActivity.cs" />
     <Compile Include="Resources\ConnectionInfoListener.cs" />
+    <Compile Include="Resources\DnsSdServiceResponseListener.cs" />
+    <Compile Include="Resources\DnsSdTxtRecordListener.cs" />
     <Compile Include="Resources\HomeActivity.cs" />
     <Compile Include="Resources\Model\HTTPClient.cs" />
     <Compile Include="Resources\Model\Person.cs" />

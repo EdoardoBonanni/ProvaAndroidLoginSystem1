@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using p2p_project;
+using Android.Net.Wifi.P2p;
 
 namespace ProvaAndroidLoginSystem1.Resources
 {
@@ -34,6 +35,7 @@ namespace ProvaAndroidLoginSystem1.Resources
             mBtnMessage.Click += mbtnMessage_Click;
             mBtnFile.Click += mbtnFile_Click;
         }
+
         void mbtnMessage_Click(object sender, EventArgs e)
         {
             Intent Message = new Intent(this, typeof(ChatActivity));
@@ -43,6 +45,11 @@ namespace ProvaAndroidLoginSystem1.Resources
         void mbtnFile_Click(object sender, EventArgs e)
         {
             
+        }
+
+        public override void OnBackPressed()
+        {
+            base.OnBackPressed();
         }
     }
 }

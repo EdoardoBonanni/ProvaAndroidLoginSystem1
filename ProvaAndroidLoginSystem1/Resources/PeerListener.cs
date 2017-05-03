@@ -43,11 +43,6 @@ namespace p2p_project.Resources
                 // Perform any other updates needed based on the new list of
                 // peers connected to the Wi-Fi P2P network.
             }
-            if (peers.Count == 0)
-            {
-                Toast.MakeText(Application.Context, "Nessun peer trovato", ToastLength.Long).Show();
-                return;
-            }
         }
 
         public List<WifiP2pDevice> Peers { get { return this.peers; } set { this.peers = value; } }

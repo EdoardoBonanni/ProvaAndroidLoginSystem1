@@ -24,15 +24,15 @@ namespace p2p_project.Resources
         private WifiP2pManager mManager;
         private WifiP2pManager.Channel mChannel;
         private MainActivity mActivity;
-        private PeerListener peerListener;
+        //private PeerListener peerListener;
 
         public WiFiDirectBroadcastReceiver(WifiP2pManager manager, WifiP2pManager.Channel channel,
-                MainActivity activity, PeerListener peerListener)
+                MainActivity activity/*, PeerListener peerListener*/)
         {
             this.mManager = manager;
             this.mChannel = channel;
             this.mActivity = activity;
-            this.peerListener = peerListener;
+            //this.peerListener = peerListener;
         }
 
         public override void OnReceive(Context context, Intent intent)
@@ -62,7 +62,7 @@ namespace p2p_project.Resources
                 // callback on PeerListListener.onPeersAvailable()
                 if (mManager != null)
                 {
-                    mManager.RequestPeers(mChannel, peerListener);
+                    //mManager.RequestPeers(mChannel, peerListener);
                 }
             }
             else if (WifiP2pManager.WifiP2pConnectionChangedAction.Equals(action))
@@ -76,9 +76,12 @@ namespace p2p_project.Resources
 
                 if (networkInfo.IsConnected)
                 {
-                    // we are connected with the other device, request connection
-                    // info to find group owner IP
-                    mManager.RequestConnectionInfo(mChannel, new ConnectionInfoListener(mActivity));
+                    if (!mActivity.IsConnected)
+                    {
+                        // we are connected with the other device, request connection
+                        // info to find group owner IP
+                        mManager.RequestConnectionInfo(mChannel, new ConnectionInfoListener(mActivity));
+                    }
                 }
                 else
                 {

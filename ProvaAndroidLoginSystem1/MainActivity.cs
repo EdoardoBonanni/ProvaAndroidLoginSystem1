@@ -11,6 +11,7 @@ using Android.Net.Wifi.P2p;
 using p2p_project.Resources;
 using Android.Net.Wifi;
 using System.Collections.Generic;
+using Android.Net.Wifi.P2p.Nsd;
 
 namespace ProvaAndroidLoginSystem1
 {
@@ -23,12 +24,15 @@ namespace ProvaAndroidLoginSystem1
         private ListView mLstPeers;
 
         public bool IsWifiP2PEnabled { get; set; }
+        public bool IsConnected { get; set; }
 
         private WifiP2pManager manager;
-        private IntentFilter intentFilter = new IntentFilter();
+        private IntentFilter intentFilter;
         private WifiP2pManager.Channel channel;
         private BroadcastReceiver receiver;
-        private PeerListener peerListener;
+        private DnsSdServiceResponseListener servListener;
+        private DnsSdTxtRecordListener txtListener;
+        //private PeerListener peerListener;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -47,6 +51,7 @@ namespace ProvaAndroidLoginSystem1
             mBtnCancel.Click += mBtnCancel_Click;
             mLstPeers.ItemClick += mLstPeers_ItemClick;
 
+            intentFilter = new IntentFilter();
             intentFilter.AddAction(WifiP2pManager.WifiP2pStateChangedAction);
             intentFilter.AddAction(WifiP2pManager.WifiP2pPeersChangedAction);
             intentFilter.AddAction(WifiP2pManager.WifiP2pConnectionChangedAction);
@@ -54,11 +59,30 @@ namespace ProvaAndroidLoginSystem1
 
             manager = (WifiP2pManager)GetSystemService(WifiP2pService);
             channel = manager.Initialize(this, MainLooper, null);
+
+            servListener = new DnsSdServiceResponseListener();
+            txtListener = new DnsSdTxtRecordListener();
+
+            //  Create a string map containing information about your service.
+            Dictionary<string, string> record = new Dictionary<string, string>();
+            record.Add("Client Name", "Test");
+
+            // Service information.  Pass it an instance name, service type
+            // _protocol._transportlayer , and the map containing
+            // information other devices will want once they connect to this one.
+            WifiP2pDnsSdServiceInfo serviceInfo =
+                    WifiP2pDnsSdServiceInfo.NewInstance("Chat P2p", "_presence._tcp", record);
+
+            // Add the local service, sending the service info, network channel,
+            // and listener that will be used to indicate success or failure of
+            // the request.
+            manager.AddLocalService(channel, serviceInfo, new ActionListener(""));
         }
 
         private void mLstPeers_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            WifiP2pDevice peerClicked = peerListener.Peers[e.Position];
+            //WifiP2pDevice peerClicked = peerListener.Peers[e.Position];
+            WifiP2pDevice peerClicked = servListener.ServiceDevices[e.Position];
 
             WifiP2pConfig config = new WifiP2pConfig();
 
@@ -70,14 +94,21 @@ namespace ProvaAndroidLoginSystem1
 
         private void mBtnCancel_Click(object sender, EventArgs e)
         {
-            manager.StopPeerDiscovery(channel, new ActionListener("Ricerca fermata"));
+            //manager.StopPeerDiscovery(channel, new ActionListener("Ricerca fermata"));
+            manager.ClearServiceRequests(channel, new ActionListener("Ricerca fermata"));
         }
 
         void mBtnSearch_Click(object sender, EventArgs e)
         {
             if (IsWifiP2PEnabled)
             {
-                manager.DiscoverPeers(channel, new ActionListener("Ricerca..."));
+                //manager.DiscoverPeers(channel, new ActionListener("Ricerca..."));
+                manager.SetDnsSdResponseListeners(channel, servListener, txtListener);
+
+                var serviceRequest = WifiP2pDnsSdServiceRequest.NewInstance();
+                manager.AddServiceRequest(channel, serviceRequest, new ActionListener(""));
+
+                manager.DiscoverServices(channel, new ActionListener("Ricerca..."));
             }
             else
             {
@@ -87,27 +118,38 @@ namespace ProvaAndroidLoginSystem1
 
         public void notifyAdapter()
         {
-            mLstPeers.Adapter = new PeersAdapter(this, peerListener.Peers);
+            //mLstPeers.Adapter = new PeersAdapter(this, peerListener.Peers);
+            mLstPeers.Adapter = new PeersAdapter(this, servListener.ServiceDevices);
         }
 
         public void changeActivity()
         {
+            IsConnected = true;
             Intent Home = new Intent(this, typeof(HomeActivity));
             this.StartActivity(Home);
         }
 
         public void resetData()
         {
-            peerListener.Peers = new List<WifiP2pDevice>();
+            //peerListener.Peers = new List<WifiP2pDevice>();
             this.notifyAdapter();
         }
 
         protected override void OnResume()
         {
             base.OnResume();
-            peerListener = new PeerListener(this);
-            receiver = new WiFiDirectBroadcastReceiver(manager, channel, this, peerListener);
+            //peerListener = new PeerListener(this);
+
+            receiver = new WiFiDirectBroadcastReceiver(manager, channel, this/*, peerListener*/);
             RegisterReceiver(receiver, intentFilter);
+
+            if(IsConnected)
+            {
+                manager.RemoveGroup(channel, new ActionListener("Chiusura della connessione..."));
+                IsConnected = false;
+                manager.ClearServiceRequests(channel, new ActionListener(""));
+                //manager.StopPeerDiscovery(channel, new ActionListener(""));
+            }
         }
 
         protected override void OnPause()

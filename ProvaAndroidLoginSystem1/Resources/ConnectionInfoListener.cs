@@ -30,6 +30,7 @@ namespace p2p_project.Resources
 
             if (info.GroupFormed)
             {
+                //Creare socket server
                 main.changeActivity();
             }
         }

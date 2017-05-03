@@ -32,7 +32,9 @@ namespace p2p_project
 
         public void OnSuccess()
         {
-            Toast.MakeText(Application.Context, message, ToastLength.Long).Show();
+            if (!message.Equals("")) { 
+                Toast.MakeText(Application.Context, message, ToastLength.Long).Show();
+            }
         }
     }
 }
