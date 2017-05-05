@@ -33,15 +33,8 @@ namespace p2p_project.Resources
                 peers.Clear();
                 peers.AddRange(refreshedPeers);
 
-                // If an AdapterView is backed by this data, notify it
-                // of the change.  For instance, if you have a ListView of
-                // available peers, trigger an update. 
-
                 // Notify the adapter.
                 mainActivity.notifyAdapter();
-
-                // Perform any other updates needed based on the new list of
-                // peers connected to the Wi-Fi P2P network.
             }
         }
 

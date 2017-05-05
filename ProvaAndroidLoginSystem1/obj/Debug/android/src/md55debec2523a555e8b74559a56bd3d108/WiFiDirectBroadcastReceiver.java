@@ -23,11 +23,11 @@ public class WiFiDirectBroadcastReceiver
 			mono.android.TypeManager.Activate ("p2p_project.Resources.WiFiDirectBroadcastReceiver, p2p project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "", this, new java.lang.Object[] {  });
 	}
 
-	public WiFiDirectBroadcastReceiver (android.net.wifi.p2p.WifiP2pManager p0, android.net.wifi.p2p.WifiP2pManager.Channel p1, md587ad3ac64fbc991d5ecd8dfeb9429049.MainActivity p2) throws java.lang.Throwable
+	public WiFiDirectBroadcastReceiver (android.net.wifi.p2p.WifiP2pManager p0, android.net.wifi.p2p.WifiP2pManager.Channel p1, md587ad3ac64fbc991d5ecd8dfeb9429049.MainActivity p2, md55debec2523a555e8b74559a56bd3d108.PeerListener p3) throws java.lang.Throwable
 	{
 		super ();
 		if (getClass () == WiFiDirectBroadcastReceiver.class)
-			mono.android.TypeManager.Activate ("p2p_project.Resources.WiFiDirectBroadcastReceiver, p2p project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "Android.Net.Wifi.P2p.WifiP2pManager, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065:Android.Net.Wifi.P2p.WifiP2pManager+Channel, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065:ProvaAndroidLoginSystem1.MainActivity, p2p project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", this, new java.lang.Object[] { p0, p1, p2 });
+			mono.android.TypeManager.Activate ("p2p_project.Resources.WiFiDirectBroadcastReceiver, p2p project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "Android.Net.Wifi.P2p.WifiP2pManager, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065:Android.Net.Wifi.P2p.WifiP2pManager+Channel, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065:ProvaAndroidLoginSystem1.MainActivity, p2p project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null:p2p_project.Resources.PeerListener, p2p project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", this, new java.lang.Object[] { p0, p1, p2, p3 });
 	}
 
 

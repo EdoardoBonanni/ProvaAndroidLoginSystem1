@@ -98,15 +98,15 @@
     <Compile Include="PeersAdapter.cs" />
     <Compile Include="Resources\ActionListener.cs" />
     <Compile Include="Resources\ChatActivity.cs" />
+    <Compile Include="Resources\ClientSocket.cs" />
     <Compile Include="Resources\ConnectionInfoListener.cs" />
-    <Compile Include="Resources\DnsSdServiceResponseListener.cs" />
-    <Compile Include="Resources\DnsSdTxtRecordListener.cs" />
     <Compile Include="Resources\HomeActivity.cs" />
     <Compile Include="Resources\Model\HTTPClient.cs" />
     <Compile Include="Resources\Model\Person.cs" />
     <Compile Include="Resources\PeerListener.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\SocketServer.cs" />
     <Compile Include="Resources\SignInActivity.cs" />
     <Compile Include="Resources\SignUpActivity.cs" />
     <Compile Include="Resources\WiFiDirectBroadcastReceiver.cs" />

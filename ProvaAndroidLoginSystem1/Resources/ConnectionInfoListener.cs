@@ -28,10 +28,35 @@ namespace p2p_project.Resources
             // InetAddress from WifiP2pInfo struct.
             InetAddress groupOwnerAddress = info.GroupOwnerAddress;
 
-            if (info.GroupFormed)
+            if (info.IsGroupOwner)
             {
                 //Creare socket server
-                main.changeActivity();
+                //Se sia client che server sono connessi
+                SocketServer server = new SocketServer();
+                int serverConnected = server.Connect();
+                if (serverConnected == 1)
+                {
+                    main.changeActivity();
+                }
+                else
+                {
+                    server.End();
+                    Toast.MakeText(Application.Context, "L'altro dispositivo non ha l'app aperta", ToastLength.Long);
+                }
+            }
+            else
+            {
+                ClientSocket client = new ClientSocket(groupOwnerAddress);
+                int clientConnected = client.Connect();
+                if(clientConnected == 1)
+                {
+                    main.changeActivity();
+                }
+                else
+                {
+                    client.End();
+                    Toast.MakeText(Application.Context, "L'altro dispositivo non ha l'app aperta", ToastLength.Long);
+                }
             }
         }
     }
