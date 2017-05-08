@@ -11,6 +11,7 @@ using Android.Views;
 using Android.Widget;
 using Java.Lang;
 using Java.Net;
+using System.Net;
 using System.Net.Sockets;
 
 namespace p2p_project.Resources
@@ -19,7 +20,7 @@ namespace p2p_project.Resources
     {
         private int port = 9876;
         private InetAddress ip;
-        private System.Net.Sockets.Socket socket;
+        private TcpClient client;
 
         public ClientSocket(InetAddress ip)
         {
@@ -28,17 +29,26 @@ namespace p2p_project.Resources
 
         public int Connect()
         {
-            socket = new System.Net.Sockets.Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-
-            IAsyncResult result = socket.BeginConnect(ip.HostAddress, port, null, null);
-
-            bool success = result.AsyncWaitHandle.WaitOne(30000, true);
-            if (!success)
+            client = new TcpClient();
+            try
             {
+                if (!client.ConnectAsync(IPAddress.Parse(ip.HostAddress), port).Wait(10000))
+                {
+                    client.Close();
+                    return -1;
+                }
+            }
+            catch(System.Exception ex)
+            {
+                client.Close();
                 return -1;
             }
+            
+            var networkStream = client.GetStream();
+            //creare thread con networkStream
             return 1;
         }
+
         public void Send()
         {
 
@@ -51,7 +61,7 @@ namespace p2p_project.Resources
 
         public void End()
         {
-
+            client.Close();
         }
     }
 }

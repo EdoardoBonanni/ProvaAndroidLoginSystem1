@@ -30,8 +30,6 @@ namespace p2p_project.Resources
 
             if (info.IsGroupOwner)
             {
-                //Creare socket server
-                //Se sia client che server sono connessi
                 SocketServer server = new SocketServer();
                 int serverConnected = server.Connect();
                 if (serverConnected == 1)
@@ -41,6 +39,7 @@ namespace p2p_project.Resources
                 else
                 {
                     server.End();
+                    main.DisconnectP2p();
                     Toast.MakeText(Application.Context, "L'altro dispositivo non ha l'app aperta", ToastLength.Long);
                 }
             }
@@ -55,6 +54,7 @@ namespace p2p_project.Resources
                 else
                 {
                     client.End();
+                    main.DisconnectP2p();
                     Toast.MakeText(Application.Context, "L'altro dispositivo non ha l'app aperta", ToastLength.Long);
                 }
             }

@@ -31,7 +31,9 @@
             android:layout_marginTop="15dp"
             android:layout_marginRight="10.7dp"
             android:textSize="10sp"
-            android:background="@drawable/buttonsignupstyle" />
+            android:background="@drawable/buttonsignupstyle"
+            android:enabled="true"
+            android:visibility="invisible" />
     </LinearLayout>
     <ListView
         android:layout_marginTop="30dp"

@@ -44,6 +44,7 @@ namespace ProvaAndroidLoginSystem1
 
             mBtnSearch = FindViewById<Button>(Resource.Id.btnP2pSearch);
             mBtnCancel = FindViewById<Button>(Resource.Id.btnCancelSearch);
+            mBtnCancel.Visibility = Android.Views.ViewStates.Invisible;
             mLstPeers = FindViewById<ListView>(Resource.Id.lstPeers);
 
             mBtnSearch.Click += mBtnSearch_Click;
@@ -74,6 +75,8 @@ namespace ProvaAndroidLoginSystem1
 
         private void mBtnCancel_Click(object sender, EventArgs e)
         {
+            mBtnSearch.Visibility = Android.Views.ViewStates.Visible;
+            mBtnCancel.Visibility = Android.Views.ViewStates.Invisible;
             manager.StopPeerDiscovery(channel, new ActionListener("Ricerca fermata"));
         }
 
@@ -81,6 +84,8 @@ namespace ProvaAndroidLoginSystem1
         {
             if (IsWifiP2PEnabled)
             {
+                mBtnSearch.Visibility = Android.Views.ViewStates.Invisible;
+                mBtnCancel.Visibility = Android.Views.ViewStates.Visible;
                 manager.DiscoverPeers(channel, new ActionListener("Ricerca..."));
             }
             else
@@ -117,9 +122,7 @@ namespace ProvaAndroidLoginSystem1
 
             if(IsConnected)
             {
-                manager.RemoveGroup(channel, new ActionListener("Chiusura della connessione..."));
-                IsConnected = false;
-                manager.StopPeerDiscovery(channel, new ActionListener(""));
+                DisconnectP2p();
             }
         }
 
@@ -127,6 +130,13 @@ namespace ProvaAndroidLoginSystem1
         {
             base.OnPause();
             UnregisterReceiver(receiver);
+        }
+
+        public void DisconnectP2p()
+        {
+            manager.RemoveGroup(channel, new ActionListener("Chiusura della connessione..."));
+            IsConnected = false;
+            manager.StopPeerDiscovery(channel, new ActionListener(""));
         }
     }
  }
