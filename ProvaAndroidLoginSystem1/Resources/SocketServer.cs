@@ -21,40 +21,48 @@ namespace p2p_project.Resources
     {
         private readonly int port = 9876;
         private TcpListener serverSocket;
-        private Java.Net.Socket client;
+        private TcpClient client;
+        private NetworkStream networkStream;
+        private Thread receive;
 
         public int Connect()
         {
-            serverSocket = new TcpListener(IPAddress.Any, port);
+            TcpListener serverSocket = new TcpListener(IPAddress.Any, port);
             serverSocket.Start();
-            var result = serverSocket.BeginAcceptTcpClient(new AsyncCallback(CreateThread), serverSocket);
+            var result = serverSocket.BeginAcceptTcpClient(null, null);
             bool success = result.AsyncWaitHandle.WaitOne(20000, true);
             if (!success)
             {
                 serverSocket.Stop();
                 return -1;
             }
+            client = serverSocket.EndAcceptTcpClient(result);
+            networkStream = client.GetStream();
+            receive = new Thread(Receive);
+            receive.Start();
             return 1;
         }
 
-        private void CreateThread(IAsyncResult ar)
+        public async void Send()
         {
-
-            var client = serverSocket.EndAcceptTcpClient(ar);
+            byte[] data = Encoding.ASCII.GetBytes("Primo test");
+            await networkStream.WriteAsync(data, 0, data.Length);
         }
 
-        public void Send()
+        public async void Receive()
         {
-
-        }
-
-        public void Receive()
-        {
-
+            while (true)
+            {
+                byte[] data = new byte[2048];
+                int responseCount = await networkStream.ReadAsync(data, 0, data.Length);
+                string responseData = System.Text.Encoding.ASCII.GetString(data, 0, responseCount);
+                Toast.MakeText(Application.Context, responseData, ToastLength.Long);
+            }
         }
 
         public void End()
         {
+            receive.Dispose();
             serverSocket.Stop();
         }
     }

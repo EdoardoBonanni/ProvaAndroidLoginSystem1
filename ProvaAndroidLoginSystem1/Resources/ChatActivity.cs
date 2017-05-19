@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using p2p_project;
+using p2p_project.Resources;
 
 namespace ProvaAndroidLoginSystem1.Resources
 {
@@ -17,6 +18,8 @@ namespace ProvaAndroidLoginSystem1.Resources
     public class ChatActivity : Activity
     {
         private Button btnSend;
+        private SocketServer server;
+        private ClientSocket client;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -28,7 +31,16 @@ namespace ProvaAndroidLoginSystem1.Resources
 
         void btnSend_Click(object sender, EventArgs e)
         {
-
+            if (ConnectionInfoListener.isServer)
+            {
+                SocketServer server = ConnectionInfoListener.Server;
+                server.Send();
+            }
+            else
+            {
+                ClientSocket client = ConnectionInfoListener.Client;
+                client.Send();
+            }
         }
     }
 }

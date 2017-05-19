@@ -21,6 +21,8 @@ namespace p2p_project.Resources
         private int port = 9876;
         private InetAddress ip;
         private TcpClient client;
+        private NetworkStream networkStream;
+        private Thread receive;
 
         public ClientSocket(InetAddress ip)
         {
@@ -44,23 +46,33 @@ namespace p2p_project.Resources
                 return -1;
             }
             
-            var networkStream = client.GetStream();
-            //creare thread con networkStream
+            networkStream = client.GetStream();
+
+            receive = new Thread(Receive);
+            receive.Start();
             return 1;
         }
 
-        public void Send()
+        public async void Send()
         {
-
+            byte[] data = Encoding.ASCII.GetBytes("Primo test");
+            await networkStream.WriteAsync(data, 0, data.Length);
         }
 
-        public void Receive()
+        public async void Receive()
         {
-
+            while (true)
+            {
+                byte[] data = new byte[2048];
+                int responseCount = await networkStream.ReadAsync(data, 0, data.Length);
+                string responseData = System.Text.Encoding.ASCII.GetString(data, 0, responseCount);
+                Toast.MakeText(Application.Context, responseData, ToastLength.Long);
+            }
         }
 
         public void End()
         {
+            receive.Dispose();
             client.Close();
         }
     }

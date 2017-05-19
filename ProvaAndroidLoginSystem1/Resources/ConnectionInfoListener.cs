@@ -19,10 +19,13 @@ namespace p2p_project.Resources
     class ConnectionInfoListener : Java.Lang.Object, IConnectionInfoListener
     {
         private MainActivity main;
+        private static SocketServer server;
+        private static ClientSocket client;
         public ConnectionInfoListener(MainActivity main)
         {
             this.main = main;
         }
+
         public void OnConnectionInfoAvailable(WifiP2pInfo info)
         {
             // InetAddress from WifiP2pInfo struct.
@@ -30,10 +33,11 @@ namespace p2p_project.Resources
 
             if (info.IsGroupOwner)
             {
-                SocketServer server = new SocketServer();
+                server = new SocketServer();
                 int serverConnected = server.Connect();
                 if (serverConnected == 1)
                 {
+                    isServer = true;
                     main.changeActivity();
                 }
                 else
@@ -45,10 +49,11 @@ namespace p2p_project.Resources
             }
             else
             {
-                ClientSocket client = new ClientSocket(groupOwnerAddress);
+                client = new ClientSocket(groupOwnerAddress);
                 int clientConnected = client.Connect();
                 if(clientConnected == 1)
                 {
+                    isServer = false;
                     main.changeActivity();
                 }
                 else
@@ -59,5 +64,11 @@ namespace p2p_project.Resources
                 }
             }
         }
+
+        public static bool isServer { get; set; }
+        public static SocketServer Server { get { return server; } }
+
+        public static ClientSocket Client { get { return client; } }
+
     }
 }
