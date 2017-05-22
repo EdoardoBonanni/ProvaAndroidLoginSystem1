@@ -13,6 +13,8 @@ using Java.Lang;
 using Java.Net;
 using System.Net;
 using System.Net.Sockets;
+using ProvaAndroidLoginSystem1.Resources;
+using ProvaAndroidLoginSystem1;
 
 namespace p2p_project.Resources
 {
@@ -23,6 +25,7 @@ namespace p2p_project.Resources
         private TcpClient client;
         private NetworkStream networkStream;
         private Thread receive;
+        private ChatActivity chatActivity;
 
         public ClientSocket(InetAddress ip)
         {
@@ -36,13 +39,11 @@ namespace p2p_project.Resources
             {
                 if (!client.ConnectAsync(IPAddress.Parse(ip.HostAddress), port).Wait(10000))
                 {
-                    client.Close();
                     return -1;
                 }
             }
             catch(System.Exception ex)
             {
-                client.Close();
                 return -1;
             }
             
@@ -53,27 +54,43 @@ namespace p2p_project.Resources
             return 1;
         }
 
-        public async void Send()
+        public async void Send(string text)
         {
-            byte[] data = Encoding.ASCII.GetBytes("Primo test");
+            byte[] data = Encoding.ASCII.GetBytes(text);
             await networkStream.WriteAsync(data, 0, data.Length);
         }
 
-        public async void Receive()
+        public void Receive()
         {
-            while (true)
+            byte[] data = new byte[2048];
+            /*int responseCount = await networkStream.ReadAsync(data, 0, data.Length);
+            string responseData = System.Text.Encoding.ASCII.GetString(data, 0, responseCount);
+            Toast.MakeText(Application.Context, responseData, ToastLength.Long);*/
+            networkStream.BeginRead(data, 0, data.Length, new AsyncCallback(receiveCallback), data);
+        }
+
+        public void receiveCallback(IAsyncResult res)
+        {
+            byte[] data = (byte[]) res.AsyncState;
+            int responseCount = networkStream.EndRead(res);
+            if(responseCount > 0)
             {
-                byte[] data = new byte[2048];
-                int responseCount = await networkStream.ReadAsync(data, 0, data.Length);
-                string responseData = System.Text.Encoding.ASCII.GetString(data, 0, responseCount);
-                Toast.MakeText(Application.Context, responseData, ToastLength.Long);
+                string buff = System.Text.Encoding.ASCII.GetString(data, 0, responseCount);
+
+                if(chatActivity != null)
+                    chatActivity.updateChat(buff);
+
+                networkStream.BeginRead(data, 0, data.Length, new AsyncCallback(receiveCallback), data);
             }
         }
 
         public void End()
         {
-            receive.Dispose();
+            if(receive != null)
+                receive.Dispose();
             client.Close();
         }
+
+        public ChatActivity setChatActivity { set { this.chatActivity = value; } }
     }
 }

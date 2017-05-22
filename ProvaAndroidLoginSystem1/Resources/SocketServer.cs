@@ -27,13 +27,12 @@ namespace p2p_project.Resources
 
         public int Connect()
         {
-            TcpListener serverSocket = new TcpListener(IPAddress.Any, port);
+            serverSocket = new TcpListener(IPAddress.Any, port);
             serverSocket.Start();
             var result = serverSocket.BeginAcceptTcpClient(null, null);
             bool success = result.AsyncWaitHandle.WaitOne(20000, true);
             if (!success)
             {
-                serverSocket.Stop();
                 return -1;
             }
             client = serverSocket.EndAcceptTcpClient(result);
@@ -43,26 +42,36 @@ namespace p2p_project.Resources
             return 1;
         }
 
-        public async void Send()
+        public async void Send(string text)
         {
-            byte[] data = Encoding.ASCII.GetBytes("Primo test");
+            byte[] data = Encoding.ASCII.GetBytes(text);
             await networkStream.WriteAsync(data, 0, data.Length);
         }
 
-        public async void Receive()
+        public void Receive()
         {
-            while (true)
+            byte[] data = new byte[2048];
+            /*int responseCount = await networkStream.ReadAsync(data, 0, data.Length);
+            string responseData = System.Text.Encoding.ASCII.GetString(data, 0, responseCount);
+            Toast.MakeText(Application.Context, responseData, ToastLength.Long);*/
+            networkStream.BeginRead(data, 0, data.Length, new AsyncCallback(receiveCallback), data);
+        }
+
+        public void receiveCallback(IAsyncResult res)
+        {
+            byte[] data = (byte[])res.AsyncState;
+            int responseCount = networkStream.EndRead(res);
+            if (responseCount > 0)
             {
-                byte[] data = new byte[2048];
-                int responseCount = await networkStream.ReadAsync(data, 0, data.Length);
-                string responseData = System.Text.Encoding.ASCII.GetString(data, 0, responseCount);
-                Toast.MakeText(Application.Context, responseData, ToastLength.Long);
+                string buff = System.Text.Encoding.ASCII.GetString(data, 0, responseCount);
+                networkStream.BeginRead(data, 0, data.Length, new AsyncCallback(receiveCallback), data);
             }
         }
 
         public void End()
         {
-            receive.Dispose();
+            if (receive != null)
+                receive.Dispose();
             serverSocket.Stop();
         }
     }

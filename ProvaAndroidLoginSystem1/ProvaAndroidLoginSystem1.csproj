@@ -94,6 +94,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChatAdapter.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="PeersAdapter.cs" />
     <Compile Include="Resources\ActionListener.cs" />

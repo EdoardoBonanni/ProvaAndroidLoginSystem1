@@ -13,6 +13,7 @@ using Android.Widget;
 using static Android.Net.Wifi.P2p.WifiP2pManager;
 using Java.Net;
 using ProvaAndroidLoginSystem1;
+using ProvaAndroidLoginSystem1.Resources;
 
 namespace p2p_project.Resources
 {

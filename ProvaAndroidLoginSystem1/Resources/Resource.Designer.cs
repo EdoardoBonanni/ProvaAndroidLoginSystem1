@@ -112,11 +112,14 @@ namespace p2p_project
 			// aapt resource value: 0x7f07000b
 			public const int btnSignUp = 2131165195;
 			
+			// aapt resource value: 0x7f070000
+			public const int llChatMessages = 2131165184;
+			
 			// aapt resource value: 0x7f070002
-			public const int llChatMessages = 2131165186;
+			public const int llContainer = 2131165186;
 			
 			// aapt resource value: 0x7f070001
-			public const int llContainer = 2131165185;
+			public const int lstMessages = 2131165185;
 			
 			// aapt resource value: 0x7f070012
 			public const int lstPeers = 2131165202;
@@ -132,9 +135,6 @@ namespace p2p_project
 			
 			// aapt resource value: 0x7f070013
 			public const int relativeLayoutTextSignIn = 2131165203;
-			
-			// aapt resource value: 0x7f070000
-			public const int scrollView = 2131165184;
 			
 			// aapt resource value: 0x7f070004
 			public const int txtChat = 2131165188;
