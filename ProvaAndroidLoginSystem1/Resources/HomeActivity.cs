@@ -36,6 +36,12 @@ namespace ProvaAndroidLoginSystem1.Resources
             mBtnFile.Click += mbtnFile_Click;
         }
 
+        protected override void OnResume()
+        {
+            //Get the Id from Db
+            base.OnResume();
+        }
+
         void mbtnMessage_Click(object sender, EventArgs e)
         {
             Intent Message = new Intent(this, typeof(ChatActivity));
@@ -45,11 +51,6 @@ namespace ProvaAndroidLoginSystem1.Resources
         void mbtnFile_Click(object sender, EventArgs e)
         {
             
-        }
-
-        public override void OnBackPressed()
-        {
-            base.OnBackPressed();
         }
     }
 }

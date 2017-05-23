@@ -135,6 +135,7 @@ namespace ProvaAndroidLoginSystem1
         {
             manager.RemoveGroup(channel, new ActionListener("Chiusura della connessione..."));
             IsConnected = false;
+            //Elimina Id dal Db
             manager.StopPeerDiscovery(channel, new ActionListener(""));
         }
     }

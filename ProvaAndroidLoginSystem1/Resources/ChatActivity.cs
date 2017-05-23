@@ -11,6 +11,8 @@ using Android.Views;
 using Android.Widget;
 using p2p_project;
 using p2p_project.Resources;
+using p2p_project.Resources.DataHelper;
+using p2p_project.Resources.Model;
 
 namespace ProvaAndroidLoginSystem1.Resources
 {
@@ -23,16 +25,44 @@ namespace ProvaAndroidLoginSystem1.Resources
         private SocketServer server;
         private ClientSocket client;
         private ChatAdapter chatAdapter;
+        private Database database;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+
             SetContentView(Resource.Layout.ChatLayout);
+
             lstMessage = FindViewById<ListView>(Resource.Id.lstMessages);
             btnSend = FindViewById<Button>(Resource.Id.btnSend);
             txtChat = FindViewById<EditText>(Resource.Id.txtChat);
+
             btnSend.Click += btnSend_Click;
-            chatAdapter = new ChatAdapter(this, new List<Tuple<string, bool>>());
+
+            database = new Database();
+            database.createTable();
+
+            List<Registro> registro = database.SelectQueryTable(1, 2);
+            List<Tuple<string, bool>> chat = new List<Tuple<string, bool>>();
+
+            foreach (var message in registro)
+            {
+
+                if (message.isFile)
+                {
+                    break;
+                }
+                if(message.IdMittente == 1/*Id dell'utente*/)
+                {
+                    chat.Add(new Tuple<string, bool>(message.Messaggio, true));
+                }
+                else
+                {
+                    chat.Add(new Tuple<string, bool>(message.Messaggio, false));
+                }
+            }
+
+            chatAdapter = new ChatAdapter(this, chat);
             lstMessage.Adapter = chatAdapter;
         }
 
@@ -40,6 +70,14 @@ namespace ProvaAndroidLoginSystem1.Resources
         {
             chatAdapter.update(text, mine);
             //inserimento nel Db
+            database.InsertIntoTable(new Registro
+            {
+                IdMittente = mine == true ? 1 : 2/*IdProprietario : IdConnesso*/,
+                IdDestinatario = mine == false ? 1 : 2,
+                isFile = false,
+                Messaggio = text,
+                Orario = DateTime.Now
+            });
         }
 
         void btnSend_Click(object sender, EventArgs e)
