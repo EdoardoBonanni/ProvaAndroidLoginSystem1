@@ -22,30 +22,32 @@ public final class R {
         public static final int progressbarstyle=0x7f020004;
     }
     public static final class id {
-        public static final int btnCancelSearch=0x7f070011;
-        public static final int btnP2pSearch=0x7f070010;
+        public static final int btnCancelSearch=0x7f070013;
+        public static final int btnP2pSearch=0x7f070012;
         public static final int btnSend=0x7f070003;
-        public static final int btnSendFileHome=0x7f07000f;
-        public static final int btnSendMessageHome=0x7f07000d;
-        public static final int btnSignIn=0x7f070017;
-        public static final int btnSignUp=0x7f07000b;
+        public static final int btnSendFileHome=0x7f070011;
+        public static final int btnSendMessageHome=0x7f07000f;
+        public static final int btnSignIn=0x7f070019;
+        public static final int btnSignUp=0x7f07000d;
+        public static final int llAlignment=0x7f070006;
         public static final int llChatMessages=0x7f070000;
         public static final int llContainer=0x7f070002;
+        public static final int llParent=0x7f070005;
         public static final int lstMessages=0x7f070001;
-        public static final int lstPeers=0x7f070012;
-        public static final int relativeLayout1=0x7f07000a;
-        public static final int relativeLayout2=0x7f070006;
-        public static final int relativeLayoutButtonSignIn=0x7f070016;
-        public static final int relativeLayoutTextSignIn=0x7f070013;
+        public static final int lstPeers=0x7f070014;
+        public static final int relativeLayout1=0x7f07000c;
+        public static final int relativeLayout2=0x7f070008;
+        public static final int relativeLayoutButtonSignIn=0x7f070018;
+        public static final int relativeLayoutTextSignIn=0x7f070015;
         public static final int txtChat=0x7f070004;
-        public static final int txtFirstName=0x7f070007;
-        public static final int txtNickname=0x7f070008;
-        public static final int txtNicknameSignIn=0x7f070014;
-        public static final int txtORHome=0x7f07000e;
-        public static final int txtPassword=0x7f070009;
-        public static final int txtPasswordSignIn=0x7f070015;
-        public static final int txtPeer=0x7f070005;
-        public static final int txtSelectActivity=0x7f07000c;
+        public static final int txtFirstName=0x7f070009;
+        public static final int txtNickname=0x7f07000a;
+        public static final int txtNicknameSignIn=0x7f070016;
+        public static final int txtORHome=0x7f070010;
+        public static final int txtPassword=0x7f07000b;
+        public static final int txtPasswordSignIn=0x7f070017;
+        public static final int txtPeer=0x7f070007;
+        public static final int txtSelectActivity=0x7f07000e;
     }
     public static final class layout {
         public static final int chatlayout=0x7f030000;

@@ -78,7 +78,7 @@ namespace p2p_project.Resources
                 string buff = System.Text.Encoding.ASCII.GetString(data, 0, responseCount);
 
                 if(chatActivity != null)
-                    chatActivity.updateChat(buff);
+                    chatActivity.updateChat(buff, false);
 
                 networkStream.BeginRead(data, 0, data.Length, new AsyncCallback(receiveCallback), data);
             }

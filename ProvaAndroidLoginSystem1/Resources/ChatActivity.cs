@@ -32,13 +32,13 @@ namespace ProvaAndroidLoginSystem1.Resources
             btnSend = FindViewById<Button>(Resource.Id.btnSend);
             txtChat = FindViewById<EditText>(Resource.Id.txtChat);
             btnSend.Click += btnSend_Click;
-            chatAdapter = new ChatAdapter(this, new List<string>());
+            chatAdapter = new ChatAdapter(this, new List<Tuple<string, bool>>());
             lstMessage.Adapter = chatAdapter;
         }
 
-        public void updateChat(string text)
+        public void updateChat(string text, bool mine)
         {
-            chatAdapter.update(text);
+            chatAdapter.update(text, mine);
             //inserimento nel Db
         }
 
@@ -54,6 +54,8 @@ namespace ProvaAndroidLoginSystem1.Resources
                 ClientSocket client = ConnectionInfoListener.Client;
                 client.Send(txtChat.Text);
             }
+            updateChat(txtChat.Text, true);
+            txtChat.Text = "";
         }
     }
 }

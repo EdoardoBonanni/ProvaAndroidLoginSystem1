@@ -11,7 +11,6 @@ using Android.Net.Wifi.P2p;
 using p2p_project.Resources;
 using Android.Net.Wifi;
 using System.Collections.Generic;
-using Android.Net.Wifi.P2p.Nsd;
 using System.Threading.Tasks;
 
 namespace ProvaAndroidLoginSystem1
