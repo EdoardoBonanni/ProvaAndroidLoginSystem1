@@ -81,7 +81,6 @@ C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\
 C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\res\layout\signinlayout.xml
 C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\res\layout\homelayout.xml
 C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\res\layout\chatlayout.xml
-C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\res\layout\data_template_peers_layout.xml
 C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\res\layout\main.xml
 C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\res\values\strings.xml
 C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\res\drawable\icon.png
@@ -140,5 +139,6 @@ C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\Prov
 C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\res\layout\data_template_peers_layout.xml
 C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Debug\p2p project.dll.mdb
 C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\android\assets\p2p project.dll.mdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\res\layout\data_template_layout.xml
 C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\p2p project.dll.mdb
 C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Debug\p2p project.dll.mdb

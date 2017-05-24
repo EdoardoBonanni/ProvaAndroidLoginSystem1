@@ -131,7 +131,7 @@
     <AndroidResource Include="Resources\layout\ChatLayout.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\Data_template_Peers_layout.axml">
+    <AndroidResource Include="Resources\layout\Data_template_layout.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

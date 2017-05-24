@@ -16,9 +16,7 @@ namespace ProvaAndroidLoginSystem1.Resources
 {
     [Activity(Label = "Chat P2P")]
     class HomeActivity : Activity
-
     {
-
         private Button mBtnMessage;
         private Button mBtnFile;
 
@@ -38,7 +36,6 @@ namespace ProvaAndroidLoginSystem1.Resources
 
         protected override void OnResume()
         {
-            //Get the Id from Db
             base.OnResume();
         }
 

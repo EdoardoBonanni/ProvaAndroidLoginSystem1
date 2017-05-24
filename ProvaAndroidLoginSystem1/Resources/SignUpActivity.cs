@@ -24,9 +24,9 @@ namespace ProvaAndroidLoginSystem1.Resources
     [Activity(Label = "SignUp")]
     class SignUpActivity : Activity
     {
-        private TextView mtxtFirstName;
-        private TextView mtxtNickname;
-        private TextView mtxtPassword;
+        private EditText mtxtFirstName;
+        private EditText mtxtNickname;
+        private EditText mtxtPassword;
         private Button mbtnSignUp;
         private InputMethodManager imm;
 

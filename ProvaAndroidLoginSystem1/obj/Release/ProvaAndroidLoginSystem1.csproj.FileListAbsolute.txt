@@ -1,7 +1,3 @@
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\ProvaAndroidLoginSystem1.dll
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\ProvaAndroidLoginSystem1.pdb
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\Provalogin1.provalogin.apk
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\Provalogin1.provalogin-Signed.apk
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\SQLite-net.dll
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\SQLitePCL.raw.dll
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\SQLitePCLRaw.batteries_green.dll
@@ -11,12 +7,7 @@ C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\SQLitePCLRaw.provider.e_sqlite3.dll
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\SQLite-net.xml
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\SQLite-net.dll.mdb
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\ProvaAndroidLoginSystem1.dll
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\ProvaAndroidLoginSystem1.pdb
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\bin\Provalogin1.provalogin.apk
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\res\layout\dialog_sign_up.xml
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\res\layout\list_view_datatemplate.xml
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\res\layout\listviewlayout.xml
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\res\layout\signinlayout.xml
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\res\layout\homelayout.xml
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\res\layout\chatlayout.xml
@@ -70,5 +61,15 @@ C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\assets\Mono.CSharp.dll.mdb
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\assets\System.Numerics.dll.mdb
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\assets\System.Runtime.Serialization.Primitives.dll.mdb
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\ProvaAndroidLoginSystem1.dll.mdb
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\ProvaAndroidLoginSystem1.dll.mdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\p2p project.dll
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\p2p project.pdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\p2p.p2p.apk
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\p2p.p2p-Signed.apk
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\p2p project.dll
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\p2p project.pdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\bin\p2p.p2p.apk
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\res\layout\data_template_peers_layout.xml
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\p2p project.dll.mdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\assets\p2p project.dll.mdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\p2p project.dll.mdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\p2p project.dll.mdb

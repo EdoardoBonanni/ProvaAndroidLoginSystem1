@@ -2,7 +2,7 @@
 <xs:schema xmlns:android="http://schemas.android.com/apk/res/android" attributeFormDefault="qualified" targetNamespace="http://schemas.android.com/apk/res/android" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:annotation>
     <xs:documentation>v25</xs:documentation>
-    <xs:documentation>23/05/2017 19:05:51</xs:documentation>
+    <xs:documentation>24/05/2017 18:29:54</xs:documentation>
   </xs:annotation>
   <xs:attribute name="accessibilityLiveRegion">
     <xs:annotation>
@@ -17130,22 +17130,23 @@
             <xs:enumeration value="@id/btnSendMessageHome" />
             <xs:enumeration value="@id/btnSignIn" />
             <xs:enumeration value="@id/btnSignUp" />
-            <xs:enumeration value="@id/llChatMessages" />
             <xs:enumeration value="@id/llContainer" />
             <xs:enumeration value="@id/lstMessages" />
             <xs:enumeration value="@id/lstPeers" />
             <xs:enumeration value="@id/relativeLayout1" />
             <xs:enumeration value="@id/relativeLayout2" />
             <xs:enumeration value="@id/relativeLayoutButtonSignIn" />
+            <xs:enumeration value="@id/relativeLayoutGoToSignUp" />
             <xs:enumeration value="@id/relativeLayoutTextSignIn" />
+            <xs:enumeration value="@id/txtAdapter" />
             <xs:enumeration value="@id/txtChat" />
             <xs:enumeration value="@id/txtFirstName" />
+            <xs:enumeration value="@id/txtGoToSignUp" />
             <xs:enumeration value="@id/txtNickname" />
             <xs:enumeration value="@id/txtNicknameSignIn" />
             <xs:enumeration value="@id/txtORHome" />
             <xs:enumeration value="@id/txtPassword" />
             <xs:enumeration value="@id/txtPasswordSignIn" />
-            <xs:enumeration value="@id/txtPeer" />
             <xs:enumeration value="@id/txtSelectActivity" />
             <xs:enumeration value="@android:id/accessibilityActionContextClick" />
             <xs:enumeration value="@android:id/accessibilityActionScrollDown" />

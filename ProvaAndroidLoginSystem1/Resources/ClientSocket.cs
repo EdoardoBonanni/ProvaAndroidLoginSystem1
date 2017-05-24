@@ -14,7 +14,6 @@ using Java.Net;
 using System.Net;
 using System.Net.Sockets;
 using ProvaAndroidLoginSystem1.Resources;
-using ProvaAndroidLoginSystem1;
 
 namespace p2p_project.Resources
 {
@@ -26,6 +25,7 @@ namespace p2p_project.Resources
         private NetworkStream networkStream;
         private Thread receive;
         private ChatActivity chatActivity;
+        //PacketManager
 
         public ClientSocket(InetAddress ip)
         {
@@ -54,9 +54,9 @@ namespace p2p_project.Resources
             return 1;
         }
 
-        public async void Send(string text)
+        public async void Send(string packet)
         {
-            byte[] data = Encoding.ASCII.GetBytes(text);
+            byte[] data = Encoding.ASCII.GetBytes(packet);
             await networkStream.WriteAsync(data, 0, data.Length);
         }
 
@@ -76,10 +76,6 @@ namespace p2p_project.Resources
             if(responseCount > 0)
             {
                 string buff = System.Text.Encoding.ASCII.GetString(data, 0, responseCount);
-
-                if(chatActivity != null)
-                    chatActivity.updateChat(buff, false);
-
                 networkStream.BeginRead(data, 0, data.Length, new AsyncCallback(receiveCallback), data);
             }
         }
@@ -90,7 +86,5 @@ namespace p2p_project.Resources
                 receive.Dispose();
             client.Close();
         }
-
-        public ChatActivity setChatActivity { set { this.chatActivity = value; } }
     }
 }

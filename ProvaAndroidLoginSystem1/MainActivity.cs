@@ -114,6 +114,11 @@ namespace ProvaAndroidLoginSystem1
         protected override void OnResume()
         {
             base.OnResume();
+            if (retrieveID("MyId") == 0)
+            {
+                Intent SignIn = new Intent(this, typeof(SignInActivity));
+                this.StartActivity(SignIn);
+            }
             peerListener = new PeerListener(this);
 
             receiver = new WiFiDirectBroadcastReceiver(manager, channel, this, peerListener);
@@ -135,8 +140,30 @@ namespace ProvaAndroidLoginSystem1
         {
             manager.RemoveGroup(channel, new ActionListener("Chiusura della connessione..."));
             IsConnected = false;
-            //Elimina Id dal Db
+            deleteId("ConnectedId");
             manager.StopPeerDiscovery(channel, new ActionListener(""));
+        }
+
+        public static int retrieveID(string key)
+        {
+            var prefs = Application.Context.GetSharedPreferences("ChatP2p", FileCreationMode.Private);
+            return prefs.GetInt(key, 0);
+        }
+
+        public static void saveID(string key, int id)
+        {
+            var prefs = Application.Context.GetSharedPreferences("ChatP2p", FileCreationMode.Private);
+            var prefEditor = prefs.Edit();
+            prefEditor.PutInt(key, id);
+            prefEditor.Commit();
+        }
+
+        public static void deleteId(string key)
+        {
+            var prefs = Application.Context.GetSharedPreferences("ChatP2p", FileCreationMode.Private);
+            var prefEditor = prefs.Edit();
+            prefEditor.Remove(key);
+            prefEditor.Commit();
         }
     }
  }

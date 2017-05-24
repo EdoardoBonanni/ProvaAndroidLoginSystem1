@@ -25,10 +25,10 @@ namespace ProvaAndroidLoginSystem1.Resources
     class SignInActivity : Activity
     {
         private InputMethodManager imm;
-        private TextView mtxtNickname;
-        private TextView mtxtPassword;
+        private EditText mtxtNickname;
+        private EditText mtxtPassword;
         private Button mbtnSignIn;
-
+        private TextView mTxtGoToSignUp;
         public static string CreateMD5(string input)
         {
             // Use input string to calculate MD5 hash
@@ -59,8 +59,16 @@ namespace ProvaAndroidLoginSystem1.Resources
             mtxtNickname = FindViewById<EditText>(Resource.Id.txtNicknameSignIn);
             mtxtPassword = FindViewById<EditText>(Resource.Id.txtPasswordSignIn);
             mbtnSignIn = FindViewById<Button>(Resource.Id.btnSignIn);
+            mTxtGoToSignUp = FindViewById<TextView>(Resource.Id.txtGoToSignUp);
+            mTxtGoToSignUp.Click += mTxtGoToSignUp_Click;
 
             mbtnSignIn.Click += mbtnSignIn_Click;
+        }
+
+        private void mTxtGoToSignUp_Click(object sender, EventArgs e)
+        {
+            Intent SignUp = new Intent(this, typeof(SignUpActivity));
+            this.StartActivity(SignUp);
         }
 
         async Task<HttpResponseMessage> RegisterAsync(Person person)
@@ -106,9 +114,10 @@ namespace ProvaAndroidLoginSystem1.Resources
                 var result = await response.Content.ReadAsStringAsync();
                 if (response.IsSuccessStatusCode)
                 {
-                    var jwt = JObject.Parse(result)["JWT"].ToString();
-                    Intent Home = new Intent(this, typeof(HomeActivity));
-                    this.StartActivity(Home);
+                    var id = JObject.Parse(result)["Id"].ToString();
+                    MainActivity.saveID("MyId", Convert.ToInt32(id));
+                    Intent Main = new Intent(this, typeof(MainActivity));
+                    this.StartActivity(Main);
                 }
                 else
                 {

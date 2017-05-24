@@ -16,9 +16,6 @@ using static Android.Net.Wifi.P2p.WifiP2pManager;
 
 namespace p2p_project.Resources
 {
-    /**
- * A BroadcastReceiver that notifies of important Wi-Fi p2p events.
- */
     class WiFiDirectBroadcastReceiver : BroadcastReceiver{
 
         private WifiP2pManager mManager;

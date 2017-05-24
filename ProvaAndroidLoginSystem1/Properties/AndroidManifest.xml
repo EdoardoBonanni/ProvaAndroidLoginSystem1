@@ -5,7 +5,7 @@
 		<activity android:name=".ViewDatabase" android:label="ViewDatabase"></activity>
 		<activity android:name=".SignInActivity" android:label="SignInActivity"></activity>
 	</application>
-  <uses-feature android:name="android.hardware.wifi.direct" />
+	<uses-feature android:name="android.hardware.wifi.direct" />
 	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
 	<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />

@@ -14,6 +14,7 @@ using static Android.Net.Wifi.P2p.WifiP2pManager;
 using Java.Net;
 using ProvaAndroidLoginSystem1;
 using ProvaAndroidLoginSystem1.Resources;
+using Newtonsoft.Json;
 
 namespace p2p_project.Resources
 {
@@ -39,6 +40,18 @@ namespace p2p_project.Resources
                 if (serverConnected == 1)
                 {
                     isServer = true;
+                    string packet = JsonConvert.SerializeObject(new
+                    {
+                        Type = "Id",
+                        Buffer = MainActivity.retrieveID("MyId"),
+                        Checksum = ""
+                    });
+                    /*
+                     * Type = "Message",
+                     * Buffer= "",
+                     * Checksum = ""
+                     */
+                    server.Send(packet);
                     main.changeActivity();
                 }
                 else
@@ -55,6 +68,13 @@ namespace p2p_project.Resources
                 if(clientConnected == 1)
                 {
                     isServer = false;
+                    string packet = JsonConvert.SerializeObject(new
+                    {
+                        Type = "Id",
+                        Buffer = MainActivity.retrieveID("MyId"),
+                        Checksum = ""
+                    });
+                    client.Send(packet);
                     main.changeActivity();
                 }
                 else

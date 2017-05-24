@@ -22,8 +22,8 @@ namespace ProvaAndroidLoginSystem1.Resources
         private ListView lstMessage;
         private Button btnSend;
         private EditText txtChat;
-        private SocketServer server;
-        private ClientSocket client;
+        /*private SocketServer server;
+        private ClientSocket client;*/
         private ChatAdapter chatAdapter;
         private Database database;
 
@@ -42,7 +42,9 @@ namespace ProvaAndroidLoginSystem1.Resources
             database = new Database();
             database.createTable();
 
-            List<Registro> registro = database.SelectQueryTable(1, 2);
+            int myId = MainActivity.retrieveID("MyId");
+
+            List<Registro> registro = database.SelectQueryTable(myId, MainActivity.retrieveID("ConnectedId"));
             List<Tuple<string, bool>> chat = new List<Tuple<string, bool>>();
 
             foreach (var message in registro)
@@ -52,7 +54,7 @@ namespace ProvaAndroidLoginSystem1.Resources
                 {
                     break;
                 }
-                if(message.IdMittente == 1/*Id dell'utente*/)
+                if(message.IdMittente == myId)
                 {
                     chat.Add(new Tuple<string, bool>(message.Messaggio, true));
                 }
@@ -68,16 +70,15 @@ namespace ProvaAndroidLoginSystem1.Resources
 
         public void updateChat(string text, bool mine)
         {
-            chatAdapter.update(text, mine);
-            //inserimento nel Db
             database.InsertIntoTable(new Registro
             {
-                IdMittente = mine == true ? 1 : 2/*IdProprietario : IdConnesso*/,
-                IdDestinatario = mine == false ? 1 : 2,
+                IdMittente = mine == true ? MainActivity.retrieveID("MyId"): MainActivity.retrieveID("ConnectedId"),
+                IdDestinatario = mine == false ? MainActivity.retrieveID("MyId") : MainActivity.retrieveID("ConnectedId"),
                 isFile = false,
                 Messaggio = text,
                 Orario = DateTime.Now
             });
+            chatAdapter.update(text, mine);
         }
 
         void btnSend_Click(object sender, EventArgs e)

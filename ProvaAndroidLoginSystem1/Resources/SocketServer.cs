@@ -42,9 +42,9 @@ namespace p2p_project.Resources
             return 1;
         }
 
-        public async void Send(string text)
+        public async void Send(string packet)
         {
-            byte[] data = Encoding.ASCII.GetBytes(text);
+            byte[] data = Encoding.ASCII.GetBytes(packet);
             await networkStream.WriteAsync(data, 0, data.Length);
         }
 

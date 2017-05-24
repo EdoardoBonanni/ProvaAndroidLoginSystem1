@@ -37,8 +37,8 @@ namespace p2p_project
 
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
-            var view = convertView ?? context.LayoutInflater.Inflate(Resource.Layout.Data_template_Peers_layout, parent, false);
-            var Peer = view.FindViewById<TextView>(Resource.Id.txtPeer);
+            var view = convertView ?? context.LayoutInflater.Inflate(Resource.Layout.Data_template_layout, parent, false);
+            var Peer = view.FindViewById<TextView>(Resource.Id.txtAdapter);
 
             if (chat[position] != null)
             {

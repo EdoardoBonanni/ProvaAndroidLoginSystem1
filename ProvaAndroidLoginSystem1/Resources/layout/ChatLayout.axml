@@ -2,22 +2,18 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFF">
-    <LinearLayout
-        android:id="@+id/llChatMessages"
-        android:background="#000000"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
+    android:background="#000000">
+    <ListView
+        android:id="@+id/lstMessages"
         android:minWidth="25px"
-        android:minHeight="25px">
-        <ListView
-            android:id="@+id/lstMessages"
-            android:minWidth="25px"
-            android:minHeight="25px"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
+        android:minHeight="25px"
+        android:background="@android:color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/llContainer"
+        android:layout_marginBottom="20dp"
+        android:transcriptMode="alwaysScroll"
+        android:stackFromBottom="true" />
     <LinearLayout
         android:id="@+id/llContainer"
         android:background="#FFFFFF"
@@ -29,11 +25,13 @@
             android:id="@+id/btnSend"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/lstMessages"
             android:text="Send" />
         <EditText
             android:id="@+id/txtChat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/btnSend"
             android:textColor="#000"
             android:textCursorDrawable="@null" />
     </LinearLayout>

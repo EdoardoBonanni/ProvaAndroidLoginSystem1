@@ -57,5 +57,22 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="30dp" />
         </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_below="@id/relativeLayoutButtonSignIn"
+            android:id="@+id/relativeLayoutGoToSignUp">
+            <TextView
+                android:text="Se non hai fatto il Sign Up clicca qui"
+                android:layout_marginTop="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="#368DEB"
+                android:textSize="20sp"
+                android:id="@+id/txtGoToSignUp" />
+        </RelativeLayout>
     </RelativeLayout>
 </LinearLayout>
