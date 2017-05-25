@@ -106,6 +106,7 @@
     <Compile Include="Resources\Model\HTTPClient.cs" />
     <Compile Include="Resources\Model\Person.cs" />
     <Compile Include="Resources\Model\Registro.cs" />
+    <Compile Include="Resources\PacketManager.cs" />
     <Compile Include="Resources\PeerListener.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

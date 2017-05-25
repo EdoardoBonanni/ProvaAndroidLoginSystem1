@@ -114,7 +114,7 @@ namespace ProvaAndroidLoginSystem1
         protected override void OnResume()
         {
             base.OnResume();
-            if (retrieveID("MyId") == 0)
+            /*if (retrieveID("MyId") == 0)
             {
                 Intent SignIn = new Intent(this, typeof(SignInActivity));
                 this.StartActivity(SignIn);
@@ -123,7 +123,7 @@ namespace ProvaAndroidLoginSystem1
 
             receiver = new WiFiDirectBroadcastReceiver(manager, channel, this, peerListener);
             RegisterReceiver(receiver, intentFilter);
-
+            */
             if(IsConnected)
             {
                 DisconnectP2p();
@@ -140,31 +140,31 @@ namespace ProvaAndroidLoginSystem1
         {
             manager.RemoveGroup(channel, new ActionListener("Chiusura della connessione..."));
             IsConnected = false;
-            deleteId("ConnectedId");
+            //deleteId("ConnectedId");
             manager.StopPeerDiscovery(channel, new ActionListener(""));
         }
 
-        public static int retrieveID(string key)
+        /*public static int retrieveID(string key)
         {
             var prefs = Application.Context.GetSharedPreferences("ChatP2p", FileCreationMode.Private);
             return prefs.GetInt(key, 0);
-        }
+        }*/
 
-        public static void saveID(string key, int id)
+        /*public static void saveID(string key, int id)
         {
             var prefs = Application.Context.GetSharedPreferences("ChatP2p", FileCreationMode.Private);
             var prefEditor = prefs.Edit();
             prefEditor.PutInt(key, id);
             prefEditor.Commit();
-        }
+        }*/
 
-        public static void deleteId(string key)
+        /*public static void deleteId(string key)
         {
             var prefs = Application.Context.GetSharedPreferences("ChatP2p", FileCreationMode.Private);
             var prefEditor = prefs.Edit();
             prefEditor.Remove(key);
             prefEditor.Commit();
-        }
+        }*/
     }
  }
 
