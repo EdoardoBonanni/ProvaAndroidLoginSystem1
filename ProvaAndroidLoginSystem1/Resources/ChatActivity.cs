@@ -13,6 +13,9 @@ using p2p_project;
 using p2p_project.Resources;
 using p2p_project.Resources.DataHelper;
 using p2p_project.Resources.Model;
+using Android.Telephony;
+using Newtonsoft.Json;
+using Java.Lang;
 
 namespace ProvaAndroidLoginSystem1.Resources
 {
@@ -27,6 +30,8 @@ namespace ProvaAndroidLoginSystem1.Resources
         private ChatAdapter chatAdapter;
         private Database database;
 
+        public static bool AnonymousMode { get; set; }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -39,29 +44,52 @@ namespace ProvaAndroidLoginSystem1.Resources
 
             btnSend.Click += btnSend_Click;
 
+            PacketManager.messageReceived += (sender, args, message) =>
+            {
+                RunOnUiThread(() =>
+                {
+                    updateChat(message, false);
+                });
+                /*
+                RunOnUiThread(new Runnable(
+                    public override void run()
+                    {
+                        updateChat(message, false);
+                    }
+                ));*/
+            };
+
             database = new Database();
             database.createTable();
 
-            int myId = MainActivity.retrieveID("MyId");
-
-            List<Registro> registro = database.SelectQueryTable(myId, MainActivity.retrieveID("ConnectedId"));
             List<Tuple<string, bool>> chat = new List<Tuple<string, bool>>();
 
-            foreach (var message in registro)
+            if (MainActivity.Number != null && MainActivity.retrievePhoneNumber("ConnectedPhoneNumber") != null)
             {
+                List<Registro> registro = new List<Registro>();
+                registro = database.SelectQueryTable(MainActivity.Number, MainActivity.retrievePhoneNumber("ConnectedPhoneNumber"));
 
-                if (message.isFile)
+                foreach (var message in registro)
                 {
-                    break;
+                    if (message.isFile)
+                    {
+                        break;
+                    }
+
+                    if (message.PhoneNumberMittente.Equals(MainActivity.Number))
+                    {
+                        chat.Add(new Tuple<string, bool>(message.Messaggio, true));
+                    }
+                    else
+                    {
+                        chat.Add(new Tuple<string, bool>(message.Messaggio, false));
+                    }
                 }
-                if(message.IdMittente == myId)
-                {
-                    chat.Add(new Tuple<string, bool>(message.Messaggio, true));
-                }
-                else
-                {
-                    chat.Add(new Tuple<string, bool>(message.Messaggio, false));
-                }
+            }
+            else
+            {
+                AnonymousMode = true;
+                Toast.MakeText(this, "E' attiva la modalità anonima.\nI dati non verranno salvati nel Db.", ToastLength.Long);
             }
 
             chatAdapter = new ChatAdapter(this, chat);
@@ -70,28 +98,37 @@ namespace ProvaAndroidLoginSystem1.Resources
 
         public void updateChat(string text, bool mine)
         {
-            database.InsertIntoTable(new Registro
+            if (!AnonymousMode)
             {
-                IdMittente = mine == true ? MainActivity.retrieveID("MyId"): MainActivity.retrieveID("ConnectedId"),
-                IdDestinatario = mine == false ? MainActivity.retrieveID("MyId") : MainActivity.retrieveID("ConnectedId"),
-                isFile = false,
-                Messaggio = text,
-                Orario = DateTime.Now
-            });
+                database.InsertIntoTable(new Registro
+                {
+                    PhoneNumberMittente = mine == true ? MainActivity.Number : MainActivity.retrievePhoneNumber("ConnectedPhoneNumber"),
+                    PhoneNumberDestinatario = mine == false ? MainActivity.Number : MainActivity.retrievePhoneNumber("ConnectedPhoneNumber"),
+                    isFile = false,
+                    Messaggio = text,
+                    Orario = DateTime.Now
+                });
+            }
             chatAdapter.update(text, mine);
         }
 
         void btnSend_Click(object sender, EventArgs e)
         {
+            string packet = JsonConvert.SerializeObject(new
+            {
+                Type = "Message",
+                Buffer = txtChat.Text,
+                Checksum = ""
+            });
             if (ConnectionInfoListener.isServer)
             {
                 SocketServer server = ConnectionInfoListener.Server;
-                server.Send(txtChat.Text);
+                server.Send(packet);
             }
             else
             {
                 ClientSocket client = ConnectionInfoListener.Client;
-                client.Send(txtChat.Text);
+                client.Send(packet);
             }
             updateChat(txtChat.Text, true);
             txtChat.Text = "";

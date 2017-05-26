@@ -12,19 +12,23 @@ using p2p_project.Resources;
 using Android.Net.Wifi;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Android.Telephony;
+using p2p_project.Resources.DataHelper;
 
 namespace ProvaAndroidLoginSystem1
 {
     [Activity(Label = "Chat P2P", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
-        public static HTTPClient client;
+        //public static HTTPClient client;
         private Button mBtnSearch;
         private Button mBtnCancel;
         private ListView mLstPeers;
 
         public bool IsWifiP2PEnabled { get; set; }
         public bool IsConnected { get; set; }
+
+        public static string Number { get; set; }
 
         private WifiP2pManager manager;
         private IntentFilter intentFilter;
@@ -36,7 +40,15 @@ namespace ProvaAndroidLoginSystem1
         {
             base.OnCreate(bundle);
 
-            client = new HTTPClient();
+            TelephonyManager mTelephonyMgr = (TelephonyManager)GetSystemService(TelephonyService);
+            Number = mTelephonyMgr.Line1Number;
+            //Number = "+393360954141";
+            //client = new HTTPClient();
+            
+            /*
+            Database db = new Database();
+            db.DeleteAllRowTable();
+            */
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
@@ -101,8 +113,8 @@ namespace ProvaAndroidLoginSystem1
         public void changeActivity()
         {
             IsConnected = true;
-            Intent Home = new Intent(this, typeof(HomeActivity));
-            this.StartActivity(Home);
+            Intent Chat = new Intent(this, typeof(ChatActivity));
+            this.StartActivity(Chat);
         }
 
         public void resetData()
@@ -118,12 +130,11 @@ namespace ProvaAndroidLoginSystem1
             {
                 Intent SignIn = new Intent(this, typeof(SignInActivity));
                 this.StartActivity(SignIn);
-            }
+            }*/
             peerListener = new PeerListener(this);
 
             receiver = new WiFiDirectBroadcastReceiver(manager, channel, this, peerListener);
             RegisterReceiver(receiver, intentFilter);
-            */
             if(IsConnected)
             {
                 DisconnectP2p();
@@ -140,31 +151,31 @@ namespace ProvaAndroidLoginSystem1
         {
             manager.RemoveGroup(channel, new ActionListener("Chiusura della connessione..."));
             IsConnected = false;
-            //deleteId("ConnectedId");
+            deletePhoneNumber("ConnectedPhoneNumber");
             manager.StopPeerDiscovery(channel, new ActionListener(""));
         }
 
-        /*public static int retrieveID(string key)
+        public static string retrievePhoneNumber(string key)
         {
             var prefs = Application.Context.GetSharedPreferences("ChatP2p", FileCreationMode.Private);
-            return prefs.GetInt(key, 0);
-        }*/
+            return prefs.GetString(key, null);
+        }
 
-        /*public static void saveID(string key, int id)
+        public static void savePhoneNumber(string key, string phoneNumber)
         {
             var prefs = Application.Context.GetSharedPreferences("ChatP2p", FileCreationMode.Private);
             var prefEditor = prefs.Edit();
-            prefEditor.PutInt(key, id);
+            prefEditor.PutString(key, phoneNumber);
             prefEditor.Commit();
-        }*/
+        }
 
-        /*public static void deleteId(string key)
+        public static void deletePhoneNumber(string key)
         {
             var prefs = Application.Context.GetSharedPreferences("ChatP2p", FileCreationMode.Private);
             var prefEditor = prefs.Edit();
             prefEditor.Remove(key);
             prefEditor.Commit();
-        }*/
+        }
     }
  }
 

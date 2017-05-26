@@ -32,6 +32,10 @@ namespace p2p_project.Resources
         {
             // InetAddress from WifiP2pInfo struct.
             InetAddress groupOwnerAddress = info.GroupOwnerAddress;
+            PacketManager.phoneNumberReceived += (sender, eventArgs) =>
+            {
+                main.changeActivity();
+            };
 
             if (info.IsGroupOwner)
             {
@@ -42,17 +46,11 @@ namespace p2p_project.Resources
                     isServer = true;
                     string packet = JsonConvert.SerializeObject(new
                     {
-                        Type = "Id",
-                        Buffer = MainActivity.retrieveID("MyId"),
+                        Type = "PhoneNumber",
+                        Buffer = MainActivity.Number??"",
                         Checksum = ""
                     });
-                    /*
-                     * Type = "Message",
-                     * Buffer= "",
-                     * Checksum = ""
-                     */
                     server.Send(packet);
-                    main.changeActivity();
                 }
                 else
                 {
@@ -70,12 +68,11 @@ namespace p2p_project.Resources
                     isServer = false;
                     string packet = JsonConvert.SerializeObject(new
                     {
-                        Type = "Id",
-                        Buffer = MainActivity.retrieveID("MyId"),
+                        Type = "PhoneNumber",
+                        Buffer = MainActivity.Number??"",
                         Checksum = ""
                     });
                     client.Send(packet);
-                    main.changeActivity();
                 }
                 else
                 {

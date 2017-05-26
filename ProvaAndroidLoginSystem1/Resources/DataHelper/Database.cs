@@ -121,6 +121,7 @@ namespace p2p_project.Resources.DataHelper
                 using (var connection = new SQLiteConnection(System.IO.Path.Combine(folder, "ChatP2p.db")))
                 {
                     connection.DeleteAll<Registro>();
+                    connection.DropTable<Registro>();
                     return true;
                 }
             }
@@ -131,21 +132,21 @@ namespace p2p_project.Resources.DataHelper
             }
         }
 
-        public List<Registro> SelectQueryTable(int Propietario, int Connesso)
+        public List<Registro> SelectQueryTable(string Propietario, string Connesso)
         {
             try
             {
                 using (var connection = new SQLiteConnection(System.IO.Path.Combine(folder, "ChatP2p.db")))
                 {
-                    List<Registro> mittente = connection.Query<Registro>("Select * From Registro Where IdMittente=? AND IdDestinatario=?", Propietario, Connesso);
-                    List<Registro> destinatario = connection.Query<Registro>("Select * From Registro Where IdMittente=? AND IdDestinatario=?", Connesso, Propietario);
+                    List<Registro> mittente = connection.Query<Registro>("Select * From Registro Where PhoneNumberMittente=? AND PhoneNumberDestinatario=?", Propietario, Connesso);
+                    List<Registro> destinatario = connection.Query<Registro>("Select * From Registro Where PhoneNumberMittente=? AND PhoneNumberDestinatario=?", Connesso, Propietario);
                     return mittente.Concat<Registro>(destinatario).ToList();
                 }
             }
             catch (SQLiteException ex)
             {
                 //Log.Info("SQLiteException", ex.Message);
-                return null;
+                return new List<Registro>();
             }
         }
     }

@@ -24,8 +24,7 @@ namespace p2p_project.Resources
         private TcpClient client;
         private NetworkStream networkStream;
         private Thread receive;
-        private ChatActivity chatActivity;
-        //PacketManager
+        private PacketManager packetManager;
 
         public ClientSocket(InetAddress ip)
         {
@@ -48,7 +47,7 @@ namespace p2p_project.Resources
             }
             
             networkStream = client.GetStream();
-
+            packetManager = new PacketManager();
             receive = new Thread(Receive);
             receive.Start();
             return 1;
@@ -76,6 +75,7 @@ namespace p2p_project.Resources
             if(responseCount > 0)
             {
                 string buff = System.Text.Encoding.ASCII.GetString(data, 0, responseCount);
+                packetManager.Unpack(buff);
                 networkStream.BeginRead(data, 0, data.Length, new AsyncCallback(receiveCallback), data);
             }
         }

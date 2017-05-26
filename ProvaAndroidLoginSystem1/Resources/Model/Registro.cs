@@ -18,9 +18,9 @@ namespace p2p_project.Resources.Model
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
 
-        public int IdMittente { get; set; }
+        public string PhoneNumberMittente { get; set; }
 
-        public int IdDestinatario { get; set; }
+        public string PhoneNumberDestinatario { get; set; }
 
         public bool isFile { get; set; }
 

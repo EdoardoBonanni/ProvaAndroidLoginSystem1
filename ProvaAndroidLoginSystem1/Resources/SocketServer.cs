@@ -24,7 +24,7 @@ namespace p2p_project.Resources
         private TcpClient client;
         private NetworkStream networkStream;
         private Thread receive;
-
+        private PacketManager packetManager;
         public int Connect()
         {
             serverSocket = new TcpListener(IPAddress.Any, port);
@@ -37,6 +37,7 @@ namespace p2p_project.Resources
             }
             client = serverSocket.EndAcceptTcpClient(result);
             networkStream = client.GetStream();
+            packetManager = new PacketManager();
             receive = new Thread(Receive);
             receive.Start();
             return 1;
@@ -57,13 +58,14 @@ namespace p2p_project.Resources
             networkStream.BeginRead(data, 0, data.Length, new AsyncCallback(receiveCallback), data);
         }
 
-        public void receiveCallback(IAsyncResult res)
+        private void receiveCallback(IAsyncResult res)
         {
             byte[] data = (byte[])res.AsyncState;
             int responseCount = networkStream.EndRead(res);
             if (responseCount > 0)
             {
                 string buff = System.Text.Encoding.ASCII.GetString(data, 0, responseCount);
+                packetManager.Unpack(buff);
                 networkStream.BeginRead(data, 0, data.Length, new AsyncCallback(receiveCallback), data);
             }
         }

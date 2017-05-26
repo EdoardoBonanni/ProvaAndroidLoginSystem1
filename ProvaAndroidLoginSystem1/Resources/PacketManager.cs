@@ -10,11 +10,29 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Newtonsoft.Json;
+using ProvaAndroidLoginSystem1;
+using ProvaAndroidLoginSystem1.Resources;
 
 namespace p2p_project.Resources
 {
+    public delegate void MessageEventHandler(object sender, EventArgs e, string message);
+    public delegate void PhoneNumberEventHandler(object sender, EventArgs e);
+
     class PacketManager
     {
+        public static event MessageEventHandler messageReceived;
+        public static event PhoneNumberEventHandler phoneNumberReceived;
+
+        protected virtual void OnMessageReceived(EventArgs e, string message)
+        {
+            messageReceived?.Invoke(this, e, message);
+        }
+
+        protected virtual void OnPhoneNumberReceived(EventArgs e)
+        {
+            phoneNumberReceived?.Invoke(this, e);
+        }
+
         public object Unpack(string packet)
         {
             dynamic a = JsonConvert.DeserializeObject<dynamic>(packet);
@@ -22,17 +40,18 @@ namespace p2p_project.Resources
             switch (type)
             {
                 case "PhoneNumber":
-                    //MainActivity.saveId("ConnectedPhoneNumber", a.Buffer);
-                    Console.WriteLine("Il numero di telefono del peer connesso è: " + a.Buffer);
+                    if(a.Buffer != "")
+                    {
+                        string phoneNumber = a.Buffer;
+                        MainActivity.savePhoneNumber("ConnectedPhoneNumber", phoneNumber);
+                    }
+                    OnPhoneNumberReceived(EventArgs.Empty);
                     break;
                 case "Message":
-                    //Inserimento nel Db
-                    Console.WriteLine("Il messaggio ricevuto è: " + a.Buffer);
+                    string message = a.Buffer;
+                    OnMessageReceived(EventArgs.Empty, message);
                     break;
                 case "File":
-                    break;
-                case "Anonymous":
-                    //Setta variabile boolean a true, accessibile da ovunque
                     break;
                 default:
                     //Errore
