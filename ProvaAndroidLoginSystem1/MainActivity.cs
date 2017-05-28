@@ -42,9 +42,10 @@ namespace ProvaAndroidLoginSystem1
 
             TelephonyManager mTelephonyMgr = (TelephonyManager)GetSystemService(TelephonyService);
             Number = mTelephonyMgr.Line1Number;
-            //Number = "+393360954141";
+            //Number = "+398526547496";
+
             //client = new HTTPClient();
-            
+
             /*
             Database db = new Database();
             db.DeleteAllRowTable();

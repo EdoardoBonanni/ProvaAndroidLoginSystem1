@@ -10,8 +10,6 @@ C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\Prov
 C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Debug\SQLite-net.xml
 C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Debug\SQLite-net.dll.mdb
 C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\ProvaAndroidLoginSystem1.csprojResolveAssemblyReference.cache
-C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\res\layout\dialog_sign_up.xml
-C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\res\layout\signinlayout.xml
 C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\res\layout\homelayout.xml
 C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\res\layout\chatlayout.xml
 C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\res\layout\main.xml
@@ -136,9 +134,9 @@ C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\Prov
 C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\p2p project.dll
 C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\p2p project.pdb
 C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\android\bin\p2p.p2p.apk
-C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\res\layout\data_template_peers_layout.xml
 C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Debug\p2p project.dll.mdb
 C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\android\assets\p2p project.dll.mdb
 C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\res\layout\data_template_layout.xml
 C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\p2p project.dll.mdb
-C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Debug\p2p project.dll.mdb
+C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\res\layout\data_template_layout.xml
+C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\res\layout\chat_template_layout.xml

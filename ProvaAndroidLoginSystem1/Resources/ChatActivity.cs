@@ -16,6 +16,7 @@ using p2p_project.Resources.Model;
 using Android.Telephony;
 using Newtonsoft.Json;
 using Java.Lang;
+using Android.Content.Res;
 
 namespace ProvaAndroidLoginSystem1.Resources
 {
@@ -50,21 +51,14 @@ namespace ProvaAndroidLoginSystem1.Resources
                 {
                     updateChat(message, false);
                 });
-                /*
-                RunOnUiThread(new Runnable(
-                    public override void run()
-                    {
-                        updateChat(message, false);
-                    }
-                ));*/
             };
 
             database = new Database();
             database.createTable();
 
-            List<Tuple<string, bool>> chat = new List<Tuple<string, bool>>();
+            List<Tuple<Registro, bool>> chat = new List<Tuple<Registro, bool>>();
 
-            if (MainActivity.Number != null && MainActivity.retrievePhoneNumber("ConnectedPhoneNumber") != null)
+            if (!MainActivity.Number.Equals("") && MainActivity.Number != null && MainActivity.retrievePhoneNumber("ConnectedPhoneNumber") != null)
             {
                 List<Registro> registro = new List<Registro>();
                 registro = database.SelectQueryTable(MainActivity.Number, MainActivity.retrievePhoneNumber("ConnectedPhoneNumber"));
@@ -78,18 +72,24 @@ namespace ProvaAndroidLoginSystem1.Resources
 
                     if (message.PhoneNumberMittente.Equals(MainActivity.Number))
                     {
-                        chat.Add(new Tuple<string, bool>(message.Messaggio, true));
+                        chat.Add(new Tuple<Registro, bool>(message, true));
                     }
                     else
                     {
-                        chat.Add(new Tuple<string, bool>(message.Messaggio, false));
+                        chat.Add(new Tuple<Registro, bool>(message, false));
                     }
                 }
             }
             else
             {
                 AnonymousMode = true;
-                Toast.MakeText(this, "E' attiva la modalità anonima.\nI dati non verranno salvati nel Db.", ToastLength.Long);
+                new AlertDialog.Builder(this)
+                .SetPositiveButton("OK", (sender, args) => { })
+                .SetMessage("E' attiva la modalità anonima.\nI dati non verranno salvati nel Database.")
+                .SetTitle("Warning")
+                .Show();
+
+                //alert.SetView(LayoutInflater.Inflate(Resource.Layout.dialog_sign_up, null));
             }
 
             chatAdapter = new ChatAdapter(this, chat);
