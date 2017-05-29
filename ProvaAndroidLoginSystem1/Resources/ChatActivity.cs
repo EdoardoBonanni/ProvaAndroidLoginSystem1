@@ -31,8 +31,6 @@ namespace ProvaAndroidLoginSystem1.Resources
         private ChatAdapter chatAdapter;
         private Database database;
 
-        public static bool AnonymousMode { get; set; }
-
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -57,40 +55,33 @@ namespace ProvaAndroidLoginSystem1.Resources
             database.createTable();
 
             List<Tuple<Registro, bool>> chat = new List<Tuple<Registro, bool>>();
+            
+            List<Registro> registro = new List<Registro>();
+            registro = database.SelectQueryTable(MainActivity.retrieveLocal("Username"), MainActivity.retrieveLocal("ConnectedUsername"));
 
-            if (!MainActivity.Number.Equals("") && MainActivity.Number != null && MainActivity.retrievePhoneNumber("ConnectedPhoneNumber") != null)
+            foreach (var message in registro)
             {
-                List<Registro> registro = new List<Registro>();
-                registro = database.SelectQueryTable(MainActivity.Number, MainActivity.retrievePhoneNumber("ConnectedPhoneNumber"));
-
-                foreach (var message in registro)
+                if (message.isFile)
                 {
-                    if (message.isFile)
-                    {
-                        break;
-                    }
+                    break;
+                }
 
-                    if (message.PhoneNumberMittente.Equals(MainActivity.Number))
-                    {
-                        chat.Add(new Tuple<Registro, bool>(message, true));
-                    }
-                    else
-                    {
-                        chat.Add(new Tuple<Registro, bool>(message, false));
-                    }
+                if (message.UsernameMittente.Equals(MainActivity.retrieveLocal("Username")))
+                {
+                    chat.Add(new Tuple<Registro, bool>(message, true));
+                }
+                else
+                {
+                    chat.Add(new Tuple<Registro, bool>(message, false));
                 }
             }
-            else
-            {
-                AnonymousMode = true;
-                new AlertDialog.Builder(this)
-                .SetPositiveButton("OK", (sender, args) => { })
+            /*new AlertDialog.Builder(this)
+                .SetPositiveButton("OK", delegate { })
                 .SetMessage("E' attiva la modalità anonima.\nI dati non verranno salvati nel Database.")
                 .SetTitle("Warning")
-                .Show();
+                .Show();*/
 
                 //alert.SetView(LayoutInflater.Inflate(Resource.Layout.dialog_sign_up, null));
-            }
 
             chatAdapter = new ChatAdapter(this, chat);
             lstMessage.Adapter = chatAdapter;
@@ -98,17 +89,14 @@ namespace ProvaAndroidLoginSystem1.Resources
 
         public void updateChat(string text, bool mine)
         {
-            if (!AnonymousMode)
+            database.InsertIntoTable(new Registro
             {
-                database.InsertIntoTable(new Registro
-                {
-                    PhoneNumberMittente = mine == true ? MainActivity.Number : MainActivity.retrievePhoneNumber("ConnectedPhoneNumber"),
-                    PhoneNumberDestinatario = mine == false ? MainActivity.Number : MainActivity.retrievePhoneNumber("ConnectedPhoneNumber"),
-                    isFile = false,
-                    Messaggio = text,
-                    Orario = DateTime.Now
-                });
-            }
+                UsernameMittente = mine == true ? MainActivity.retrieveLocal("Username") : MainActivity.retrieveLocal("ConnectedUsername"),
+                UsernameDestinatario = mine == false ? MainActivity.retrieveLocal("Username") : MainActivity.retrieveLocal("ConnectedUsername"),
+                isFile = false,
+                Messaggio = text,
+                Orario = DateTime.Now
+            });
             chatAdapter.update(text, mine);
         }
 

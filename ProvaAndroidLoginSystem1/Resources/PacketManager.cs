@@ -16,21 +16,21 @@ using ProvaAndroidLoginSystem1.Resources;
 namespace p2p_project.Resources
 {
     public delegate void MessageEventHandler(object sender, EventArgs e, string message);
-    public delegate void PhoneNumberEventHandler(object sender, EventArgs e);
+    public delegate void UsernameEventHandler(object sender, EventArgs e);
 
     class PacketManager
     {
         public static event MessageEventHandler messageReceived;
-        public static event PhoneNumberEventHandler phoneNumberReceived;
+        public static event UsernameEventHandler usernameReceived;
 
         protected virtual void OnMessageReceived(EventArgs e, string message)
         {
             messageReceived?.Invoke(this, e, message);
         }
 
-        protected virtual void OnPhoneNumberReceived(EventArgs e)
+        protected virtual void OnUsernameReceived(EventArgs e)
         {
-            phoneNumberReceived?.Invoke(this, e);
+            usernameReceived?.Invoke(this, e);
         }
 
         public object Unpack(string packet)
@@ -39,13 +39,13 @@ namespace p2p_project.Resources
             string type = a.Type;
             switch (type)
             {
-                case "PhoneNumber":
+                case "Username":
                     if(a.Buffer != "")
                     {
-                        string phoneNumber = a.Buffer;
-                        MainActivity.savePhoneNumber("ConnectedPhoneNumber", phoneNumber);
+                        string Username = a.Buffer;
+                        MainActivity.saveLocal("ConnectedUsername", Username);
                     }
-                    OnPhoneNumberReceived(EventArgs.Empty);
+                    OnUsernameReceived(EventArgs.Empty);
                     break;
                 case "Message":
                     string message = a.Buffer;
@@ -60,7 +60,7 @@ namespace p2p_project.Resources
             return null;
         }
 
-        public void PackNumber(string phoneNumber)
+        public void PackUsername(string username)
         {
 
         }

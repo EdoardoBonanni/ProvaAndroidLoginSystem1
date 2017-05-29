@@ -29,6 +29,13 @@ namespace p2p_project
             return position;
         }
 
+        public void update(List<WifiP2pDevice> list)
+        {
+            this.peers.Clear();
+            this.peers.AddRange(list);
+            NotifyDataSetChanged();
+        }
+
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
             var view = convertView ?? dialog.LayoutInflater.Inflate(Resource.Layout.Data_template_layout, parent, false);

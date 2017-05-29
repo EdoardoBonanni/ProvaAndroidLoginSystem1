@@ -15,16 +15,8 @@ namespace ProvaAndroidLoginSystem1.Resources.Model
 {
     public class Person
     {
-        [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
-
-        public string Firstname { get; set; }
-
-        [Unique]
-        public string Nickname { get; set; }
+        public string Username { get; set; }
 
         public string Password { get; set; }
-
-        public Person() { }
     }
 }

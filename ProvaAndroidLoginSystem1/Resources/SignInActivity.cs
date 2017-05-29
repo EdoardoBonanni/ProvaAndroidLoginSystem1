@@ -25,10 +25,11 @@ namespace ProvaAndroidLoginSystem1.Resources
     class SignInActivity : Activity
     {
         private InputMethodManager imm;
-        private EditText mtxtNickname;
+        private EditText mtxtUsername;
         private EditText mtxtPassword;
         private Button mbtnSignIn;
-        private TextView mTxtGoToSignUp;
+        private bool isBackup;
+
         public static string CreateMD5(string input)
         {
             // Use input string to calculate MD5 hash
@@ -56,19 +57,13 @@ namespace ProvaAndroidLoginSystem1.Resources
 
             imm = (InputMethodManager)GetSystemService(Context.InputMethodService);
             
-            mtxtNickname = FindViewById<EditText>(Resource.Id.txtNicknameSignIn);
+            mtxtUsername = FindViewById<EditText>(Resource.Id.txtNicknameSignIn);
             mtxtPassword = FindViewById<EditText>(Resource.Id.txtPasswordSignIn);
             mbtnSignIn = FindViewById<Button>(Resource.Id.btnSignIn);
-            mTxtGoToSignUp = FindViewById<TextView>(Resource.Id.txtGoToSignUp);
-            mTxtGoToSignUp.Click += mTxtGoToSignUp_Click;
 
             mbtnSignIn.Click += mbtnSignIn_Click;
-        }
 
-        private void mTxtGoToSignUp_Click(object sender, EventArgs e)
-        {
-            Intent SignUp = new Intent(this, typeof(SignUpActivity));
-            this.StartActivity(SignUp);
+            isBackup = Intent.GetBooleanExtra("Backup", false);
         }
 
         async Task<HttpResponseMessage> RegisterAsync(Person person)
@@ -79,7 +74,7 @@ namespace ProvaAndroidLoginSystem1.Resources
             var content = new FormUrlEncodedContent(new[]
             {
                 new KeyValuePair<string, string>("method", "login"),
-                new KeyValuePair<string, string>("Nickname", person.Nickname),
+                new KeyValuePair<string, string>("Nickname", person.Username),
                 new KeyValuePair<string, string>("Password", person.Password)
             });
 
@@ -103,19 +98,21 @@ namespace ProvaAndroidLoginSystem1.Resources
             {
                 Person person = new Person()
                 {
-                    Nickname = mtxtNickname.Text,
+                    Username = mtxtUsername.Text,
                     Password = CreateMD5(mtxtPassword.Text)
                 };
 
-                imm.HideSoftInputFromWindow(mtxtNickname.WindowToken, 0);
+                imm.HideSoftInputFromWindow(mtxtUsername.WindowToken, 0);
                 imm.HideSoftInputFromWindow(mtxtPassword.WindowToken, 0);
 
                 var response = await RegisterAsync(person);
                 var result = await response.Content.ReadAsStringAsync();
                 if (response.IsSuccessStatusCode)
                 {
-                    var id = JObject.Parse(result)["Id"].ToString();
-                    MainActivity.saveID("MyId", Convert.ToInt32(id));
+                    if (isBackup)
+                    {
+                        //Push on server
+                    }
                     Intent Main = new Intent(this, typeof(MainActivity));
                     this.StartActivity(Main);
                 }

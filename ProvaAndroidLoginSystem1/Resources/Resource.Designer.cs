@@ -91,11 +91,11 @@ namespace p2p_project
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f07000c
-			public const int btnCancelSearch = 2131165196;
+			// aapt resource value: 0x7f070011
+			public const int btnCancelSearch = 2131165201;
 			
-			// aapt resource value: 0x7f07000b
-			public const int btnP2pSearch = 2131165195;
+			// aapt resource value: 0x7f070010
+			public const int btnP2pSearch = 2131165200;
 			
 			// aapt resource value: 0x7f070005
 			public const int btnSend = 2131165189;
@@ -103,11 +103,17 @@ namespace p2p_project
 			// aapt resource value: 0x7f070004
 			public const int btnSendFile = 2131165188;
 			
-			// aapt resource value: 0x7f07000a
-			public const int btnSendFileHome = 2131165194;
+			// aapt resource value: 0x7f07000f
+			public const int btnSendFileHome = 2131165199;
 			
-			// aapt resource value: 0x7f070008
-			public const int btnSendMessageHome = 2131165192;
+			// aapt resource value: 0x7f07000d
+			public const int btnSendMessageHome = 2131165197;
+			
+			// aapt resource value: 0x7f070015
+			public const int btnSignIn = 2131165205;
+			
+			// aapt resource value: 0x7f07000a
+			public const int btnSignUp = 2131165194;
 			
 			// aapt resource value: 0x7f070003
 			public const int llContainer = 2131165187;
@@ -115,8 +121,8 @@ namespace p2p_project
 			// aapt resource value: 0x7f070002
 			public const int lstMessages = 2131165186;
 			
-			// aapt resource value: 0x7f07000d
-			public const int lstPeers = 2131165197;
+			// aapt resource value: 0x7f070012
+			public const int lstPeers = 2131165202;
 			
 			// aapt resource value: 0x7f070000
 			public const int txtAdapter = 2131165184;
@@ -125,13 +131,31 @@ namespace p2p_project
 			public const int txtChat = 2131165190;
 			
 			// aapt resource value: 0x7f070009
-			public const int txtORHome = 2131165193;
+			public const int txtConfermaPassword = 2131165193;
+			
+			// aapt resource value: 0x7f07000b
+			public const int txtGoToSignIn = 2131165195;
+			
+			// aapt resource value: 0x7f070007
+			public const int txtNickname = 2131165191;
+			
+			// aapt resource value: 0x7f070013
+			public const int txtNicknameSignIn = 2131165203;
+			
+			// aapt resource value: 0x7f07000e
+			public const int txtORHome = 2131165198;
 			
 			// aapt resource value: 0x7f070001
 			public const int txtOrario = 2131165185;
 			
-			// aapt resource value: 0x7f070007
-			public const int txtSelectActivity = 2131165191;
+			// aapt resource value: 0x7f070008
+			public const int txtPassword = 2131165192;
+			
+			// aapt resource value: 0x7f070014
+			public const int txtPasswordSignIn = 2131165204;
+			
+			// aapt resource value: 0x7f07000c
+			public const int txtSelectActivity = 2131165196;
 			
 			static Id()
 			{
@@ -156,10 +180,16 @@ namespace p2p_project
 			public const int Data_template_layout = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int HomeLayout = 2130903043;
+			public const int dialog_sign_up = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int Main = 2130903044;
+			public const int HomeLayout = 2130903044;
+			
+			// aapt resource value: 0x7f030005
+			public const int Main = 2130903045;
+			
+			// aapt resource value: 0x7f030006
+			public const int SignInLayout = 2130903046;
 			
 			static Layout()
 			{

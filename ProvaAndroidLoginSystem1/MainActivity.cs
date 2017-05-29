@@ -20,7 +20,7 @@ namespace ProvaAndroidLoginSystem1
     [Activity(Label = "Chat P2P", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
-        //public static HTTPClient client;
+        public static HTTPClient client;
         private Button mBtnSearch;
         private Button mBtnCancel;
         private ListView mLstPeers;
@@ -28,23 +28,24 @@ namespace ProvaAndroidLoginSystem1
         public bool IsWifiP2PEnabled { get; set; }
         public bool IsConnected { get; set; }
 
-        public static string Number { get; set; }
+        //public static string Number { get; set; }
 
         private WifiP2pManager manager;
         private IntentFilter intentFilter;
         private WifiP2pManager.Channel channel;
         private BroadcastReceiver receiver;
         private PeerListener peerListener;
+        private PeersAdapter peersAdapter;
 
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-
+            /*
             TelephonyManager mTelephonyMgr = (TelephonyManager)GetSystemService(TelephonyService);
             Number = mTelephonyMgr.Line1Number;
-            //Number = "+398526547496";
+            //Number = "+398526547496";*/
 
-            //client = new HTTPClient();
+            client = new HTTPClient();
 
             /*
             Database db = new Database();
@@ -71,6 +72,9 @@ namespace ProvaAndroidLoginSystem1
 
             manager = (WifiP2pManager)GetSystemService(WifiP2pService);
             channel = manager.Initialize(this, MainLooper, null);
+
+            peersAdapter = new PeersAdapter(this, new List<WifiP2pDevice>());
+            mLstPeers.Adapter = peersAdapter;
         }
 
         private void mLstPeers_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
@@ -108,7 +112,7 @@ namespace ProvaAndroidLoginSystem1
 
         public void notifyAdapter()
         {
-            mLstPeers.Adapter = new PeersAdapter(this, peerListener.Peers);
+            peersAdapter.update(peerListener.Peers);
         }
 
         public void changeActivity()
@@ -121,21 +125,24 @@ namespace ProvaAndroidLoginSystem1
         public void resetData()
         {
             peerListener.Peers = new List<WifiP2pDevice>();
-            this.notifyAdapter();
+            notifyAdapter();
         }
 
         protected override void OnResume()
         {
             base.OnResume();
-            /*if (retrieveID("MyId") == 0)
+
+            if (string.IsNullOrEmpty(retrieveLocal("Username")))
             {
-                Intent SignIn = new Intent(this, typeof(SignInActivity));
-                this.StartActivity(SignIn);
-            }*/
+                Intent SignUp = new Intent(this, typeof(SignUpActivity));
+                this.StartActivity(SignUp);
+            }
+
             peerListener = new PeerListener(this);
 
             receiver = new WiFiDirectBroadcastReceiver(manager, channel, this, peerListener);
             RegisterReceiver(receiver, intentFilter);
+
             if(IsConnected)
             {
                 DisconnectP2p();
@@ -152,25 +159,25 @@ namespace ProvaAndroidLoginSystem1
         {
             manager.RemoveGroup(channel, new ActionListener("Chiusura della connessione..."));
             IsConnected = false;
-            deletePhoneNumber("ConnectedPhoneNumber");
+            deleteLocal("ConnectedUsername");
             manager.StopPeerDiscovery(channel, new ActionListener(""));
         }
 
-        public static string retrievePhoneNumber(string key)
+        public static string retrieveLocal(string key)
         {
             var prefs = Application.Context.GetSharedPreferences("ChatP2p", FileCreationMode.Private);
             return prefs.GetString(key, null);
         }
 
-        public static void savePhoneNumber(string key, string phoneNumber)
+        public static void saveLocal(string key, string username)
         {
             var prefs = Application.Context.GetSharedPreferences("ChatP2p", FileCreationMode.Private);
             var prefEditor = prefs.Edit();
-            prefEditor.PutString(key, phoneNumber);
+            prefEditor.PutString(key, username);
             prefEditor.Commit();
         }
 
-        public static void deletePhoneNumber(string key)
+        public static void deleteLocal(string key)
         {
             var prefs = Application.Context.GetSharedPreferences("ChatP2p", FileCreationMode.Private);
             var prefEditor = prefs.Edit();

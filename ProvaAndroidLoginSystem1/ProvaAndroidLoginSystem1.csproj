@@ -103,11 +103,14 @@
     <Compile Include="Resources\ConnectionInfoListener.cs" />
     <Compile Include="Resources\DataHelper\Database.cs" />
     <Compile Include="Resources\Model\HTTPClient.cs" />
+    <Compile Include="Resources\Model\Person.cs" />
     <Compile Include="Resources\Model\Registro.cs" />
     <Compile Include="Resources\PacketManager.cs" />
     <Compile Include="Resources\PeerListener.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\SignInActivity.cs" />
+    <Compile Include="Resources\SignUpActivity.cs" />
     <Compile Include="Resources\SocketServer.cs" />
     <Compile Include="Resources\WiFiDirectBroadcastReceiver.cs" />
   </ItemGroup>
@@ -128,6 +131,8 @@
     <AndroidResource Include="Resources\layout\Chat_template_layout.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\dialog_sign_up.axml" />
+    <AndroidResource Include="Resources\layout\SignInLayout.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml">

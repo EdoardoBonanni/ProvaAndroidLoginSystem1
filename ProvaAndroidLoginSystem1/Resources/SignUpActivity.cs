@@ -24,11 +24,13 @@ namespace ProvaAndroidLoginSystem1.Resources
     [Activity(Label = "SignUp")]
     class SignUpActivity : Activity
     {
-        private EditText mtxtFirstName;
-        private EditText mtxtNickname;
+        private EditText mtxtUsername;
         private EditText mtxtPassword;
+        private EditText mtxtConfirmPassword;
         private Button mbtnSignUp;
+        private TextView mtxtGoToSignIn;
         private InputMethodManager imm;
+        private bool isBackup;
 
         public static string CreateMD5(string input)
         {
@@ -56,12 +58,16 @@ namespace ProvaAndroidLoginSystem1.Resources
 
             imm = (InputMethodManager)GetSystemService(Context.InputMethodService);
 
-            mtxtFirstName = FindViewById<EditText>(Resource.Id.txtFirstName);
-            mtxtNickname = FindViewById<EditText>(Resource.Id.txtNickname);
+            mtxtUsername = FindViewById<EditText>(Resource.Id.txtNickname);
             mtxtPassword = FindViewById<EditText>(Resource.Id.txtPassword);
+            mtxtConfirmPassword = FindViewById<EditText>(Resource.Id.txtConfermaPassword);
             mbtnSignUp = FindViewById<Button>(Resource.Id.btnSignUp);
+            mtxtGoToSignIn = FindViewById<TextView>(Resource.Id.txtGoToSignIn);
 
             mbtnSignUp.Click += mbtnSignUp_Click;
+            mtxtGoToSignIn.Click += mTxtGoToSignIn_Click;
+
+            isBackup = Intent.GetBooleanExtra("Backup", false);
 
             base.OnCreate(bundle);
         }
@@ -73,8 +79,7 @@ namespace ProvaAndroidLoginSystem1.Resources
             var content = new FormUrlEncodedContent(new[]
             {
                 new KeyValuePair<string, string>("method", "register"),
-                new KeyValuePair<string, string>("Firstname", person.Firstname),
-                new KeyValuePair<string, string>("Nickname", person.Nickname),
+                new KeyValuePair<string, string>("Username", person.Username),
                 new KeyValuePair<string, string>("Password", person.Password)
             });
 
@@ -96,29 +101,38 @@ namespace ProvaAndroidLoginSystem1.Resources
         {
             try
             {
-                if(mtxtFirstName.Text.Equals("") || this.mtxtNickname.Text.Equals("") || this.mtxtPassword.Text.Equals(""))
+                if(this.mtxtUsername.Text.Equals("") || this.mtxtPassword.Text.Equals("") || this.mtxtConfirmPassword.Equals(""))
                 {
-                    Toast.MakeText(this, "All the textboxs must be filled", ToastLength.Long).Show();
+                    Toast.MakeText(this, "Devi completare tutti i campi", ToastLength.Long).Show();
                     return;
                 }
+                else if (!mtxtPassword.Text.Equals(mtxtConfirmPassword.Text))
+                {
+                    Toast.MakeText(this, "Il campo Conferma password deve essere uguale al campo Password", ToastLength.Long).Show();
+                    return;
+                }
+
                 Person person = new Person()
                 {
-                    Firstname = mtxtFirstName.Text,
-                    Nickname = mtxtNickname.Text,
+                    Username = mtxtUsername.Text,
                     Password = CreateMD5(mtxtPassword.Text)
                 };
 
-                imm.HideSoftInputFromWindow(mtxtFirstName.WindowToken, 0);
-                imm.HideSoftInputFromWindow(mtxtNickname.WindowToken, 0);
+                imm.HideSoftInputFromWindow(mtxtUsername.WindowToken, 0);
                 imm.HideSoftInputFromWindow(mtxtPassword.WindowToken, 0);
+                imm.HideSoftInputFromWindow(mtxtConfirmPassword.WindowToken, 0);
 
                 var response = await RegisterAsync(person);
                 var result = await response.Content.ReadAsStringAsync();
                 if (response.IsSuccessStatusCode)
                 {
-                    var jwt = JObject.Parse(result)["JWT"].ToString();
-                    Intent Home = new Intent(this, typeof(HomeActivity));
-                    this.StartActivity(Home);
+                    MainActivity.saveLocal("Username", person.Username);
+                    if (isBackup)
+                    {
+                        //Push on server
+                    }
+                    Intent main = new Intent(this, typeof(MainActivity));
+                    this.StartActivity(main);
                 }
                 else
                 {
@@ -129,6 +143,16 @@ namespace ProvaAndroidLoginSystem1.Resources
             catch (Exception ex) {
                 Console.WriteLine(ex.InnerException);
             }
+        }
+
+        private void mTxtGoToSignIn_Click(object sender, EventArgs e)
+        {
+            Intent SignIn = new Intent(this, typeof(SignInActivity));
+            if (isBackup)
+            {
+                SignIn.PutExtra("Backup", true);
+            }
+            this.StartActivity(SignIn);
         }
     }
 }

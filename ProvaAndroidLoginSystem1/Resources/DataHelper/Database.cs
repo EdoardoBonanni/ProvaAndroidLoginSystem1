@@ -138,8 +138,8 @@ namespace p2p_project.Resources.DataHelper
             {
                 using (var connection = new SQLiteConnection(System.IO.Path.Combine(folder, "ChatP2p.db")))
                 {
-                    List<Registro> mittente = connection.Query<Registro>("Select * From Registro Where PhoneNumberMittente=? AND PhoneNumberDestinatario=?", Propietario, Connesso);
-                    List<Registro> destinatario = connection.Query<Registro>("Select * From Registro Where PhoneNumberMittente=? AND PhoneNumberDestinatario=?", Connesso, Propietario);
+                    List<Registro> mittente = connection.Query<Registro>("Select * From Registro Where UsernameMittente=? AND UsernameDestinatario=?", Propietario, Connesso);
+                    List<Registro> destinatario = connection.Query<Registro>("Select * From Registro Where UsernameMittente=? AND UsernameDestinatario=?", Connesso, Propietario);
                     return mittente.Concat<Registro>(destinatario).ToList();
                 }
             }
