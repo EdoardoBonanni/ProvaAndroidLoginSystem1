@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 
 namespace p2p_project.Resources
 {
-    class SocketServer
+    class SocketServer : ISocket
     {
         private readonly int port = 9876;
         private TcpListener serverSocket;
@@ -58,7 +58,7 @@ namespace p2p_project.Resources
             networkStream.BeginRead(data, 0, data.Length, new AsyncCallback(receiveCallback), data);
         }
 
-        private void receiveCallback(IAsyncResult res)
+        public void receiveCallback(IAsyncResult res)
         {
             byte[] data = (byte[])res.AsyncState;
             int responseCount = networkStream.EndRead(res);

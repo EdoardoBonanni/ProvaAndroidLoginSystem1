@@ -60,19 +60,29 @@ namespace p2p_project.Resources
             return null;
         }
 
-        public void PackUsername(string username)
+        public static string PackUsername(string username)
         {
-
+            return JsonConvert.SerializeObject(new
+                {
+                    Type = "Username",
+                    Buffer = MainActivity.retrieveLocal("Username") ?? "",
+                    Checksum = ""
+                });
         }
 
-        public void PackMessage(string message)
+        public static string PackMessage(string message)
         {
-
+            return JsonConvert.SerializeObject(new
+                {
+                    Type = "Message",
+                    Buffer = message,
+                    Checksum = ""
+                });
         }
 
-        public void PackFile()
+        public static string PackFile()
         {
-
+            return "";
         }
     }
 }

@@ -21,8 +21,7 @@ namespace p2p_project.Resources
     class ConnectionInfoListener : Java.Lang.Object, IConnectionInfoListener
     {
         private MainActivity main;
-        private static SocketServer server;
-        private static ClientSocket client;
+        private static ISocket socket;
         public ConnectionInfoListener(MainActivity main)
         {
             this.main = main;
@@ -32,6 +31,7 @@ namespace p2p_project.Resources
         {
             // InetAddress from WifiP2pInfo struct.
             InetAddress groupOwnerAddress = info.GroupOwnerAddress;
+
             PacketManager.usernameReceived += delegate
             {
                 main.changeActivity();
@@ -39,54 +39,27 @@ namespace p2p_project.Resources
 
             if (info.IsGroupOwner)
             {
-                server = new SocketServer();
-                int serverConnected = server.Connect();
-                if (serverConnected == 1)
-                {
-                    isServer = true;
-                    string packet = JsonConvert.SerializeObject(new
-                    {
-                        Type = "Username",
-                        Buffer = MainActivity.retrieveLocal("Username")??"",
-                        Checksum = ""
-                    });
-                    server.Send(packet);
-                }
-                else
-                {
-                    server.End();
-                    main.DisconnectP2p();
-                    Toast.MakeText(Application.Context, "L'altro dispositivo non ha l'app aperta", ToastLength.Long);
-                }
+                socket = new SocketServer();
             }
             else
             {
-                client = new ClientSocket(groupOwnerAddress);
-                int clientConnected = client.Connect();
-                if(clientConnected == 1)
-                {
-                    isServer = false;
-                    string packet = JsonConvert.SerializeObject(new
-                    {
-                        Type = "Username",
-                        Buffer = MainActivity.retrieveLocal("Username")??"",
-                        Checksum = ""
-                    });
-                    client.Send(packet);
-                }
-                else
-                {
-                    client.End();
-                    main.DisconnectP2p();
-                    Toast.MakeText(Application.Context, "L'altro dispositivo non ha l'app aperta", ToastLength.Long);
-                }
+                socket = new ClientSocket(groupOwnerAddress);
+            }
+
+            int socketConnected = socket.Connect();
+            if (socketConnected == 1)
+            {
+                socket.Send(PacketManager.PackUsername(MainActivity.retrieveLocal("Username") ?? ""));
+            }
+            else
+            {
+                socket.End();
+                main.DisconnectP2p();
+                Toast.MakeText(Application.Context, "L'altro dispositivo non ha l'app aperta", ToastLength.Long);
             }
         }
-
-        public static bool isServer { get; set; }
-        public static SocketServer Server { get { return server; } }
-
-        public static ClientSocket Client { get { return client; } }
+        
+        public static ISocket Socket { get { return socket; } }
 
     }
 }

@@ -97,4 +97,21 @@ C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\
 C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Debug\System.Xml.dll.mdb
 C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Debug\System.Xml.Linq.dll.mdb
 C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\p2p project.dll.mdb
-C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Debug\p2p project.dll.mdb
+C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\res\layout\selectfilelayout.xml
+C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\res\layout\sendfilelayout.xml
+C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Debug\Java.Interop.dll.mdb
+C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Debug\Microsoft.CSharp.dll.mdb
+C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Debug\Mono.Android.dll.mdb
+C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Debug\Mono.CSharp.dll.mdb
+C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Debug\mscorlib.dll.mdb
+C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Debug\System.ComponentModel.Composition.dll.mdb
+C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Debug\System.Core.dll.mdb
+C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Debug\System.dll.mdb
+C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Debug\System.IO.Compression.dll.mdb
+C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Debug\System.Net.Http.dll.mdb
+C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Debug\System.Numerics.dll.mdb
+C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Debug\System.Runtime.Serialization.dll.mdb
+C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Debug\System.Runtime.Serialization.Primitives.dll.mdb
+C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Debug\System.ServiceModel.Internals.dll.mdb
+C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Debug\System.Xml.dll.mdb
+C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Debug\System.Xml.Linq.dll.mdb

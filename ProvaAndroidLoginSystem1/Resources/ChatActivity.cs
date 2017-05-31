@@ -27,8 +27,6 @@ namespace ProvaAndroidLoginSystem1.Resources
         private Button btnFile;
         private Button btnSend;
         private EditText txtChat;
-        /*private SocketServer server;
-        private ClientSocket client;*/
         private ChatAdapter chatAdapter;
         private Database database;
 
@@ -111,23 +109,13 @@ namespace ProvaAndroidLoginSystem1.Resources
 
         void btnSend_Click(object sender, EventArgs e)
         {
-            string packet = JsonConvert.SerializeObject(new
-            {
-                Type = "Message",
-                Buffer = txtChat.Text,
-                Checksum = ""
-            });
-            if (ConnectionInfoListener.isServer)
-            {
-                SocketServer server = ConnectionInfoListener.Server;
-                server.Send(packet);
-            }
-            else
-            {
-                ClientSocket client = ConnectionInfoListener.Client;
-                client.Send(packet);
-            }
+            ISocket socket = ConnectionInfoListener.Socket;
+
+            string packet = PacketManager.PackMessage(txtChat.Text);
+            socket.Send(packet);
+
             updateChat(txtChat.Text, true);
+
             txtChat.Text = "";
         }
     }

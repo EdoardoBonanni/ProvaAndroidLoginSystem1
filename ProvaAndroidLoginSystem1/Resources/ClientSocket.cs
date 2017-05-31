@@ -17,7 +17,7 @@ using ProvaAndroidLoginSystem1.Resources;
 
 namespace p2p_project.Resources
 {
-    class ClientSocket
+    class ClientSocket : ISocket
     {
         private int port = 9876;
         private InetAddress ip;

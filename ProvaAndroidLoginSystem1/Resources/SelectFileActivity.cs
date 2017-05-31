@@ -20,6 +20,8 @@ namespace p2p_project.Resources
     {
         private Button btnSendFileGallery;
         private Button btnSendFileNow;
+        private readonly int FROM_GALLERY = 1;
+        private readonly int CAMERA = 2;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -38,8 +40,7 @@ namespace p2p_project.Resources
         {
             if (IsThereAnAppToTakePictures())
             {
-                Intent SendFileNow = new Intent(this, typeof(SendFileActivity));
-                this.StartActivity(SendFileNow);
+                
             }
             else
             {
@@ -59,8 +60,8 @@ namespace p2p_project.Resources
         {
             var imageIntent = new Intent();
             imageIntent.SetType("image/*");
-            imageIntent.SetAction(Intent.ActionGetContent);
-            StartActivityForResult(Intent.CreateChooser(imageIntent, "Select photo"), 0);
+            imageIntent.SetAction(Intent.ActionPick);
+            StartActivityForResult(Intent.CreateChooser(imageIntent, "Select photo"), FROM_GALLERY);
         }
 
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
@@ -69,12 +70,23 @@ namespace p2p_project.Resources
 
             if (resultCode == Result.Ok)
             {
-                Intent SendFileNow = new Intent(this, typeof(SendFileActivity));
-                
-                var test = new { FromGallery = true, Uri = data.Data.ToString() };
-                string obj = JsonConvert.SerializeObject(test);
-                SendFileNow.PutExtra("SelectFile", obj);
-                this.StartActivity(SendFileNow);
+                if (requestCode == FROM_GALLERY)
+                {
+                    Intent SendFileNow = new Intent(this, typeof(SendFileActivity));
+
+                    var test = new
+                    {
+                        FromGallery = true,
+                        Uri = data.Data.ToString()
+                    };
+                    string obj = JsonConvert.SerializeObject(test);
+                    SendFileNow.PutExtra("SelectFile", obj);
+                    this.StartActivity(SendFileNow);
+                }
+                else if (requestCode == CAMERA)
+                {
+
+                }
             }
         }
     }
