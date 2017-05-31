@@ -26,10 +26,13 @@ public final class R {
         public static final int btnP2pSearch=0x7f070010;
         public static final int btnSend=0x7f070005;
         public static final int btnSendFile=0x7f070004;
+        public static final int btnSendFileGallery=0x7f070013;
         public static final int btnSendFileHome=0x7f07000f;
+        public static final int btnSendFileNow=0x7f070014;
         public static final int btnSendMessageHome=0x7f07000d;
-        public static final int btnSignIn=0x7f070015;
+        public static final int btnSignIn=0x7f070018;
         public static final int btnSignUp=0x7f07000a;
+        public static final int imageViewSendFile=0x7f070015;
         public static final int llContainer=0x7f070003;
         public static final int lstMessages=0x7f070002;
         public static final int lstPeers=0x7f070012;
@@ -38,11 +41,11 @@ public final class R {
         public static final int txtConfermaPassword=0x7f070009;
         public static final int txtGoToSignIn=0x7f07000b;
         public static final int txtNickname=0x7f070007;
-        public static final int txtNicknameSignIn=0x7f070013;
+        public static final int txtNicknameSignIn=0x7f070016;
         public static final int txtORHome=0x7f07000e;
         public static final int txtOrario=0x7f070001;
         public static final int txtPassword=0x7f070008;
-        public static final int txtPasswordSignIn=0x7f070014;
+        public static final int txtPasswordSignIn=0x7f070017;
         public static final int txtSelectActivity=0x7f07000c;
     }
     public static final class layout {
@@ -52,7 +55,9 @@ public final class R {
         public static final int dialog_sign_up=0x7f030003;
         public static final int homelayout=0x7f030004;
         public static final int main=0x7f030005;
-        public static final int signinlayout=0x7f030006;
+        public static final int selectfilelayout=0x7f030006;
+        public static final int sendfilelayout=0x7f030007;
+        public static final int signinlayout=0x7f030008;
     }
     public static final class string {
         public static final int ApplicationName=0x7f050001;

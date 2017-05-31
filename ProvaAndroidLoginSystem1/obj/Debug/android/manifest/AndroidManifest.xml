@@ -22,6 +22,8 @@
     <activity android:label="Chat P2P" android:name="md5589b17e39cf80bf285194150f7ef410e.ChatActivity" />
     <activity android:label="SignInActivity" android:name="md5589b17e39cf80bf285194150f7ef410e.SignInActivity" />
     <activity android:label="SignUp" android:name="md5589b17e39cf80bf285194150f7ef410e.SignUpActivity" />
+    <activity android:label="Seleziona File" android:name="md55debec2523a555e8b74559a56bd3d108.SelectFileActivity" />
+    <activity android:label="SendFileNow" android:name="md55debec2523a555e8b74559a56bd3d108.SendFileActivity" />
     <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="p2p.p2p.mono.MonoRuntimeProvider.__mono_init__" />
     <!--suppress ExportedReceiver-->
     <receiver android:name="mono.android.Seppuku">

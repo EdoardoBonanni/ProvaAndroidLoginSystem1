@@ -24,6 +24,7 @@ namespace ProvaAndroidLoginSystem1.Resources
     public class ChatActivity : Activity
     {
         private ListView lstMessage;
+        private Button btnFile;
         private Button btnSend;
         private EditText txtChat;
         /*private SocketServer server;
@@ -39,9 +40,11 @@ namespace ProvaAndroidLoginSystem1.Resources
 
             lstMessage = FindViewById<ListView>(Resource.Id.lstMessages);
             btnSend = FindViewById<Button>(Resource.Id.btnSend);
+            btnFile = FindViewById<Button>(Resource.Id.btnSendFile);
             txtChat = FindViewById<EditText>(Resource.Id.txtChat);
 
             btnSend.Click += btnSend_Click;
+            btnFile.Click += BtnFile_Click;
 
             PacketManager.messageReceived += (sender, args, message) =>
             {
@@ -85,6 +88,12 @@ namespace ProvaAndroidLoginSystem1.Resources
 
             chatAdapter = new ChatAdapter(this, chat);
             lstMessage.Adapter = chatAdapter;
+        }
+
+        private void BtnFile_Click(object sender, EventArgs e)
+        {
+            Intent SelectFile = new Intent(this, typeof(SelectFileActivity));
+            this.StartActivity(SelectFile);
         }
 
         public void updateChat(string text, bool mine)
