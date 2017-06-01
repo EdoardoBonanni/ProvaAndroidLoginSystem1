@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Android.Telephony;
 using p2p_project.Resources.DataHelper;
+using Android.Provider;
 
 namespace ProvaAndroidLoginSystem1
 {
@@ -40,6 +41,7 @@ namespace ProvaAndroidLoginSystem1
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
+
             /*
             TelephonyManager mTelephonyMgr = (TelephonyManager)GetSystemService(TelephonyService);
             Number = mTelephonyMgr.Line1Number;

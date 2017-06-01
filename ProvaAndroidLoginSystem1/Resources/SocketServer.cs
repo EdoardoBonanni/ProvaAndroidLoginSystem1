@@ -37,7 +37,7 @@ namespace p2p_project.Resources
             }
             client = serverSocket.EndAcceptTcpClient(result);
             networkStream = client.GetStream();
-            packetManager = new PacketManager();
+            packetManager = new PacketManager(this);
             receive = new Thread(Receive);
             receive.Start();
             return 1;

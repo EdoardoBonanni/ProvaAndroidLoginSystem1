@@ -12,16 +12,19 @@ using Android.Widget;
 using SQLite;
 using ProvaAndroidLoginSystem1.Resources.Model;
 using p2p_project.Resources.Model;
+using ProvaAndroidLoginSystem1;
 
 namespace p2p_project.Resources.DataHelper
 {
+    delegate void DatabaseEventHandler(object sender, EventArgs e, Registro registro);
     class Database
     {
         string folder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+        public event DatabaseEventHandler databaseUpdated;
 
-        public Database()
+        private void OnDatabaseUpdated(EventArgs e, Registro registro)
         {
-
+            databaseUpdated?.Invoke(this, e, registro);
         }
 
         public bool createTable()
@@ -53,6 +56,11 @@ namespace p2p_project.Resources.DataHelper
                 using (var connection = new SQLiteConnection(System.IO.Path.Combine(folder, "ChatP2p.db")))
                 {
                     connection.Insert(registro);
+                    bool test = registro.UsernameMittente == MainActivity.retrieveLocal("Username");
+                    if (!test)
+                    {
+                        OnDatabaseUpdated(EventArgs.Empty, registro);
+                    }
                     return true;
                 }
             }

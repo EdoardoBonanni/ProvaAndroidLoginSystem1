@@ -65,9 +65,9 @@ namespace p2p_project
             return view;
         }
 
-        public void update(string message, bool mine)
+        public void update(string message, bool mine, bool isFile)
         {
-            this.chat.Add(new Tuple<Registro, bool>(new Registro {Messaggio = message, Orario = DateTime.Now }, mine));
+            this.chat.Add(new Tuple<Registro, bool>(new Registro {Messaggio = message, Orario = DateTime.Now, isFile = isFile }, mine));
             this.chat = chat.OrderBy(d => d.Item1.Orario).ToList();
             NotifyDataSetChanged();
         }

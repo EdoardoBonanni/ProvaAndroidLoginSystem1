@@ -20,6 +20,7 @@ namespace p2p_project.Resources
     {
         private ImageView imgPhoto;
         private Button btnSendFile;
+        private Android.Net.Uri uri;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -36,8 +37,9 @@ namespace p2p_project.Resources
             bool fromGallery = test.FromGallery;
             if (fromGallery)
             {
-                string uri = test.Uri;
-                imgPhoto.SetImageURI(Android.Net.Uri.Parse(uri));
+                string uriString = test.Uri;
+                uri = Android.Net.Uri.Parse(uriString);
+                imgPhoto.SetImageURI(uri);
             }
             else{
                 int height = Resources.DisplayMetrics.HeightPixels;
@@ -58,6 +60,8 @@ namespace p2p_project.Resources
 
         private void BtnSendFile_Click(object sender, EventArgs e)
         {
+            //string packet = PacketManager.PackFile(PacketManager.readBytes(uri, 1), 1, uri.ToString());
+            //socket.Send(packet);
             Intent chat = new Intent(this, typeof(ChatActivity));
             this.StartActivity(chat);
         }

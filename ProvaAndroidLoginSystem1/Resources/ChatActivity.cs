@@ -27,6 +27,8 @@ namespace ProvaAndroidLoginSystem1.Resources
         private Button btnFile;
         private Button btnSend;
         private EditText txtChat;
+
+
         private ChatAdapter chatAdapter;
         private Database database;
 
@@ -43,17 +45,40 @@ namespace ProvaAndroidLoginSystem1.Resources
 
             btnSend.Click += btnSend_Click;
             btnFile.Click += BtnFile_Click;
+            lstMessage.ItemClick += LstMessage_ItemClick;
 
+            //Lo farà il background Service
             PacketManager.messageReceived += (sender, args, message) =>
             {
                 RunOnUiThread(() =>
                 {
-                    updateChat(message, false);
+                    updateChat(message, false, false);
                 });
             };
 
+            /*
+             * Lo fa il background Service
+            PacketManager.fileReceived += (sender, args, uri) =>
+            {
+                RunOnUiThread(() =>
+                {
+                    updateChat(uri, true, true);
+                });
+            };
+            */
+
             database = new Database();
             database.createTable();
+
+            /*
+            database.databaseUpdated += (sender, args, reg) =>
+            {
+                RunOnUiThread(() =>
+                {
+                    updateChat(reg.Messaggio, true, reg.isFile);
+                });
+            };
+            */
 
             List<Tuple<Registro, bool>> chat = new List<Tuple<Registro, bool>>();
             
@@ -62,11 +87,6 @@ namespace ProvaAndroidLoginSystem1.Resources
 
             foreach (var message in registro)
             {
-                if (message.isFile)
-                {
-                    break;
-                }
-
                 if (message.UsernameMittente.Equals(MainActivity.retrieveLocal("Username")))
                 {
                     chat.Add(new Tuple<Registro, bool>(message, true));
@@ -88,14 +108,25 @@ namespace ProvaAndroidLoginSystem1.Resources
             lstMessage.Adapter = chatAdapter;
         }
 
+        private void LstMessage_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            var itemClicked = sender as Tuple<Registro, bool>;
+            if (itemClicked.Item1.isFile)
+            {
+                //Start Activity
+                //PutExtra("Uri", itemClicked.Item1.Messaggio);
+            }
+        }
+
         private void BtnFile_Click(object sender, EventArgs e)
         {
             Intent SelectFile = new Intent(this, typeof(SelectFileActivity));
             this.StartActivity(SelectFile);
         }
 
-        public void updateChat(string text, bool mine)
+        public void updateChat(string text, bool mine, bool isFile)
         {
+            //Background Service
             database.InsertIntoTable(new Registro
             {
                 UsernameMittente = mine == true ? MainActivity.retrieveLocal("Username") : MainActivity.retrieveLocal("ConnectedUsername"),
@@ -104,7 +135,8 @@ namespace ProvaAndroidLoginSystem1.Resources
                 Messaggio = text,
                 Orario = DateTime.Now
             });
-            chatAdapter.update(text, mine);
+
+            chatAdapter.update(text, mine, isFile);
         }
 
         void btnSend_Click(object sender, EventArgs e)
@@ -114,7 +146,7 @@ namespace ProvaAndroidLoginSystem1.Resources
             string packet = PacketManager.PackMessage(txtChat.Text);
             socket.Send(packet);
 
-            updateChat(txtChat.Text, true);
+            updateChat(txtChat.Text, true, false);
 
             txtChat.Text = "";
         }
