@@ -12,10 +12,19 @@ using Android.Widget;
 using Android.Provider;
 using Android.Content.PM;
 using Newtonsoft.Json;
+using Java.IO;
+using Android.Graphics;
 
 namespace p2p_project.Resources
 {
-    [Activity(Label = "Seleziona File")]
+    public static class App
+    {
+        public static File _file;
+        public static File _dir;
+        public static Bitmap bitmap;
+    }
+
+    [Activity(Label = "Seleziona File", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class SelectFileActivity : Activity
     {
         private Button btnSendFileGallery;
@@ -40,11 +49,27 @@ namespace p2p_project.Resources
         {
             if (IsThereAnAppToTakePictures())
             {
-                
+                CreateDirectoryForPictures();
+
+                Intent intent = new Intent(MediaStore.ActionImageCapture);
+                App._file = new File(App._dir, String.Format("myPhoto_{0}.jpg", Guid.NewGuid()));
+                intent.PutExtra(MediaStore.ExtraOutput, Android.Net.Uri.FromFile(App._file));
+                StartActivityForResult(intent, CAMERA);
             }
             else
             {
                 //avvertire l'utente
+            }
+        }
+
+        private void CreateDirectoryForPictures()
+        {
+            App._dir = new File(
+                Android.OS.Environment.GetExternalStoragePublicDirectory(
+                    Android.OS.Environment.DirectoryPictures), "ChatP2p");
+            if (!App._dir.Exists())
+            {
+                App._dir.Mkdirs();
             }
         }
 
@@ -74,18 +99,34 @@ namespace p2p_project.Resources
                 {
                     Intent SendFileNow = new Intent(this, typeof(SendFileActivity));
 
-                    var test = new
+                    var gallery = new
                     {
                         FromGallery = true,
                         Uri = data.Data.ToString()
                     };
-                    string obj = JsonConvert.SerializeObject(test);
+                    string obj = JsonConvert.SerializeObject(gallery);
                     SendFileNow.PutExtra("SelectFile", obj);
                     this.StartActivity(SendFileNow);
                 }
                 else if (requestCode == CAMERA)
                 {
+                    // Make it available in the gallery
+                    Intent mediaScanIntent = new Intent(Intent.ActionMediaScannerScanFile);
+                    Android.Net.Uri contentUri = Android.Net.Uri.FromFile(App._file);
+                    mediaScanIntent.SetData(contentUri);
+                    SendBroadcast(mediaScanIntent);
 
+                    Intent SendFileNow = new Intent(this, typeof(SendFileActivity));
+
+                    var camera = new
+                    {
+                        FromGallery = false,
+                        Uri = contentUri.ToString()
+                    };
+                    string obj = JsonConvert.SerializeObject(camera);
+
+                    SendFileNow.PutExtra("SelectFile", obj);
+                    this.StartActivity(SendFileNow);
                 }
             }
         }

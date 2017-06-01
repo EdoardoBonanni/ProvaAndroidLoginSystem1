@@ -45,7 +45,7 @@ namespace p2p_project.Resources
 
         public async void Send(string packet)
         {
-            byte[] data = Encoding.ASCII.GetBytes(packet);
+            byte[] data = Encoding.UTF8.GetBytes(packet);
             await networkStream.WriteAsync(data, 0, data.Length);
         }
 
@@ -64,7 +64,7 @@ namespace p2p_project.Resources
             int responseCount = networkStream.EndRead(res);
             if (responseCount > 0)
             {
-                string buff = System.Text.Encoding.ASCII.GetString(data, 0, responseCount);
+                string buff = System.Text.Encoding.UTF8.GetString(data, 0, responseCount);
                 packetManager.Unpack(buff);
                 networkStream.BeginRead(data, 0, data.Length, new AsyncCallback(receiveCallback), data);
             }

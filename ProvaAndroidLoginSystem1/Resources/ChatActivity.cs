@@ -20,7 +20,7 @@ using Android.Content.Res;
 
 namespace ProvaAndroidLoginSystem1.Resources
 {
-    [Activity(Label = "Chat P2P")]
+    [Activity(Label = "Chat P2P", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class ChatActivity : Activity
     {
         private ListView lstMessage;

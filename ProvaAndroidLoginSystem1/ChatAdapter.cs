@@ -48,7 +48,7 @@ namespace p2p_project
             if (chat[position] != null)
             {
                 Chat.Text = chat[position].Item1.Messaggio;
-                Orario.Text = chat[position].Item1.Orario.ToString();
+                Orario.Text = chat[position].Item1.Orario.ToString("dd/MM/yyy hh:mm");
 
                 if(chat[position].Item2)
                 {

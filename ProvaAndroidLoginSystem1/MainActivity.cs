@@ -17,7 +17,7 @@ using p2p_project.Resources.DataHelper;
 
 namespace ProvaAndroidLoginSystem1
 {
-    [Activity(Label = "Chat P2P", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "Chat P2P", MainLauncher = true, Icon = "@drawable/icon", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class MainActivity : Activity
     {
         public static HTTPClient client;

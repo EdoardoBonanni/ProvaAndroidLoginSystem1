@@ -21,7 +21,7 @@ using p2p_project;
 
 namespace ProvaAndroidLoginSystem1.Resources
 {
-    [Activity(Label = "SignUp")]
+    [Activity(Label = "SignUp", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class SignUpActivity : Activity
     {
         private EditText mtxtUsername;
