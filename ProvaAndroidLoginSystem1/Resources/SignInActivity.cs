@@ -74,7 +74,7 @@ namespace ProvaAndroidLoginSystem1.Resources
             var content = new FormUrlEncodedContent(new[]
             {
                 new KeyValuePair<string, string>("method", "login"),
-                new KeyValuePair<string, string>("Nickname", person.Username),
+                new KeyValuePair<string, string>("Username", person.Username),
                 new KeyValuePair<string, string>("Password", person.Password)
             });
 

@@ -102,6 +102,7 @@
     <Compile Include="Resources\ClientSocket.cs" />
     <Compile Include="Resources\ConnectionInfoListener.cs" />
     <Compile Include="Resources\DataHelper\Database.cs" />
+    <Compile Include="Resources\EventConsumer.cs" />
     <Compile Include="Resources\ISocket.cs" />
     <Compile Include="Resources\Model\HTTPClient.cs" />
     <Compile Include="Resources\Model\Person.cs" />

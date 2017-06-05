@@ -12,12 +12,14 @@ using Android.Widget;
 using Newtonsoft.Json;
 using ProvaAndroidLoginSystem1;
 using ProvaAndroidLoginSystem1.Resources;
-using Java.IO;
+using System.IO;
+using Android.Graphics;
+using Android.Media;
 
 namespace p2p_project.Resources
 {
     public delegate void MessageEventHandler(object sender, EventArgs e, string message);
-    public delegate void FileEventHandler(object sender, EventArgs e, string uri);
+    public delegate void FileEventHandler(object sender, EventArgs e, string uri, bool mine);
     public delegate void UsernameEventHandler(object sender, EventArgs e);
 
     class PacketManager
@@ -25,13 +27,22 @@ namespace p2p_project.Resources
         public static event MessageEventHandler messageReceived;
         public static event UsernameEventHandler usernameReceived;
         public static event FileEventHandler fileReceived;
-        private int number;
-        private File f;
+
+        private Dictionary<string, string> f;
         private ISocket socket;
 
         public PacketManager(ISocket socket)
         {
             this.socket = socket;
+            this.f = new Dictionary<string, string>();
+            SendFileActivity.firstSendFile += SendFileActivity_firstSendFile;
+            new EventConsumer();
+        }
+
+        private void SendFileActivity_firstSendFile(object sender, EventArgs e, string uri)
+        {
+            string packet = PackFile(readBytes(Android.Net.Uri.Parse(uri), 1), 1, uri);
+            socket.Send(packet);
         }
 
         protected virtual void OnMessageReceived(EventArgs e, string message)
@@ -44,12 +55,12 @@ namespace p2p_project.Resources
             usernameReceived?.Invoke(this, e);
         }
 
-        protected virtual void OnFileReceived(EventArgs e , string uri)
+        protected virtual void OnFileReceived(EventArgs e , string uri, bool mine)
         {
-            fileReceived?.Invoke(this, e, uri);
+            fileReceived?.Invoke(this, e, uri, mine);
         }
 
-        public object Unpack(string packet)
+        public void Unpack(string packet)
         {
             dynamic a = JsonConvert.DeserializeObject<dynamic>(packet);
             string type = a.Type;
@@ -68,45 +79,124 @@ namespace p2p_project.Resources
                     OnMessageReceived(EventArgs.Empty, message);
                     break;
                 case "File":
-                    //scrivere il buffer
-                    number = a.Number;
-                    if(number == 1)
+                    string command = a.Command;
+                    switch (command)
                     {
-                        CreateFile();
+                        case "Send":
+                            int number = a.Number;
+                            string path = "";
+                            if (number == 1)
+                            {
+                                string uri = a.Path;
+                                path = CreateFile(uri);
+                            }
+                            else
+                            {
+                                path = a.Path;
+                            }
+                            byte[] buffer = a.Buffer;
+                            int num = appendToFile(path, buffer);
+                            string pack = PackAck(num, path);
+                            socket.Send(pack);
+                            break;
+                        case "Ack":
+                            int numberAck = a.Number;
+                            string pathAck = a.Path;
+                            string uriAck = a.Buffer;
+
+                            byte[] bufferAck = readBytes(Android.Net.Uri.Parse(uriAck), numberAck);
+                            if (bufferAck != null)
+                            {
+                                if (bufferAck.Length == 0)
+                                {
+                                    socket.Send(PackEnd(pathAck));
+                                }
+                                else
+                                {
+                                    string packetAck = PackFile(bufferAck, numberAck, pathAck);
+                                    socket.Send(packetAck);
+                                }
+                            }
+                            else
+                            {
+                                //Nack
+                            }
+                            break;
+                        case "Nack":
+
+                            break;
+                        case "End":
+                            string pathEnd = a.Path;
+                            saveFile(pathEnd);
+                            OnFileReceived(EventArgs.Empty, f[pathEnd], false);
+                            break;
+                        default:
+                            //Errore
+                            break;
                     }
-                    Android.Net.Uri uri = a.Uri;
-                    socket.Send(PackFile(readBytes(uri, number), number, uri.ToString()));
                     break;
                 default:
                     //Errore
                     break;
             }
-            return null;
         }
 
-        private void CreateFile()
+        private string CreateFile(string uri)
         {
             var fileDir = CreateDirectoryForPictures();
-            f = new File(fileDir, String.Format("myPhoto_{0}.jpg", Guid.NewGuid()));
+            string fileName = String.Format("myPhoto_{0}.jpg", Guid.NewGuid());
+            string path = System.IO.Path.Combine(fileDir.Path, fileName);
+            f.Add(path, uri);
+            FileStream fs = File.Create(path);
+            fs.Close();
+            return path;
         }
 
-        private void appendToFile(byte[] buffer)
+        private int appendToFile(string path, byte[] buffer)
         {
-            
+            FileStream fileStream = new FileStream(path, FileMode.Append, FileAccess.Write);
+
+            fileStream.Write(buffer, 0, buffer.Length);
+
+            var len = fileStream.Length;
+
+            fileStream.Close();
+
+            return getNumber(path);
         }
 
-        private Android.Net.Uri saveFile()
+        private int getNumber(string path)
+        {
+            // this dynamically extends to take the bytes you read
+
+            FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read);
+
+            int bufferSize = 16384;
+            byte[] buffer = new byte[bufferSize];
+
+            int len = 1;
+            int i = 1;
+            while ((len = fs.Read(buffer, 0, bufferSize)) > 0)
+            {
+                i++;
+            }
+
+            fs.Close();
+
+            return i;
+        }
+
+        private void saveFile(string path)
         {
             Intent mediaScanIntent = new Intent(Intent.ActionMediaScannerScanFile);
-            Android.Net.Uri contentUri = Android.Net.Uri.FromFile(App._file);
+            Android.Net.Uri contentUri = Android.Net.Uri.Parse(this.f[path]);
             mediaScanIntent.SetData(contentUri);
             Application.Context.SendBroadcast(mediaScanIntent);
-            return contentUri;
         }
 
-        private File CreateDirectoryForPictures()
+        private Java.IO.File CreateDirectoryForPictures()
         {
-            File dir = new File(
+            Java.IO.File dir = new Java.IO.File(
                 Android.OS.Environment.GetExternalStoragePublicDirectory(
                     Android.OS.Environment.DirectoryPictures), "ChatP2p");
             if (!dir.Exists())
@@ -136,14 +226,41 @@ namespace p2p_project.Resources
                 });
         }
 
-        public static string PackFile(byte[] buffer, int num, string uri)
+        public static string PackFile(byte[] buffer, int num, string uri_Path)
         {
             return JsonConvert.SerializeObject(new
             {
                 Type = "File",
+                Command = "Send",
                 Number = num,
-                Uri = uri,
+                Path = uri_Path,
                 Buffer = buffer,
+                Checksum = ""
+            });
+        }
+
+        public string PackAck(int number, string path)
+        {
+            string uri = this.f[path];
+            return JsonConvert.SerializeObject(new
+            {
+                Type = "File",
+                Command = "Ack",
+                Number = number,
+                Path = path,
+                Buffer = uri,
+                Checksum = ""
+            });
+        }
+
+        public string PackEnd(string path)
+        {
+            return JsonConvert.SerializeObject(new
+            {
+                Type = "File",
+                Command = "End",
+                Number = 2,
+                Path = path,
                 Checksum = ""
             });
         }
@@ -155,22 +272,26 @@ namespace p2p_project.Resources
             var stream = res.OpenInputStream(uri);
 
             // this is storage overwritten on each iteration with bytes
-            int bufferSize = 4096;
+            int bufferSize = 16384;
             byte[] buffer = new byte[bufferSize];
 
             // we need to know how may bytes were read to write them to the byteBuffer
             int len = 0;
-            int i = 1;
-            while ((len = stream.Read(buffer, 0, bufferSize)) != -1) {
+            int i = 0;
+            while ((len = stream.Read(buffer, 0, bufferSize)) > 0) {
+                i++;
                 if (i == number)
                 {
-                    return buffer;
+                    byte[] copyBuffer = new byte[len];
+                    Array.Copy(buffer, copyBuffer, len);
+                    return copyBuffer;
                 }
-                i++;
+                buffer = new byte[bufferSize];
             }
-            if(i > number)
+            if (number >= i)
             {
-                OnFileReceived(EventArgs.Empty, uri.ToString());
+                OnFileReceived(EventArgs.Empty, uri.ToString(), true);
+                return new byte[0];
             }
             return null;
         }

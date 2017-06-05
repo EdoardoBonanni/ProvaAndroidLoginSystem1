@@ -15,12 +15,16 @@ using ProvaAndroidLoginSystem1.Resources;
 
 namespace p2p_project.Resources
 {
+    public delegate void SendFileEventHandler(object sender, EventArgs e, string uri);
+
     [Activity(Label = "SendFileNow", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class SendFileActivity : Activity
     {
         private ImageView imgPhoto;
         private Button btnSendFile;
         private Android.Net.Uri uri;
+
+        public static event SendFileEventHandler firstSendFile;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -62,6 +66,7 @@ namespace p2p_project.Resources
         {
             //string packet = PacketManager.PackFile(PacketManager.readBytes(uri, 1), 1, uri.ToString());
             //socket.Send(packet);
+            OnFirstSendFile(EventArgs.Empty, uri.ToString());
             Intent chat = new Intent(this, typeof(ChatActivity));
             this.StartActivity(chat);
         }
@@ -70,6 +75,11 @@ namespace p2p_project.Resources
         {
             Intent chat = new Intent(this, typeof(ChatActivity));
             this.StartActivity(chat);
+        }
+
+        protected virtual void OnFirstSendFile(EventArgs args, string uri)
+        {
+            firstSendFile?.Invoke(this, args, uri);
         }
     }
 

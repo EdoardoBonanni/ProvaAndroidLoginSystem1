@@ -25,6 +25,7 @@ namespace p2p_project.Resources
         private NetworkStream networkStream;
         private Thread receive;
         private PacketManager packetManager;
+        private string appendBuff;
         public int Connect()
         {
             serverSocket = new TcpListener(IPAddress.Any, port);
@@ -51,7 +52,7 @@ namespace p2p_project.Resources
 
         public void Receive()
         {
-            byte[] data = new byte[4096];
+            byte[] data = new byte[20000];
             /*int responseCount = await networkStream.ReadAsync(data, 0, data.Length);
             string responseData = System.Text.Encoding.ASCII.GetString(data, 0, responseCount);
             Toast.MakeText(Application.Context, responseData, ToastLength.Long);*/
@@ -65,7 +66,19 @@ namespace p2p_project.Resources
             if (responseCount > 0)
             {
                 string buff = System.Text.Encoding.UTF8.GetString(data, 0, responseCount);
-                packetManager.Unpack(buff);
+                if (buff.Contains("{") && buff.Contains("}")){
+                    appendBuff = "";
+                    packetManager.Unpack(buff);
+                }
+                else
+                {
+                    appendBuff += buff;
+                    if(appendBuff.Contains("{") && appendBuff.Contains("}"))
+                    {
+                        packetManager.Unpack(appendBuff);
+                        appendBuff = "";
+                    }
+                }
                 networkStream.BeginRead(data, 0, data.Length, new AsyncCallback(receiveCallback), data);
             }
         }
