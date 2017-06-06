@@ -15,14 +15,16 @@ using ProvaAndroidLoginSystem1.Resources;
 
 namespace p2p_project.Resources
 {
-    public delegate void SendFileEventHandler(object sender, EventArgs e, string uri);
+    public delegate void SendFileEventHandler(object sender, EventArgs e, string uri, string path);
 
     [Activity(Label = "SendFileNow", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class SendFileActivity : Activity
     {
         private ImageView imgPhoto;
         private Button btnSendFile;
+
         private Android.Net.Uri uri;
+        private string path;
 
         public static event SendFileEventHandler firstSendFile;
 
@@ -43,9 +45,16 @@ namespace p2p_project.Resources
             {
                 string uriString = test.Uri;
                 uri = Android.Net.Uri.Parse(uriString);
+                path = test.Path;
                 imgPhoto.SetImageURI(uri);
+
+                GC.Collect();
             }
             else{
+                string uriString = test.Uri;
+                uri = Android.Net.Uri.Parse(uriString);
+                path = test.Path;
+
                 int height = Resources.DisplayMetrics.HeightPixels;
                 int width = 150;//imgPhoto.Height;
                 App.bitmap = App._file.Path.LoadAndResizeBitmap(width, height);
@@ -66,7 +75,7 @@ namespace p2p_project.Resources
         {
             //string packet = PacketManager.PackFile(PacketManager.readBytes(uri, 1), 1, uri.ToString());
             //socket.Send(packet);
-            OnFirstSendFile(EventArgs.Empty, uri.ToString());
+            OnFirstSendFile(EventArgs.Empty, uri.ToString(), path);
             Intent chat = new Intent(this, typeof(ChatActivity));
             this.StartActivity(chat);
         }
@@ -77,9 +86,9 @@ namespace p2p_project.Resources
             this.StartActivity(chat);
         }
 
-        protected virtual void OnFirstSendFile(EventArgs args, string uri)
+        protected virtual void OnFirstSendFile(EventArgs args, string uri, string path)
         {
-            firstSendFile?.Invoke(this, args, uri);
+            firstSendFile?.Invoke(this, args, uri, path);
         }
     }
 

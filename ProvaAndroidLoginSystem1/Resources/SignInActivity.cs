@@ -109,6 +109,7 @@ namespace ProvaAndroidLoginSystem1.Resources
                 var result = await response.Content.ReadAsStringAsync();
                 if (response.IsSuccessStatusCode)
                 {
+                    MainActivity.saveLocal("Username", person.Username);
                     if (isBackup)
                     {
                         //Push on server

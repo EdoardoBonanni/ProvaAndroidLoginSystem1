@@ -7,20 +7,21 @@
   <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
   <uses-feature android:name="android.hardware.wifi.direct" />
-  <application android:label="Chat p2p" android:name="android.app.Application" android:allowBackup="true">
-    <activity android:name=".ViewDatabase" android:label="ViewDatabase"></activity>
-    <activity android:name=".SignInActivity" android:label="SignInActivity"></activity>
-    <activity android:icon="@drawable/icon" android:label="Chat P2P" android:name="md587ad3ac64fbc991d5ecd8dfeb9429049.MainActivity">
+  <application android:label="Chat p2p" android:name="android.app.Application" android:allowBackup="true" android:icon="@drawable/icon">
+    <activity android:icon="@drawable/icon" android:label="Chat P2P" android:screenOrientation="portrait" android:name="md587ad3ac64fbc991d5ecd8dfeb9429049.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
-    <activity android:label="Chat P2P" android:name="md5589b17e39cf80bf285194150f7ef410e.ChatActivity" />
-    <activity android:label="Chat P2P" android:name="md5589b17e39cf80bf285194150f7ef410e.HomeActivity" />
-    <activity android:label="SignInActivity" android:name="md5589b17e39cf80bf285194150f7ef410e.SignInActivity" />
-    <activity android:label="SignUp" android:name="md5589b17e39cf80bf285194150f7ef410e.SignUpActivity" />
+    <activity android:label="Chat P2P" android:screenOrientation="portrait" android:name="md5589b17e39cf80bf285194150f7ef410e.ChatActivity" />
+    <activity android:label="SignInActivity" android:screenOrientation="portrait" android:name="md5589b17e39cf80bf285194150f7ef410e.SignInActivity" />
+    <activity android:label="SignUp" android:screenOrientation="portrait" android:name="md5589b17e39cf80bf285194150f7ef410e.SignUpActivity" />
+    <activity android:label="Seleziona File" android:screenOrientation="portrait" android:name="md55debec2523a555e8b74559a56bd3d108.SelectFileActivity" />
+    <activity android:label="SendFileNow" android:screenOrientation="portrait" android:name="md55debec2523a555e8b74559a56bd3d108.SendFileActivity" />
     <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="p2p.p2p.mono.MonoRuntimeProvider.__mono_init__" />
   </application>
 </manifest>

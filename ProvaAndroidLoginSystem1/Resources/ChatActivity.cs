@@ -17,6 +17,7 @@ using Android.Telephony;
 using Newtonsoft.Json;
 using Java.Lang;
 using Android.Content.Res;
+using Java.IO;
 
 namespace ProvaAndroidLoginSystem1.Resources
 {
@@ -74,7 +75,7 @@ namespace ProvaAndroidLoginSystem1.Resources
             {
                 RunOnUiThread(() =>
                 {
-                    updateChat(reg.Messaggio, mine, reg.isFile);
+                    updateChat(reg.Messaggio, mine, reg.isFile, reg.Path);
                 });
             };
 
@@ -108,14 +109,24 @@ namespace ProvaAndroidLoginSystem1.Resources
 
         private void LstMessage_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            /*
-            var itemClicked = sender as Tuple<Registro, bool>;
-            if (itemClicked.Item1.isFile)
+            Registro itemClicked = (Registro) chatAdapter.GetItem(e.Position);
+            if (itemClicked.isFile)
             {
+                File f = new File(itemClicked.Path);
+                string uri = Android.Net.Uri.FromFile(f).ToString();
+                Intent SendFileNow = new Intent(this, typeof(SendFileActivity));
+
+                var gallery = new
+                {
+                    FromGallery = true,
+                    Uri = uri
+                };
+                string obj = JsonConvert.SerializeObject(gallery);
+                SendFileNow.PutExtra("SelectFile", obj);
+                this.StartActivity(SendFileNow);
                 //Start Activity
                 //PutExtra("Uri", itemClicked.Item1.Messaggio);
             }
-            */
         }
 
         private void BtnFile_Click(object sender, EventArgs e)
@@ -124,7 +135,7 @@ namespace ProvaAndroidLoginSystem1.Resources
             this.StartActivity(SelectFile);
         }
 
-        public void updateChat(string text, bool mine, bool isFile)
+        public void updateChat(string text, bool mine, bool isFile, string path = "")
         {
             if (mine && !isFile)
             {
@@ -134,11 +145,12 @@ namespace ProvaAndroidLoginSystem1.Resources
                     UsernameDestinatario = mine == false ? MainActivity.retrieveLocal("Username") : MainActivity.retrieveLocal("ConnectedUsername"),
                     isFile = false,
                     Messaggio = text,
+                    Path = "",
                     Orario = DateTime.Now
                 });
             }
 
-            chatAdapter.update(text, mine, isFile);
+            chatAdapter.update(text, mine, path, isFile);
         }
 
         void btnSend_Click(object sender, EventArgs e)
@@ -154,6 +166,12 @@ namespace ProvaAndroidLoginSystem1.Resources
 
                 txtChat.Text = "";
             }
+        }
+
+        public override void OnBackPressed()
+        {
+            Intent main = new Intent(this, typeof(MainActivity));
+            this.StartActivity(main);
         }
     }
 }

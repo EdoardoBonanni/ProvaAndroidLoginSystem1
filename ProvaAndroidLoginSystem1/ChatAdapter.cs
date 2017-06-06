@@ -28,7 +28,7 @@ namespace p2p_project
 
         public override Java.Lang.Object GetItem(int position)
         {
-            return position;
+            return this.chat[position].Item1;
         }
 
         public override long GetItemId(int position)
@@ -65,9 +65,14 @@ namespace p2p_project
             return view;
         }
 
-        public void update(string message, bool mine, bool isFile)
+        public void update(string message, bool mine, string path, bool isFile)
         {
-            this.chat.Add(new Tuple<Registro, bool>(new Registro {Messaggio = message, Orario = DateTime.Now, isFile = isFile }, mine));
+            this.chat.Add(new Tuple<Registro, bool>(new Registro {
+                Messaggio = message,
+                Orario = DateTime.Now,
+                Path = path,
+                isFile = isFile
+            }, mine));
             this.chat = chat.OrderBy(d => d.Item1.Orario).ToList();
             NotifyDataSetChanged();
         }

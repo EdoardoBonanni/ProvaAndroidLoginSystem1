@@ -57,7 +57,7 @@ namespace p2p_project.Resources.DataHelper
                 {
                     connection.Insert(registro);
                     bool mine = registro.UsernameMittente == MainActivity.retrieveLocal("Username");
-                    if (!mine && !registro.isFile)
+                    if (!mine || (mine && registro.isFile))
                     {
                         OnDatabaseUpdated(EventArgs.Empty, registro, mine);
                     }

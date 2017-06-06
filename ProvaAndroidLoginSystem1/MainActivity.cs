@@ -49,10 +49,8 @@ namespace ProvaAndroidLoginSystem1
 
             client = new HTTPClient();
 
-            /*
-            Database db = new Database();
-            db.DeleteAllRowTable();
-            */
+            //Database db = new Database();
+            //db.DeleteAllRowTable();
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
@@ -163,6 +161,8 @@ namespace ProvaAndroidLoginSystem1
             IsConnected = false;
             deleteLocal("ConnectedUsername");
             manager.StopPeerDiscovery(channel, new ActionListener(""));
+            mBtnCancel.Visibility = Android.Views.ViewStates.Invisible;
+            mBtnSearch.Visibility = Android.Views.ViewStates.Visible;
         }
 
         public static string retrieveLocal(string key)

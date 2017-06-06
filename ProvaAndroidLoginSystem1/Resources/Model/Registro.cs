@@ -13,7 +13,7 @@ using SQLite;
 
 namespace p2p_project.Resources.Model
 {
-    class Registro
+    class Registro : Java.Lang.Object
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
@@ -27,5 +27,7 @@ namespace p2p_project.Resources.Model
         public string Messaggio { get; set; }
 
         public DateTime Orario { get; set; }
+
+        public string Path { get; set; }
     }
 }

@@ -14,6 +14,7 @@ using Android.Content.PM;
 using Newtonsoft.Json;
 using Java.IO;
 using Android.Graphics;
+using Android.Database;
 
 namespace p2p_project.Resources
 {
@@ -49,11 +50,11 @@ namespace p2p_project.Resources
         {
             if (IsThereAnAppToTakePictures())
             {
-                CreateDirectoryForPictures();
+                CreateDirectoryForPictures("ChatP2p Fotocamera");
 
                 Intent intent = new Intent(MediaStore.ActionImageCapture);
                 App._file = new File(App._dir, String.Format("myPhoto_{0}.jpg", Guid.NewGuid()));
-                intent.PutExtra(MediaStore.ExtraOutput, Android.Net.Uri.FromFile(App._file));
+                intent.PutExtra(MediaStore.ExtraOutput, Android.Net.Uri.FromFile(App._file));                
                 StartActivityForResult(intent, CAMERA);
             }
             else
@@ -62,11 +63,11 @@ namespace p2p_project.Resources
             }
         }
 
-        private void CreateDirectoryForPictures()
+        private void CreateDirectoryForPictures(string dirName)
         {
-            App._dir = new File(
-                Android.OS.Environment.GetExternalStoragePublicDirectory(
-                    Android.OS.Environment.DirectoryPictures), "ChatP2p");
+            string path = System.IO.Path.Combine(Android.OS.Environment.GetExternalStoragePublicDirectory(
+                    Android.OS.Environment.DirectoryPictures).Path, "ChatP2p");
+            App._dir = new Java.IO.File(path, dirName);
             if (!App._dir.Exists())
             {
                 App._dir.Mkdirs();
@@ -102,7 +103,8 @@ namespace p2p_project.Resources
                     var gallery = new
                     {
                         FromGallery = true,
-                        Uri = data.Data.ToString()
+                        Uri = data.Data.ToString(),
+                        Path = GetPathToImage(data.Data)
                     };
                     string obj = JsonConvert.SerializeObject(gallery);
                     SendFileNow.PutExtra("SelectFile", obj);
@@ -121,7 +123,8 @@ namespace p2p_project.Resources
                     var camera = new
                     {
                         FromGallery = false,
-                        Uri = contentUri.ToString()
+                        Uri = contentUri.ToString(),
+                        Path = App._file.Path
                     };
                     string obj = JsonConvert.SerializeObject(camera);
 
@@ -129,6 +132,24 @@ namespace p2p_project.Resources
                     this.StartActivity(SendFileNow);
                 }
             }
+        }
+
+        private string GetPathToImage(Android.Net.Uri uri)
+        {
+            ICursor cursor = this.ContentResolver.Query(uri, null, null, null, null);
+            cursor.MoveToFirst();
+            string document_id = cursor.GetString(0);
+            //document_id = document_id.Split(':')[1];
+            cursor.Close();
+
+            cursor = ContentResolver.Query(
+            Android.Provider.MediaStore.Images.Media.ExternalContentUri,
+            null, MediaStore.Images.Media.InterfaceConsts.Id + " = ? ", new String[] { document_id }, null);
+            cursor.MoveToFirst();
+            string path = cursor.GetString(cursor.GetColumnIndex(MediaStore.Images.Media.InterfaceConsts.Data));
+            cursor.Close();
+
+            return path;
         }
     }
 }

@@ -46,3 +46,7 @@ p2p_project.Resources.WiFiDirectBroadcastReceiver, p2p project;md55debec2523a555
 p2p_project.Resources.WiFiDirectBroadcastReceiver, p2p project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md55debec2523a555e8b74559a56bd3d108.WiFiDirectBroadcastReceiver
 p2p_project.Resources.WiFiDirectBroadcastReceiver;md55debec2523a555e8b74559a56bd3d108.WiFiDirectBroadcastReceiver
 p2p_project.resources.WiFiDirectBroadcastReceiver;md55debec2523a555e8b74559a56bd3d108.WiFiDirectBroadcastReceiver
+p2p_project.Resources.Model.Registro, p2p project;md50267bfff25029ca0e0a85c6bf7f96414.Registro
+p2p_project.Resources.Model.Registro, p2p project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md50267bfff25029ca0e0a85c6bf7f96414.Registro
+p2p_project.Resources.Model.Registro;md50267bfff25029ca0e0a85c6bf7f96414.Registro
+p2p_project.resources.model.Registro;md50267bfff25029ca0e0a85c6bf7f96414.Registro
