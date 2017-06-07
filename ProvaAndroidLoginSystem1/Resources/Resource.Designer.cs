@@ -50,6 +50,36 @@ namespace p2p_project
 		public partial class Attribute
 		{
 			
+			// aapt resource value: 0x7f010009
+			public const int layout_aspectRatio = 2130771977;
+			
+			// aapt resource value: 0x7f010001
+			public const int layout_heightPercent = 2130771969;
+			
+			// aapt resource value: 0x7f010006
+			public const int layout_marginBottomPercent = 2130771974;
+			
+			// aapt resource value: 0x7f010008
+			public const int layout_marginEndPercent = 2130771976;
+			
+			// aapt resource value: 0x7f010003
+			public const int layout_marginLeftPercent = 2130771971;
+			
+			// aapt resource value: 0x7f010002
+			public const int layout_marginPercent = 2130771970;
+			
+			// aapt resource value: 0x7f010005
+			public const int layout_marginRightPercent = 2130771973;
+			
+			// aapt resource value: 0x7f010007
+			public const int layout_marginStartPercent = 2130771975;
+			
+			// aapt resource value: 0x7f010004
+			public const int layout_marginTopPercent = 2130771972;
+			
+			// aapt resource value: 0x7f010000
+			public const int layout_widthPercent = 2130771968;
+			
 			static Attribute()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -247,6 +277,61 @@ namespace p2p_project
 			}
 			
 			private Style()
+			{
+			}
+		}
+		
+		public partial class Styleable
+		{
+			
+			public static int[] PercentLayout_Layout = new int[] {
+					2130771968,
+					2130771969,
+					2130771970,
+					2130771971,
+					2130771972,
+					2130771973,
+					2130771974,
+					2130771975,
+					2130771976,
+					2130771977};
+			
+			// aapt resource value: 9
+			public const int PercentLayout_Layout_layout_aspectRatio = 9;
+			
+			// aapt resource value: 1
+			public const int PercentLayout_Layout_layout_heightPercent = 1;
+			
+			// aapt resource value: 6
+			public const int PercentLayout_Layout_layout_marginBottomPercent = 6;
+			
+			// aapt resource value: 8
+			public const int PercentLayout_Layout_layout_marginEndPercent = 8;
+			
+			// aapt resource value: 3
+			public const int PercentLayout_Layout_layout_marginLeftPercent = 3;
+			
+			// aapt resource value: 2
+			public const int PercentLayout_Layout_layout_marginPercent = 2;
+			
+			// aapt resource value: 5
+			public const int PercentLayout_Layout_layout_marginRightPercent = 5;
+			
+			// aapt resource value: 7
+			public const int PercentLayout_Layout_layout_marginStartPercent = 7;
+			
+			// aapt resource value: 4
+			public const int PercentLayout_Layout_layout_marginTopPercent = 4;
+			
+			// aapt resource value: 0
+			public const int PercentLayout_Layout_layout_widthPercent = 0;
+			
+			static Styleable()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Styleable()
 			{
 			}
 		}

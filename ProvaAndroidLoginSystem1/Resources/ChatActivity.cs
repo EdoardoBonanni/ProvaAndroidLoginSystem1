@@ -18,6 +18,8 @@ using Newtonsoft.Json;
 using Java.Lang;
 using Android.Content.Res;
 using Java.IO;
+using Android.Provider;
+using Android.Graphics;
 
 namespace ProvaAndroidLoginSystem1.Resources
 {
@@ -118,14 +120,13 @@ namespace ProvaAndroidLoginSystem1.Resources
 
                 var gallery = new
                 {
-                    FromGallery = true,
-                    Uri = uri
+                    GetFrom = "Received",
+                    Uri = uri, 
+                    Path = itemClicked.Path
                 };
                 string obj = JsonConvert.SerializeObject(gallery);
                 SendFileNow.PutExtra("SelectFile", obj);
                 this.StartActivity(SendFileNow);
-                //Start Activity
-                //PutExtra("Uri", itemClicked.Item1.Messaggio);
             }
         }
 

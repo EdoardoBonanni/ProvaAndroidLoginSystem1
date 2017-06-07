@@ -12,6 +12,8 @@ using Android.Widget;
 using Newtonsoft.Json;
 using Android.Graphics;
 using ProvaAndroidLoginSystem1.Resources;
+using Android.Database;
+using Android.Provider;
 
 namespace p2p_project.Resources
 {
@@ -40,32 +42,58 @@ namespace p2p_project.Resources
             var prova = Intent.GetStringExtra("SelectFile");
             var test = JsonConvert.DeserializeObject<dynamic>(prova);
 
-            bool fromGallery = test.FromGallery;
-            if (fromGallery)
+            string getFrom = test.GetFrom;
+
+            string uriString;
+            int height;
+            int width;
+
+            switch (getFrom)
             {
-                string uriString = test.Uri;
-                uri = Android.Net.Uri.Parse(uriString);
-                path = test.Path;
-                imgPhoto.SetImageURI(uri);
+                case "Gallery":
+                    uriString = test.Uri;
+                    uri = Android.Net.Uri.Parse(uriString);
+                    path = test.Path;
+                    imgPhoto.SetImageURI(uri);
+                    break;
+                case "Camera":
+                    uriString = test.Uri;
+                    uri = Android.Net.Uri.Parse(uriString);
+                    path = test.Path;
 
-                GC.Collect();
-            }
-            else{
-                string uriString = test.Uri;
-                uri = Android.Net.Uri.Parse(uriString);
-                path = test.Path;
+                    height = Resources.DisplayMetrics.HeightPixels;
+                    width = 150;//imgPhoto.Height;
+                    App.bitmap = App._file.Path.LoadAndResizeBitmap(width, height);
 
-                int height = Resources.DisplayMetrics.HeightPixels;
-                int width = 150;//imgPhoto.Height;
-                App.bitmap = App._file.Path.LoadAndResizeBitmap(width, height);
-                if (App.bitmap != null)
-                {
-                    imgPhoto.SetImageBitmap(App.bitmap);
-                    App.bitmap = null;
-                }
+                    if (App.bitmap != null)
+                    {
+                        imgPhoto.SetImageBitmap(App.bitmap);
+                        App.bitmap = null;
+                    }
 
-                // Dispose of the Java side bitmap.
-                GC.Collect();
+                    GC.Collect();
+                    break;
+                case "Received":
+                    btnSendFile.Visibility = ViewStates.Gone;
+
+                    uriString = test.Uri;
+                    uri = Android.Net.Uri.Parse(uriString);
+                    path = test.Path;
+
+                    height = Resources.DisplayMetrics.HeightPixels;
+                    width = 150;//imgPhoto.Height;
+                    Bitmap bitmap = path.LoadAndResizeBitmap(width, height);
+
+                    if (bitmap != null)
+                    {
+                        imgPhoto.SetImageBitmap(bitmap);
+                        bitmap = null;
+                    }
+
+                    GC.Collect();
+                    break;
+                default:
+                    break;
             }
 
             btnSendFile.Click += BtnSendFile_Click;

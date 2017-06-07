@@ -114,5 +114,11 @@ C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\Prov
 C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Debug\System.ServiceModel.Internals.dll.mdb
 C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Debug\System.Xml.dll.mdb
 C:\Users\lucag\Desktop\Progetti\Informatica\Mobile\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Debug\System.Xml.Linq.dll.mdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\XbdMerge\Xamarin.Android.Support.Annotations.dll.stamp
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\XbdMerge\Xamarin.Android.Support.Compat.dll.stamp
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\XbdMerge\Xamarin.Android.Support.Percent.dll.stamp
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Debug\Xamarin.Android.Support.Annotations.dll
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Debug\Xamarin.Android.Support.Compat.dll
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Debug\Xamarin.Android.Support.Percent.dll
 C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\p2p project.dll.mdb
 C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Debug\p2p project.dll.mdb

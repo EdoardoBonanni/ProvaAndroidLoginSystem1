@@ -102,7 +102,7 @@ namespace p2p_project.Resources
 
                     var gallery = new
                     {
-                        FromGallery = true,
+                        GetFrom = "Gallery",
                         Uri = data.Data.ToString(),
                         Path = GetPathToImage(data.Data)
                     };
@@ -122,7 +122,7 @@ namespace p2p_project.Resources
 
                     var camera = new
                     {
-                        FromGallery = false,
+                        GetFrom = "Camera",
                         Uri = contentUri.ToString(),
                         Path = App._file.Path
                     };
@@ -151,5 +151,6 @@ namespace p2p_project.Resources
 
             return path;
         }
+
     }
 }

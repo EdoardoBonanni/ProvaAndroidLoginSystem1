@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.percent.PercentRelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -22,9 +23,9 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="30dp"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_widthPercent="50%"
+        android:layout_heightPercent="50%"
         android:id="@+id/imageViewSendFile"
         android:layout_below="@+id/btnSendFile"
         android:scaleType="fitCenter" />
-</RelativeLayout>
+</android.support.percent.PercentRelativeLayout>
