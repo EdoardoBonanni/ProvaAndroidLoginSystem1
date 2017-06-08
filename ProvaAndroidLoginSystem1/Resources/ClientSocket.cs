@@ -62,7 +62,7 @@ namespace p2p_project.Resources
 
         public void Receive()
         {
-            byte[] data = new byte[20000];
+            byte[] data = new byte[10000];
             /*int responseCount = await networkStream.ReadAsync(data, 0, data.Length);
             string responseData = System.Text.Encoding.ASCII.GetString(data, 0, responseCount);
             Toast.MakeText(Application.Context, responseData, ToastLength.Long);*/
@@ -71,19 +71,16 @@ namespace p2p_project.Resources
 
         public void receiveCallback(IAsyncResult res)
         {
-            byte[] data = (byte[]) res.AsyncState;
+            byte[] data = (byte[])res.AsyncState;
             int responseCount = networkStream.EndRead(res);
-            if(responseCount > 0)
+            if (responseCount > 0)
             {
-                string buff = System.Text.Encoding.UTF8.GetString(data, 0, responseCount);
-                if (buff.Contains("{") && buff.Contains("}"))
+                string buff = Encoding.UTF8.GetString(data, 0, responseCount);
+                var token = split(buff, '}');
+
+                foreach (var tok in token)
                 {
-                    appendBuff = "";
-                    packetManager.Unpack(buff);
-                }
-                else
-                {
-                    appendBuff += buff;
+                    appendBuff += tok;
                     if (appendBuff.Contains("{") && appendBuff.Contains("}"))
                     {
                         packetManager.Unpack(appendBuff);
@@ -92,6 +89,31 @@ namespace p2p_project.Resources
                 }
                 networkStream.BeginRead(data, 0, data.Length, new AsyncCallback(receiveCallback), data);
             }
+        }
+
+        private string[] split(string buffer, char separator)
+        {
+            var chars = buffer.ToCharArray();
+            List<string> token = new List<string>();
+            string tok = "";
+
+            foreach (var ch in chars)
+            {
+                tok += ch;
+                if (ch.Equals(separator))
+                {
+                    token.Add(tok);
+                    tok = "";
+                }
+            }
+
+            if (!tok.Equals(""))
+            {
+                token.Add(tok);
+            }
+
+            var tokens = token.ToArray();
+            return tokens;
         }
 
         public void End()

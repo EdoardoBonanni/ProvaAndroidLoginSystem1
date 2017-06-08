@@ -202,7 +202,7 @@ namespace p2p_project.Resources
 
             FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read);
 
-            int bufferSize = 16384;
+            int bufferSize = 4096;
             byte[] buffer = new byte[bufferSize];
 
             int len = 1;
@@ -298,7 +298,7 @@ namespace p2p_project.Resources
             var stream = res.OpenInputStream(uri);
 
             // this is storage overwritten on each iteration with bytes
-            int bufferSize = 16384;
+            int bufferSize = 4096;
             byte[] buffer = new byte[bufferSize];
 
             // we need to know how may bytes were read to write them to the byteBuffer
