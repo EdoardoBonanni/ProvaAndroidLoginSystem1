@@ -81,7 +81,7 @@ namespace p2p_project.Resources
                     path = test.Path;
 
                     height = Resources.DisplayMetrics.HeightPixels;
-                    width = 150;//imgPhoto.Height;
+                    width = 150;// imgPhoto.Height;
                     Bitmap bitmap = path.LoadAndResizeBitmap(width, height);
 
                     if (bitmap != null)

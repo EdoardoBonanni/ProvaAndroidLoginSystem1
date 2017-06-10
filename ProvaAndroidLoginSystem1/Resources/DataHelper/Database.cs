@@ -140,14 +140,12 @@ namespace p2p_project.Resources.DataHelper
             }
         }
 
-        public List<Registro> SelectQueryTable(string Propietario, string Connesso, int numPage)
+        public List<Registro> SelectQueryTable(string Propietario, string Connesso, int offset)
         {
             try
             {
                 using (var connection = new SQLiteConnection(System.IO.Path.Combine(folder, "ChatP2p.db")))
                 {
-                    int offset = (numPage - 1) * count;
-                   
                     List<Registro> chat = connection.Query<Registro>("Select * FROM Registro WHERE (UsernameMittente=? AND UsernameDestinatario=?) OR (UsernameMittente=? AND UsernameDestinatario=?) ORDER BY orario DESC LIMIT " + offset + ", " + count + ";", Propietario, Connesso, Connesso, Propietario);
                     return chat;
                 }
@@ -158,5 +156,6 @@ namespace p2p_project.Resources.DataHelper
                 return new List<Registro>();
             }
         }
+
     }
 }

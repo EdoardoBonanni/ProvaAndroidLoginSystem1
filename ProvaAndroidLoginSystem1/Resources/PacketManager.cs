@@ -146,8 +146,8 @@ namespace p2p_project.Resources
                             break;
                         case "End":
                             string pathEndDestinatario = a.Path;
-                            OnFileReceived(EventArgs.Empty, System.IO.Path.GetFileName(pathEndDestinatario), pathEndDestinatario, false);
-                            saveFile(pathEndDestinatario);
+                            string newPath = saveFile(pathEndDestinatario);
+                            OnFileReceived(EventArgs.Empty, System.IO.Path.GetFileName(newPath), newPath, false);
                             break;
                         default:
                             //Errore
@@ -171,9 +171,18 @@ namespace p2p_project.Resources
 
         private string CreateFile()
         {
-            var fileDir = CreateDirectoryForPictures("ChatP2p Ricevute");
-            string fileName = String.Format("myPhoto_{0}.jpg", Guid.NewGuid());
-            string path = System.IO.Path.Combine(fileDir.Path, fileName);
+            var tempDir = Application.Context.ExternalCacheDir;
+            string dirName = "ChatP2p Temporanee";
+
+            Java.IO.File dir = new Java.IO.File(tempDir.Path, dirName);
+            if (!dir.Exists())
+            {
+                dir.Mkdirs();
+            }
+
+            string fileName = string.Format("myPhoto_{0}.jpg", Guid.NewGuid());
+            string path = System.IO.Path.Combine(dir.Path, fileName);
+
             FileStream fs = File.Create(path);
             fs.Close();
             return path;
@@ -225,16 +234,27 @@ namespace p2p_project.Resources
             return i;
         }
 
-        private void saveFile(string path)
+        private string saveFile(string path)
         {
             Java.IO.File file = new Java.IO.File(path);
 
+            var dir = CreateDirectoryForPictures("ChatP2p ricevute");
+            string newPath = System.IO.Path.Combine(dir.Path, System.IO.Path.GetFileName(path));
+
+            Java.IO.File newFile = new Java.IO.File(newPath);
+
+            var tempBites = File.ReadAllBytes(path);
+            File.WriteAllBytes(newPath, tempBites);
+
             Intent mediaScanIntent = new Intent(Intent.ActionMediaScannerScanFile);
-            Android.Net.Uri contentUri = Android.Net.Uri.FromFile(file);
+            Android.Net.Uri contentUri = Android.Net.Uri.FromFile(newFile);
             mediaScanIntent.SetData(contentUri);
             Application.Context.SendBroadcast(mediaScanIntent);
 
             destinatario.Remove(path);
+            File.Delete(path);
+
+            return newPath;
         }
 
         #region pack

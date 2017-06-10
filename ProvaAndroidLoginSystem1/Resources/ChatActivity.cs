@@ -34,6 +34,7 @@ namespace ProvaAndroidLoginSystem1.Resources
 
         private ChatAdapter chatAdapter;
         private Database database;
+        private bool dataLoaded = true;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -49,6 +50,7 @@ namespace ProvaAndroidLoginSystem1.Resources
             btnSend.Click += btnSend_Click;
             btnFile.Click += BtnFile_Click;
             lstMessage.ItemClick += LstMessage_ItemClick;
+            lstMessage.ScrollStateChanged += LstMessage_ScrollStateChanged;
 
             database = new Database();
             database.createTable();
@@ -57,7 +59,7 @@ namespace ProvaAndroidLoginSystem1.Resources
             {
                 RunOnUiThread(() =>
                 {
-                    updateChat(reg.Messaggio, mine, reg.isFile, reg.Path);
+                    updateChat(reg.Messaggio, mine, reg.isFile, reg.Orario, reg.Path);
                 });
             };
 
@@ -91,13 +93,34 @@ namespace ProvaAndroidLoginSystem1.Resources
             lstMessage.Adapter = chatAdapter;
         }
 
+        private void LstMessage_ScrollStateChanged(object sender, AbsListView.ScrollStateChangedEventArgs e)
+        {
+            if (dataLoaded)
+            {
+                if (lstMessage.FirstVisiblePosition == 0)
+                {
+                    var chatUpdate = database.SelectQueryTable(MainActivity.retrieveLocal("Username"), MainActivity.retrieveLocal("ConnectedUsername"), lstMessage.Count);
+                    if (chatUpdate.Count == 0)
+                    {
+                        dataLoaded = false;
+                    }
+                    foreach (var message in chatUpdate)
+                    {
+                        bool mine = message.UsernameMittente == MainActivity.retrieveLocal("Username");
+                        chatAdapter.update(message.Messaggio, mine, message.Path, message.isFile, message.Orario);
+                    }
+                }
+            }
+        }
+
+
         private void PacketManager_partFileReceived(object sender, EventArgs e, string fileName, string path, bool mine)
         {
             if (chatAdapter.test(path))
             {
                 RunOnUiThread(() =>
                 {
-                    updateChat(fileName + " (in corso...)", mine, true, path);
+                    updateChat(fileName + " (in corso...)", mine, true, DateTime.Now, path);
                 });
             }
         }
@@ -132,7 +155,7 @@ namespace ProvaAndroidLoginSystem1.Resources
             this.StartActivity(SelectFile);
         }
 
-        public void updateChat(string text, bool mine, bool isFile, string path = "")
+        public void updateChat(string text, bool mine, bool isFile, DateTime orario, string path = "")
         {
             if (mine && !isFile)
             {
@@ -143,11 +166,11 @@ namespace ProvaAndroidLoginSystem1.Resources
                     isFile = false,
                     Messaggio = text,
                     Path = "",
-                    Orario = DateTime.Now
+                    Orario = orario
                 });
             }
 
-            chatAdapter.update(text, mine, path, isFile);
+            chatAdapter.update(text, mine, path, isFile, orario);
         }
 
         void btnSend_Click(object sender, EventArgs e)
@@ -159,7 +182,7 @@ namespace ProvaAndroidLoginSystem1.Resources
                 string packet = PacketManager.PackMessage(txtChat.Text);
                 socket.Send(packet);
 
-                updateChat(txtChat.Text, true, false);
+                updateChat(txtChat.Text, true, false, DateTime.Now);
 
                 txtChat.Text = "";
             }

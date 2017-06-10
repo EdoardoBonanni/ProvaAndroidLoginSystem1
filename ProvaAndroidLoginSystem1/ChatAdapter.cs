@@ -65,7 +65,7 @@ namespace p2p_project
             return view;
         }
 
-        public void update(string message, bool mine, string path, bool isFile)
+        public void update(string message, bool mine, string path, bool isFile, DateTime orario)
         {
             if (isFile)
             {
@@ -79,7 +79,7 @@ namespace p2p_project
 
             chat.Add(new Tuple<Registro, bool>(new Registro {
                 Messaggio = message,
-                Orario = DateTime.Now,
+                Orario = orario,
                 Path = path,
                 isFile = isFile
             }, mine));
