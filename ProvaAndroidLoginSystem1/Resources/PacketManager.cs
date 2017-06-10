@@ -21,12 +21,14 @@ namespace p2p_project.Resources
     public delegate void MessageEventHandler(object sender, EventArgs e, string message);
     public delegate void FileEventHandler(object sender, EventArgs e, string fileName, string path, bool mine);
     public delegate void UsernameEventHandler(object sender, EventArgs e);
+    public delegate void PartFileEventHandler(object sender, EventArgs e, string fileName, string path, bool mine);
 
     class PacketManager
     {
         public static event MessageEventHandler messageReceived;
         public static event UsernameEventHandler usernameReceived;
         public static event FileEventHandler fileReceived;
+        public static event PartFileEventHandler partFileReceived;
 
         //<MittentePath, Tuple<Uri, DestinatarioPath>
         private Dictionary<string, Tuple<string, string>> mittente;
@@ -66,6 +68,11 @@ namespace p2p_project.Resources
             fileReceived?.Invoke(this, e, fileName, path, mine);
         }
 
+        protected virtual void OnPartFileReceived(EventArgs e, string fileName, string path, bool mine)
+        {
+            partFileReceived?.Invoke(this, e, fileName, path, mine);
+        }
+
         public void Unpack(string packet)
         {
             dynamic a = JsonConvert.DeserializeObject<dynamic>(packet);
@@ -102,6 +109,7 @@ namespace p2p_project.Resources
                                 path = a.Path;
                             }
                             byte[] buffer = a.Buffer;
+                            OnPartFileReceived(EventArgs.Empty, System.IO.Path.GetFileName(path), path, false);
                             int num = appendToFile(path, buffer);
                             string pack = PackAck(num, path);
                             socket.Send(pack);
@@ -110,7 +118,7 @@ namespace p2p_project.Resources
                             int numberAck = a.Number;
                             string pathAck = a.Path;
                             string pathDestinatario = a.Buffer;
-
+                            OnPartFileReceived(EventArgs.Empty, System.IO.Path.GetFileName(pathAck), pathAck, true);
                             addDestinatario(pathAck, pathDestinatario);
 
                             byte[] bufferAck = readBytes(Android.Net.Uri.Parse(mittente[pathAck].Item1), numberAck);

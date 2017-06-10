@@ -50,26 +50,6 @@ namespace ProvaAndroidLoginSystem1.Resources
             btnFile.Click += BtnFile_Click;
             lstMessage.ItemClick += LstMessage_ItemClick;
 
-            /*
-            //Lo farà il background Service
-            PacketManager.messageReceived += (sender, args, message) =>
-            {
-                RunOnUiThread(() =>
-                {
-                    updateChat(message, false, false);
-                });
-            };
-
-            //Lo fa il background Service
-            PacketManager.fileReceived += (sender, args, uri) =>
-            {
-                RunOnUiThread(() =>
-                {
-                    updateChat(uri, true, true);
-                });
-            };
-            */
-
             database = new Database();
             database.createTable();
 
@@ -81,10 +61,12 @@ namespace ProvaAndroidLoginSystem1.Resources
                 });
             };
 
+            PacketManager.partFileReceived += PacketManager_partFileReceived;
+
             List<Tuple<Registro, bool>> chat = new List<Tuple<Registro, bool>>();
             
             List<Registro> registro = new List<Registro>();
-            registro = database.SelectQueryTable(MainActivity.retrieveLocal("Username"), MainActivity.retrieveLocal("ConnectedUsername"));
+            registro = database.SelectQueryTable(MainActivity.retrieveLocal("Username"), MainActivity.retrieveLocal("ConnectedUsername"), 1);
 
             foreach (var message in registro)
             {
@@ -109,24 +91,38 @@ namespace ProvaAndroidLoginSystem1.Resources
             lstMessage.Adapter = chatAdapter;
         }
 
+        private void PacketManager_partFileReceived(object sender, EventArgs e, string fileName, string path, bool mine)
+        {
+            if (chatAdapter.test(path))
+            {
+                RunOnUiThread(() =>
+                {
+                    updateChat(fileName + " (in corso...)", mine, true, path);
+                });
+            }
+        }
+
         private void LstMessage_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             Registro itemClicked = (Registro) chatAdapter.GetItem(e.Position);
             if (itemClicked.isFile)
             {
-                File f = new File(itemClicked.Path);
-                string uri = Android.Net.Uri.FromFile(f).ToString();
-                Intent SendFileNow = new Intent(this, typeof(SendFileActivity));
-
-                var gallery = new
+                if(!itemClicked.Messaggio.Contains("(in corso...)"))
                 {
-                    GetFrom = "Received",
-                    Uri = uri, 
-                    Path = itemClicked.Path
-                };
-                string obj = JsonConvert.SerializeObject(gallery);
-                SendFileNow.PutExtra("SelectFile", obj);
-                this.StartActivity(SendFileNow);
+                    File f = new File(itemClicked.Path);
+                    string uri = Android.Net.Uri.FromFile(f).ToString();
+                    Intent SendFileNow = new Intent(this, typeof(SendFileActivity));
+
+                    var gallery = new
+                    {
+                        GetFrom = "Received",
+                        Uri = uri, 
+                        Path = itemClicked.Path
+                    };
+                    string obj = JsonConvert.SerializeObject(gallery);
+                    SendFileNow.PutExtra("SelectFile", obj);
+                    this.StartActivity(SendFileNow);
+                }
             }
         }
 

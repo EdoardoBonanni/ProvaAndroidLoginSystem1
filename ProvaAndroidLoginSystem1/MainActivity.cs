@@ -42,11 +42,6 @@ namespace ProvaAndroidLoginSystem1
         {
             base.OnCreate(bundle);
 
-            /*
-            TelephonyManager mTelephonyMgr = (TelephonyManager)GetSystemService(TelephonyService);
-            Number = mTelephonyMgr.Line1Number;
-            //Number = "+398526547496";*/
-
             client = new HTTPClient();
 
             //Database db = new Database();

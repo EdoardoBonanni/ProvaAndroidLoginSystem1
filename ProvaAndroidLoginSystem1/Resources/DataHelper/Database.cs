@@ -21,7 +21,7 @@ namespace p2p_project.Resources.DataHelper
     {
         string folder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
         public static event DatabaseEventHandler databaseUpdated;
-
+        private int count = 10;
         private void OnDatabaseUpdated(EventArgs e, Registro registro, bool mine)
         {
             databaseUpdated?.Invoke(this, e, registro, mine);
@@ -140,15 +140,16 @@ namespace p2p_project.Resources.DataHelper
             }
         }
 
-        public List<Registro> SelectQueryTable(string Propietario, string Connesso)
+        public List<Registro> SelectQueryTable(string Propietario, string Connesso, int numPage)
         {
             try
             {
                 using (var connection = new SQLiteConnection(System.IO.Path.Combine(folder, "ChatP2p.db")))
                 {
-                    List<Registro> mittente = connection.Query<Registro>("Select * From Registro Where UsernameMittente=? AND UsernameDestinatario=?", Propietario, Connesso);
-                    List<Registro> destinatario = connection.Query<Registro>("Select * From Registro Where UsernameMittente=? AND UsernameDestinatario=?", Connesso, Propietario);
-                    return mittente.Concat<Registro>(destinatario).ToList();
+                    int offset = (numPage - 1) * count;
+                   
+                    List<Registro> chat = connection.Query<Registro>("Select * FROM Registro WHERE (UsernameMittente=? AND UsernameDestinatario=?) OR (UsernameMittente=? AND UsernameDestinatario=?) ORDER BY orario DESC LIMIT " + offset + ", " + count + ";", Propietario, Connesso, Connesso, Propietario);
+                    return chat;
                 }
             }
             catch (SQLiteException ex)

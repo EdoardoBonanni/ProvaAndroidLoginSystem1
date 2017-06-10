@@ -67,14 +67,35 @@ namespace p2p_project
 
         public void update(string message, bool mine, string path, bool isFile)
         {
-            this.chat.Add(new Tuple<Registro, bool>(new Registro {
+            if (isFile)
+            {
+                var receivingFile = chat.Where(a => a.Item1.Path == path).FirstOrDefault();
+
+                if (receivingFile != null)
+                {
+                    chat.Remove(receivingFile);
+                }
+            }
+
+            chat.Add(new Tuple<Registro, bool>(new Registro {
                 Messaggio = message,
                 Orario = DateTime.Now,
                 Path = path,
                 isFile = isFile
             }, mine));
-            this.chat = chat.OrderBy(d => d.Item1.Orario).ToList();
+
+            chat = chat.OrderBy(d => d.Item1.Orario).ToList();
             NotifyDataSetChanged();
+        }
+        
+        public bool test(string path)
+        {
+            var receivingFile = chat.Where(a => a.Item1.Path == path).FirstOrDefault();
+            if(receivingFile != null)
+            {
+                return false;
+            }
+            return true;
         }
 
         public override int Count
