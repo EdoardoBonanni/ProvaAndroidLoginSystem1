@@ -30,7 +30,7 @@ namespace ProvaAndroidLoginSystem1.Resources
         private Button btnFile;
         private Button btnSend;
         private EditText txtChat;
-
+        private TextView txtUsername;
 
         private ChatAdapter chatAdapter;
         private Database database;
@@ -46,6 +46,8 @@ namespace ProvaAndroidLoginSystem1.Resources
             btnSend = FindViewById<Button>(Resource.Id.btnSend);
             btnFile = FindViewById<Button>(Resource.Id.btnSendFile);
             txtChat = FindViewById<EditText>(Resource.Id.txtChat);
+            txtUsername = FindViewById<TextView>(Resource.Id.txtUser);
+            txtUsername.Text = MainActivity.retrieveLocal("ConnectedUsername");
 
             btnSend.Click += btnSend_Click;
             btnFile.Click += BtnFile_Click;
@@ -68,7 +70,7 @@ namespace ProvaAndroidLoginSystem1.Resources
             List<Tuple<Registro, bool>> chat = new List<Tuple<Registro, bool>>();
             
             List<Registro> registro = new List<Registro>();
-            registro = database.SelectQueryTable(MainActivity.retrieveLocal("Username"), MainActivity.retrieveLocal("ConnectedUsername"), 1);
+            registro = database.SelectQueryTable(MainActivity.retrieveLocal("Username"), MainActivity.retrieveLocal("ConnectedUsername"), 0);
 
             foreach (var message in registro)
             {
@@ -114,14 +116,18 @@ namespace ProvaAndroidLoginSystem1.Resources
         }
 
 
-        private void PacketManager_partFileReceived(object sender, EventArgs e, string fileName, string path, bool mine)
+        private void PacketManager_partFileReceived(object sender, EventArgs e, string fileName, string path, bool mine, int number, int totalNumber)
         {
-            if (chatAdapter.test(path))
+            if (number < totalNumber)
             {
                 RunOnUiThread(() =>
                 {
-                    updateChat(fileName + " (in corso...)", mine, true, DateTime.Now, path);
+                    updateChat(fileName + " " + Convert.ToInt32(decimal.Divide(number, totalNumber) * 100) + "%", mine, true, DateTime.Now, path);
                 });
+            }
+            if(number == totalNumber)
+            {
+                chatAdapter.remove(path);
             }
         }
 
@@ -130,7 +136,7 @@ namespace ProvaAndroidLoginSystem1.Resources
             Registro itemClicked = (Registro) chatAdapter.GetItem(e.Position);
             if (itemClicked.isFile)
             {
-                if(!itemClicked.Messaggio.Contains("(in corso...)"))
+                if(!itemClicked.Messaggio.Contains("%"))
                 {
                     File f = new File(itemClicked.Path);
                     string uri = Android.Net.Uri.FromFile(f).ToString();
@@ -186,6 +192,12 @@ namespace ProvaAndroidLoginSystem1.Resources
 
                 txtChat.Text = "";
             }
+        }
+
+        protected override void OnResume()
+        {
+            base.OnResume();
+            var test = chatAdapter.Chat;
         }
 
         public override void OnBackPressed()

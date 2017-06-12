@@ -21,7 +21,7 @@ using p2p_project;
 
 namespace ProvaAndroidLoginSystem1.Resources
 {
-    [Activity(Label = "SignInActivity", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Label = "SignIn", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class SignInActivity : Activity
     {
         private InputMethodManager imm;

@@ -2,7 +2,7 @@
 <xs:schema xmlns:android="http://schemas.android.com/apk/res/android" attributeFormDefault="qualified" targetNamespace="http://schemas.android.com/apk/res/android" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:annotation>
     <xs:documentation>v25</xs:documentation>
-    <xs:documentation>10/06/2017 16:44:07</xs:documentation>
+    <xs:documentation>12/06/2017 18:33:37</xs:documentation>
   </xs:annotation>
   <xs:attribute name="accessibilityLiveRegion">
     <xs:annotation>
@@ -17148,6 +17148,7 @@
             <xs:enumeration value="@id/txtPassword" />
             <xs:enumeration value="@id/txtPasswordSignIn" />
             <xs:enumeration value="@id/txtSelectActivity" />
+            <xs:enumeration value="@id/txtUser" />
             <xs:enumeration value="@android:id/accessibilityActionContextClick" />
             <xs:enumeration value="@android:id/accessibilityActionScrollDown" />
             <xs:enumeration value="@android:id/accessibilityActionScrollLeft" />
@@ -20071,6 +20072,7 @@
             <xs:enumeration value="@id/txtPassword" />
             <xs:enumeration value="@id/txtPasswordSignIn" />
             <xs:enumeration value="@id/txtSelectActivity" />
+            <xs:enumeration value="@id/txtUser" />
             <xs:enumeration value="@android:id/accessibilityActionContextClick" />
             <xs:enumeration value="@android:id/accessibilityActionScrollDown" />
             <xs:enumeration value="@android:id/accessibilityActionScrollLeft" />
@@ -20174,6 +20176,7 @@
             <xs:enumeration value="@id/txtPassword" />
             <xs:enumeration value="@id/txtPasswordSignIn" />
             <xs:enumeration value="@id/txtSelectActivity" />
+            <xs:enumeration value="@id/txtUser" />
             <xs:enumeration value="@android:id/accessibilityActionContextClick" />
             <xs:enumeration value="@android:id/accessibilityActionScrollDown" />
             <xs:enumeration value="@android:id/accessibilityActionScrollLeft" />
@@ -20277,6 +20280,7 @@
             <xs:enumeration value="@id/txtPassword" />
             <xs:enumeration value="@id/txtPasswordSignIn" />
             <xs:enumeration value="@id/txtSelectActivity" />
+            <xs:enumeration value="@id/txtUser" />
             <xs:enumeration value="@android:id/accessibilityActionContextClick" />
             <xs:enumeration value="@android:id/accessibilityActionScrollDown" />
             <xs:enumeration value="@android:id/accessibilityActionScrollLeft" />
@@ -20380,6 +20384,7 @@
             <xs:enumeration value="@id/txtPassword" />
             <xs:enumeration value="@id/txtPasswordSignIn" />
             <xs:enumeration value="@id/txtSelectActivity" />
+            <xs:enumeration value="@id/txtUser" />
             <xs:enumeration value="@android:id/accessibilityActionContextClick" />
             <xs:enumeration value="@android:id/accessibilityActionScrollDown" />
             <xs:enumeration value="@android:id/accessibilityActionScrollLeft" />
@@ -20483,6 +20488,7 @@
             <xs:enumeration value="@id/txtPassword" />
             <xs:enumeration value="@id/txtPasswordSignIn" />
             <xs:enumeration value="@id/txtSelectActivity" />
+            <xs:enumeration value="@id/txtUser" />
             <xs:enumeration value="@android:id/accessibilityActionContextClick" />
             <xs:enumeration value="@android:id/accessibilityActionScrollDown" />
             <xs:enumeration value="@android:id/accessibilityActionScrollLeft" />
@@ -20826,6 +20832,7 @@
             <xs:enumeration value="@id/txtPassword" />
             <xs:enumeration value="@id/txtPasswordSignIn" />
             <xs:enumeration value="@id/txtSelectActivity" />
+            <xs:enumeration value="@id/txtUser" />
             <xs:enumeration value="@android:id/accessibilityActionContextClick" />
             <xs:enumeration value="@android:id/accessibilityActionScrollDown" />
             <xs:enumeration value="@android:id/accessibilityActionScrollLeft" />
@@ -20929,6 +20936,7 @@
             <xs:enumeration value="@id/txtPassword" />
             <xs:enumeration value="@id/txtPasswordSignIn" />
             <xs:enumeration value="@id/txtSelectActivity" />
+            <xs:enumeration value="@id/txtUser" />
             <xs:enumeration value="@android:id/accessibilityActionContextClick" />
             <xs:enumeration value="@android:id/accessibilityActionScrollDown" />
             <xs:enumeration value="@android:id/accessibilityActionScrollLeft" />
@@ -21032,6 +21040,7 @@
             <xs:enumeration value="@id/txtPassword" />
             <xs:enumeration value="@id/txtPasswordSignIn" />
             <xs:enumeration value="@id/txtSelectActivity" />
+            <xs:enumeration value="@id/txtUser" />
             <xs:enumeration value="@android:id/accessibilityActionContextClick" />
             <xs:enumeration value="@android:id/accessibilityActionScrollDown" />
             <xs:enumeration value="@android:id/accessibilityActionScrollLeft" />
@@ -21175,6 +21184,7 @@
             <xs:enumeration value="@id/txtPassword" />
             <xs:enumeration value="@id/txtPasswordSignIn" />
             <xs:enumeration value="@id/txtSelectActivity" />
+            <xs:enumeration value="@id/txtUser" />
             <xs:enumeration value="@android:id/accessibilityActionContextClick" />
             <xs:enumeration value="@android:id/accessibilityActionScrollDown" />
             <xs:enumeration value="@android:id/accessibilityActionScrollLeft" />
@@ -21720,6 +21730,7 @@
             <xs:enumeration value="@id/txtPassword" />
             <xs:enumeration value="@id/txtPasswordSignIn" />
             <xs:enumeration value="@id/txtSelectActivity" />
+            <xs:enumeration value="@id/txtUser" />
             <xs:enumeration value="@android:id/accessibilityActionContextClick" />
             <xs:enumeration value="@android:id/accessibilityActionScrollDown" />
             <xs:enumeration value="@android:id/accessibilityActionScrollLeft" />
@@ -21823,6 +21834,7 @@
             <xs:enumeration value="@id/txtPassword" />
             <xs:enumeration value="@id/txtPasswordSignIn" />
             <xs:enumeration value="@id/txtSelectActivity" />
+            <xs:enumeration value="@id/txtUser" />
             <xs:enumeration value="@android:id/accessibilityActionContextClick" />
             <xs:enumeration value="@android:id/accessibilityActionScrollDown" />
             <xs:enumeration value="@android:id/accessibilityActionScrollLeft" />
@@ -21926,6 +21938,7 @@
             <xs:enumeration value="@id/txtPassword" />
             <xs:enumeration value="@id/txtPasswordSignIn" />
             <xs:enumeration value="@id/txtSelectActivity" />
+            <xs:enumeration value="@id/txtUser" />
             <xs:enumeration value="@android:id/accessibilityActionContextClick" />
             <xs:enumeration value="@android:id/accessibilityActionScrollDown" />
             <xs:enumeration value="@android:id/accessibilityActionScrollLeft" />
@@ -22029,6 +22042,7 @@
             <xs:enumeration value="@id/txtPassword" />
             <xs:enumeration value="@id/txtPasswordSignIn" />
             <xs:enumeration value="@id/txtSelectActivity" />
+            <xs:enumeration value="@id/txtUser" />
             <xs:enumeration value="@android:id/accessibilityActionContextClick" />
             <xs:enumeration value="@android:id/accessibilityActionScrollDown" />
             <xs:enumeration value="@android:id/accessibilityActionScrollLeft" />

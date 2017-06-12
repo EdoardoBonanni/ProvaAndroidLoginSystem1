@@ -19,7 +19,7 @@ namespace p2p_project.Resources
 {
     public delegate void SendFileEventHandler(object sender, EventArgs e, string uri, string path);
 
-    [Activity(Label = "SendFileNow", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Label = "ChatP2p", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class SendFileActivity : Activity
     {
         private ImageView imgPhoto;

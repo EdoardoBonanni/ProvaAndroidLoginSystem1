@@ -21,7 +21,7 @@ namespace p2p_project.Resources
     public delegate void MessageEventHandler(object sender, EventArgs e, string message);
     public delegate void FileEventHandler(object sender, EventArgs e, string fileName, string path, bool mine);
     public delegate void UsernameEventHandler(object sender, EventArgs e);
-    public delegate void PartFileEventHandler(object sender, EventArgs e, string fileName, string path, bool mine);
+    public delegate void PartFileEventHandler(object sender, EventArgs e, string fileName, string path, bool mine, int number, int totalNumber);
 
     class PacketManager
     {
@@ -33,7 +33,7 @@ namespace p2p_project.Resources
         //<MittentePath, Tuple<Uri, DestinatarioPath>
         private Dictionary<string, Tuple<string, string>> mittente;
         //<DestinatarioPath, MittentePath>
-        private Dictionary<string, string> destinatario;
+        private Dictionary<string, Tuple<string, int>> destinatario;
 
         private ISocket socket;
 
@@ -41,7 +41,7 @@ namespace p2p_project.Resources
         {
             this.socket = socket;
             this.mittente = new Dictionary<string, Tuple<string, string>>();
-            this.destinatario = new Dictionary<string, string>();
+            this.destinatario = new Dictionary<string, Tuple<string, int>>();
             SendFileActivity.firstSendFile += SendFileActivity_firstSendFile;
             new EventConsumer();
         }
@@ -68,9 +68,9 @@ namespace p2p_project.Resources
             fileReceived?.Invoke(this, e, fileName, path, mine);
         }
 
-        protected virtual void OnPartFileReceived(EventArgs e, string fileName, string path, bool mine)
+        protected virtual void OnPartFileReceived(EventArgs e, string fileName, string path, bool mine, int number, int totalNumber)
         {
-            partFileReceived?.Invoke(this, e, fileName, path, mine);
+            partFileReceived?.Invoke(this, e, fileName, path, mine, number, totalNumber);
         }
 
         public void Unpack(string packet)
@@ -100,16 +100,18 @@ namespace p2p_project.Resources
                             string path = "";
                             if (number == 1)
                             {
+                                int totalNumber1 = a.TotalNumber;
                                 string pathMittente = a.Path;
                                 path = CreateFile();
-                                destinatario.Add(path, pathMittente);
+                                destinatario.Add(path, new Tuple<string, int>(pathMittente, totalNumber1));
                             }
                             else
                             {
                                 path = a.Path;
                             }
                             byte[] buffer = a.Buffer;
-                            OnPartFileReceived(EventArgs.Empty, System.IO.Path.GetFileName(path), path, false);
+                            var totalNumber = getTotalNumber(path, false);
+                            OnPartFileReceived(EventArgs.Empty, System.IO.Path.GetFileName(path), path, false, number, totalNumber);
                             int num = appendToFile(path, buffer);
                             string pack = PackAck(num, path);
                             socket.Send(pack);
@@ -118,7 +120,8 @@ namespace p2p_project.Resources
                             int numberAck = a.Number;
                             string pathAck = a.Path;
                             string pathDestinatario = a.Buffer;
-                            OnPartFileReceived(EventArgs.Empty, System.IO.Path.GetFileName(pathAck), pathAck, true);
+                            var totalNumberAck = this.getTotalNumber(pathAck, true);
+                            OnPartFileReceived(EventArgs.Empty, System.IO.Path.GetFileName(pathAck), pathAck, true, numberAck, totalNumberAck);
                             addDestinatario(pathAck, pathDestinatario);
 
                             byte[] bufferAck = readBytes(Android.Net.Uri.Parse(mittente[pathAck].Item1), numberAck);
@@ -263,8 +266,7 @@ namespace p2p_project.Resources
             return JsonConvert.SerializeObject(new
                 {
                     Type = "Username",
-                    Buffer = MainActivity.retrieveLocal("Username") ?? "",
-                    Checksum = ""
+                    Buffer = MainActivity.retrieveLocal("Username") ?? ""
                 });
         }
 
@@ -273,27 +275,41 @@ namespace p2p_project.Resources
             return JsonConvert.SerializeObject(new
                 {
                     Type = "Message",
-                    Buffer = message,
-                    Checksum = ""
+                    Buffer = message
                 });
         }
 
         public static string PackFile(byte[] buffer, int num, string path)
         {
-            return JsonConvert.SerializeObject(new
+            if (num == 1)
             {
-                Type = "File",
-                Command = "Send",
-                Number = num,
-                Path = path,
-                Buffer = buffer,
-                Checksum = ""
-            });
+                int totalNumber = getTotalNumber(path);
+                return JsonConvert.SerializeObject(new
+                {
+                    Type = "File",
+                    Command = "Send",
+                    Number = num,
+                    TotalNumber = totalNumber,
+                    Path = path,
+                    Buffer = buffer
+                });
+            }
+            else
+            {
+                return JsonConvert.SerializeObject(new
+                {
+                    Type = "File",
+                    Command = "Send",
+                    Number = num,
+                    Path = path,
+                    Buffer = buffer
+                });
+            }
         }
 
         public string PackAck(int number, string pathDestinatario)
         {
-            string pathMittente = destinatario[pathDestinatario];
+            string pathMittente = destinatario[pathDestinatario].Item1;
 
             return JsonConvert.SerializeObject(new
             {
@@ -301,8 +317,7 @@ namespace p2p_project.Resources
                 Command = "Ack",
                 Number = number,
                 Path = pathMittente,
-                Buffer = pathDestinatario,
-                Checksum = ""
+                Buffer = pathDestinatario
             });
         }
 
@@ -313,8 +328,7 @@ namespace p2p_project.Resources
                 Type = "File",
                 Command = "End",
                 Number = 2,
-                Path = path,
-                Checksum = ""
+                Path = path
             });
         }
         #endregion pack
@@ -347,6 +361,30 @@ namespace p2p_project.Resources
                 return new byte[0];
             }
             return null;
+        }
+
+        private static int getTotalNumber(string path)
+        {
+            Java.IO.File f = new Java.IO.File(path);
+            var fileLength = f.Length();
+            var number = fileLength / 4096;
+            if (fileLength % 4096 > 0)
+            {
+                number++;
+            }
+            return Convert.ToInt32(number);
+        }
+
+        public int getTotalNumber(string path, bool mine)
+        {
+            if (mine)
+            {
+                return getTotalNumber(path);
+            }
+            else
+            {
+                return destinatario[path].Item2;
+            }
         }
     }
 }

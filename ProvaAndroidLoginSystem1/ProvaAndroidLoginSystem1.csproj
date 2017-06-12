@@ -184,11 +184,6 @@
     <AndroidResource Include="Resources\drawable\ButtonSignUpStyle.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ProgressBarStyle.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\edit_text_file.xml">
       <SubType>Designer</SubType>
     </AndroidResource>

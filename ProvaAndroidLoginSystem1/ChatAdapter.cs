@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using p2p_project.Resources.Model;
+using Android.Graphics;
 
 namespace p2p_project
 {
@@ -54,11 +55,15 @@ namespace p2p_project
                 {
                     Chat.Gravity = GravityFlags.Right;
                     Orario.Gravity = GravityFlags.Right;
+                    Chat.SetTextColor(Color.Aqua);
+                    Orario.SetTextColor(Color.Aqua);
                 }
                 else
                 {
                     Chat.Gravity = GravityFlags.Left;
                     Orario.Gravity = GravityFlags.Left;
+                    Chat.SetTextColor(Color.Gold);
+                    Orario.SetTextColor(Color.Gold);
                 }
             }
 
@@ -87,15 +92,15 @@ namespace p2p_project
             chat = chat.OrderBy(d => d.Item1.Orario).ToList();
             NotifyDataSetChanged();
         }
-        
-        public bool test(string path)
+
+        public void remove(string path)
         {
             var receivingFile = chat.Where(a => a.Item1.Path == path).FirstOrDefault();
-            if(receivingFile != null)
+
+            if (receivingFile != null)
             {
-                return false;
+                chat.Remove(receivingFile);
             }
-            return true;
         }
 
         public override int Count
@@ -105,6 +110,8 @@ namespace p2p_project
                 return this.chat.Count;
             }
         }
+
+        public List<Tuple<Registro, bool>> Chat { get { return this.chat; } }
 
     }
 }

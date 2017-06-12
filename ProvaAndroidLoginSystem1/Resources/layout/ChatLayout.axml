@@ -2,9 +2,18 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000"
+    android:background="@android:color/black"
     android:descendantFocusability="beforeDescendants"
     android:focusableInTouchMode="true">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:id="@+id/txtUser"
+        android:background="@android:color/white"
+        android:textColor="@android:color/black" />
     <ListView
         android:id="@+id/lstMessages"
         android:minWidth="25px"
@@ -14,6 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/llContainer"
         android:layout_marginBottom="20dp"
+        android:layout_marginTop="40dp"
         android:transcriptMode="alwaysScroll"
         android:stackFromBottom="true" />
     <LinearLayout
