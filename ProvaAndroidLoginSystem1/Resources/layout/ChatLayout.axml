@@ -31,27 +31,27 @@
         android:background="#FFFFFF"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:layout_alignParentBottom="true">
-        <Button
-            android:id="@+id/btnSendFile"
-            android:layout_width="match_parent"
+        <ImageButton
+            android:src="@android:drawable/ic_menu_camera"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/lstMessages"
-            android:text="Send File" />
-        <Button
-            android:id="@+id/btnSend"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/lstMessages"
-            android:text="Send" />
+            android:id="@+id/imgBtnFile" />
         <EditText
             android:id="@+id/txtChat"
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/btnSend"
+            android:layout_weight="1"
             android:textColor="#000"
-            android:inputType="textCapSentences"
+            android:inputType="textCapSentences|textMultiLine"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:textCursorDrawable="@null" />
+        <ImageButton
+            android:src="@android:drawable/ic_menu_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imgBtnSend" />
     </LinearLayout>
 </RelativeLayout>

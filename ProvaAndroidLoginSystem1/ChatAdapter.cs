@@ -11,6 +11,7 @@ using Android.Views;
 using Android.Widget;
 using p2p_project.Resources.Model;
 using Android.Graphics;
+using p2p_project.Resources;
 
 namespace p2p_project
 {
@@ -43,8 +44,7 @@ namespace p2p_project
 
             var Chat = view.FindViewById<TextView>(Resource.Id.txtAdapter);
             var Orario = view.FindViewById<TextView>(Resource.Id.txtOrario);
-
-            //var date = chat.GroupBy(o => o.Item1.Orario.Date).Select(a => a.First()).ToList();
+            var llChatAdapter = view.FindViewById<LinearLayout>(Resource.Id.llChatAdapter);
 
             if (chat[position] != null)
             {

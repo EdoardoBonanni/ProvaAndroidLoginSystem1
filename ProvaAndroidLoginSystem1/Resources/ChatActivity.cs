@@ -27,8 +27,8 @@ namespace ProvaAndroidLoginSystem1.Resources
     public class ChatActivity : Activity
     {
         private ListView lstMessage;
-        private Button btnFile;
-        private Button btnSend;
+        private ImageButton btnFile;
+        private ImageButton btnSend;
         private EditText txtChat;
         private TextView txtUsername;
 
@@ -43,8 +43,8 @@ namespace ProvaAndroidLoginSystem1.Resources
             SetContentView(Resource.Layout.ChatLayout);
 
             lstMessage = FindViewById<ListView>(Resource.Id.lstMessages);
-            btnSend = FindViewById<Button>(Resource.Id.btnSend);
-            btnFile = FindViewById<Button>(Resource.Id.btnSendFile);
+            btnSend = FindViewById<ImageButton>(Resource.Id.imgBtnSend);
+            btnFile = FindViewById<ImageButton>(Resource.Id.imgBtnFile);
             txtChat = FindViewById<EditText>(Resource.Id.txtChat);
             txtUsername = FindViewById<TextView>(Resource.Id.txtUser);
             txtUsername.Text = MainActivity.retrieveLocal("ConnectedUsername");
