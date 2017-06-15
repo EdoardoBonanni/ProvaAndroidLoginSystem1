@@ -14,6 +14,7 @@ using Android.Graphics;
 using ProvaAndroidLoginSystem1.Resources;
 using Android.Database;
 using Android.Provider;
+using Android.Media;
 
 namespace p2p_project.Resources
 {
@@ -145,6 +146,29 @@ namespace p2p_project.Resources
             options.InSampleSize = inSampleSize;
             options.InJustDecodeBounds = false;
             Bitmap resizedBitmap = BitmapFactory.DecodeFile(fileName, options);
+            
+            /*
+            Matrix mtx = new Matrix();
+            ExifInterface exif = new ExifInterface(fileName);
+            string orientation = exif.GetAttribute(ExifInterface.TagOrientation);
+
+            switch (orientation)
+            {
+                case "6": // portrait
+                    mtx.PreRotate(90);
+                    resizedBitmap = Bitmap.CreateBitmap(resizedBitmap, 0, 0, resizedBitmap.Width, resizedBitmap.Height, mtx, false);
+                    mtx.Dispose();
+                    mtx = null;
+                    break;
+                case "1": // landscape
+                    break;
+                default:
+                    mtx.PreRotate(90);
+                    resizedBitmap = Bitmap.CreateBitmap(resizedBitmap, 0, 0, resizedBitmap.Width, resizedBitmap.Height, mtx, false);
+                    mtx.Dispose();
+                    mtx = null;
+                    break;
+            }*/
 
             return resizedBitmap;
         }

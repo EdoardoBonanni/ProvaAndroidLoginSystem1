@@ -16,51 +16,15 @@ C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\res\drawable\icon.png
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\res\drawable\buttonsigninstyle.xml
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\res\drawable\buttonsignupstyle.xml
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\res\drawable\progressbarstyle.xml
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\res\drawable\edit_text_file.xml
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\res\anim\slide_up.xml
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\res\anim\slide_right.xml
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\res\values\styles.xml
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\R.cs.flag
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\uploadflags.txt
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\ProvaAndroidLoginSystem1.dll.mdb
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\Java.Interop.dll.mdb
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\Mono.Android.dll.mdb
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\mscorlib.dll.mdb
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\System.ComponentModel.Composition.dll.mdb
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\System.Core.dll.mdb
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\System.dll.mdb
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\System.IO.Compression.dll.mdb
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\System.Net.Http.dll.mdb
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\System.Runtime.Serialization.dll.mdb
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\System.ServiceModel.Internals.dll.mdb
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\System.Xml.dll.mdb
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\System.Xml.Linq.dll.mdb
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\assets\Java.Interop.dll.mdb
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\assets\Mono.Android.dll.mdb
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\assets\mscorlib.dll.mdb
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\assets\ProvaAndroidLoginSystem1.dll.mdb
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\assets\SQLite-net.dll.mdb
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\assets\System.ComponentModel.Composition.dll.mdb
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\assets\System.Core.dll.mdb
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\assets\System.dll.mdb
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\assets\System.IO.Compression.dll.mdb
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\assets\System.Net.Http.dll.mdb
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\assets\System.Runtime.Serialization.dll.mdb
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\assets\System.ServiceModel.Internals.dll.mdb
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\assets\System.Xml.dll.mdb
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\assets\System.Xml.Linq.dll.mdb
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\ProvaAndroidLoginSystem1.csprojResolveAssemblyReference.cache
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\Newtonsoft.Json.dll
 C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\Newtonsoft.Json.xml
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\Microsoft.CSharp.dll.mdb
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\Mono.CSharp.dll.mdb
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\System.Numerics.dll.mdb
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\System.Runtime.Serialization.Primitives.dll.mdb
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\assets\Microsoft.CSharp.dll.mdb
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\assets\Mono.CSharp.dll.mdb
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\assets\System.Numerics.dll.mdb
-C:\Users\Edoardo\documents\visual studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\assets\System.Runtime.Serialization.Primitives.dll.mdb
 C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\p2p project.dll
 C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\p2p project.pdb
 C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\p2p.p2p.apk
@@ -68,11 +32,45 @@ C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\
 C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\p2p project.dll
 C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\p2p project.pdb
 C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\bin\p2p.p2p.apk
-C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\p2p project.dll.mdb
-C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\assets\p2p project.dll.mdb
 C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\res\layout\data_template_layout.xml
 C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\res\layout\chat_template_layout.xml
 C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\res\layout\selectfilelayout.xml
 C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\res\layout\sendfilelayout.xml
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\p2p project.dll.mdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\res\drawable\p2p_icon.png
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\Java.Interop.dll.mdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\Microsoft.CSharp.dll.mdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\Mono.Android.dll.mdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\Mono.CSharp.dll.mdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\mscorlib.dll.mdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\System.ComponentModel.Composition.dll.mdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\System.Core.dll.mdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\System.dll.mdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\System.IO.Compression.dll.mdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\System.Net.Http.dll.mdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\System.Numerics.dll.mdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\System.Runtime.Serialization.dll.mdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\System.Runtime.Serialization.Primitives.dll.mdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\System.ServiceModel.Internals.dll.mdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\System.Xml.dll.mdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\System.Xml.Linq.dll.mdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\assets\Java.Interop.dll.mdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\assets\Microsoft.CSharp.dll.mdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\assets\Mono.Android.dll.mdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\assets\Mono.CSharp.dll.mdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\assets\mscorlib.dll.mdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\assets\p2p project.dll.mdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\assets\SQLite-net.dll.mdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\assets\System.ComponentModel.Composition.dll.mdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\assets\System.Core.dll.mdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\assets\System.dll.mdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\assets\System.IO.Compression.dll.mdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\assets\System.Net.Http.dll.mdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\assets\System.Numerics.dll.mdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\assets\System.Runtime.Serialization.dll.mdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\assets\System.Runtime.Serialization.Primitives.dll.mdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\assets\System.ServiceModel.Internals.dll.mdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\assets\System.Xml.dll.mdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\android\assets\System.Xml.Linq.dll.mdb
 C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Release\p2p project.dll.mdb
 C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Release\p2p project.dll.mdb

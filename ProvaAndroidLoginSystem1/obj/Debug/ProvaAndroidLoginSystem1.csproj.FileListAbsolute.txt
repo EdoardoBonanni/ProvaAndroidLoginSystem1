@@ -94,7 +94,7 @@ C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\
 C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\R.cs.flag
 C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\uploadflags.txt
 C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Debug\p2p project.dll.mdb
-C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\ProvaAndroidLoginSystem1.csprojResolveAssemblyReference.cache
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\res\drawable\p2p_icon.png
 C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Debug\Java.Interop.dll.mdb
 C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Debug\Microsoft.CSharp.dll.mdb
 C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Debug\Mono.Android.dll.mdb
@@ -129,5 +129,6 @@ C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\
 C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\android\assets\System.ServiceModel.Internals.dll.mdb
 C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\android\assets\System.Xml.dll.mdb
 C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\android\assets\System.Xml.Linq.dll.mdb
+C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\ProvaAndroidLoginSystem1.csprojResolveAssemblyReference.cache
 C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\obj\Debug\p2p project.dll.mdb
 C:\Users\Edoardo\Documents\Visual Studio 2015\Projects\ProvaAndroidLoginSystem1\ProvaAndroidLoginSystem1\bin\Debug\p2p project.dll.mdb

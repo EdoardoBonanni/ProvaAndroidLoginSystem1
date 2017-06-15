@@ -18,7 +18,7 @@ using Android.Provider;
 
 namespace ProvaAndroidLoginSystem1
 {
-    [Activity(Label = "Chat P2P", MainLauncher = true, Icon = "@drawable/icon", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Label = "Chat P2P", MainLauncher = true, Icon = "@drawable/p2p_icon", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class MainActivity : Activity
     {
         public static HTTPClient client;
@@ -70,6 +70,12 @@ namespace ProvaAndroidLoginSystem1
 
             peersAdapter = new PeersAdapter(this, new List<WifiP2pDevice>());
             mLstPeers.Adapter = peersAdapter;
+
+            if (string.IsNullOrEmpty(retrieveLocal("Username")))
+            {
+                Intent SignUp = new Intent(this, typeof(SignUpActivity));
+                this.StartActivity(SignUp);
+            }
         }
 
         private void mLstPeers_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
@@ -127,16 +133,12 @@ namespace ProvaAndroidLoginSystem1
         {
             base.OnResume();
 
-            if (string.IsNullOrEmpty(retrieveLocal("Username")))
-            {
-                Intent SignUp = new Intent(this, typeof(SignUpActivity));
-                this.StartActivity(SignUp);
-            }
-
             peerListener = new PeerListener(this);
 
             receiver = new WiFiDirectBroadcastReceiver(manager, channel, this, peerListener);
             RegisterReceiver(receiver, intentFilter);
+
+            IsConnected = Intent.GetBooleanExtra("isConnected", false);
 
             if(IsConnected)
             {
@@ -152,6 +154,7 @@ namespace ProvaAndroidLoginSystem1
 
         public void DisconnectP2p()
         {
+            ConnectionInfoListener.Socket.End();
             manager.RemoveGroup(channel, new ActionListener("Chiusura della connessione..."));
             IsConnected = false;
             deleteLocal("ConnectedUsername");

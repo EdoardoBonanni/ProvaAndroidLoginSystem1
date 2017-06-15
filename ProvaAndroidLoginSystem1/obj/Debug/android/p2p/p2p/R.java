@@ -19,6 +19,7 @@ public final class R {
         public static final int buttonsignupstyle=0x7f020001;
         public static final int edit_text_file=0x7f020002;
         public static final int icon=0x7f020003;
+        public static final int p2p_icon=0x7f020004;
     }
     public static final class id {
         public static final int btnCancelSearch=0x7f070013;

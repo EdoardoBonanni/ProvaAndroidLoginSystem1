@@ -194,16 +194,18 @@ namespace ProvaAndroidLoginSystem1.Resources
             }
         }
 
-        protected override void OnResume()
-        {
-            base.OnResume();
-            var test = chatAdapter.Chat;
-        }
-
         public override void OnBackPressed()
         {
-            Intent main = new Intent(this, typeof(MainActivity));
-            this.StartActivity(main);
+            new AlertDialog.Builder(this)
+                .SetPositiveButton("Sì", delegate {
+                    Intent main = new Intent(this, typeof(MainActivity));
+                    main.PutExtra("isConnected", true);
+                    this.StartActivity(main);
+                })
+                .SetNegativeButton("NO", delegate { })
+                .SetMessage("In questo modo verrai disconnesso dalla chat.\nSei sicuro di voler uscire?")
+                .SetTitle("Warning")
+                .Show();
         }
     }
 }

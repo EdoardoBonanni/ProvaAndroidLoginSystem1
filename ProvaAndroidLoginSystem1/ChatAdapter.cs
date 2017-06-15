@@ -74,6 +74,7 @@ namespace p2p_project
         {
             if (isFile)
             {
+
                 var receivingFile = chat.Where(a => a.Item1.Path == path).FirstOrDefault();
 
                 if (receivingFile != null)
