@@ -1,13 +1,10 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
 using Android.Widget;
 using ProvaAndroidLoginSystem1.Resources.Model;
 using Android.Views.InputMethods;
@@ -16,7 +13,6 @@ using System.Net;
 using System.Net.Http;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using System.Net.Http.Headers;
 using p2p_project;
 
 namespace ProvaAndroidLoginSystem1.Resources

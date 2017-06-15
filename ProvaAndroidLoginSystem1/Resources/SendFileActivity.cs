@@ -1,20 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Newtonsoft.Json;
 using Android.Graphics;
 using ProvaAndroidLoginSystem1.Resources;
-using Android.Database;
-using Android.Provider;
-using Android.Media;
 
 namespace p2p_project.Resources
 {
@@ -28,6 +21,7 @@ namespace p2p_project.Resources
 
         private Android.Net.Uri uri;
         private string path;
+        private string getFrom;
 
         public static event SendFileEventHandler firstSendFile;
 
@@ -43,7 +37,7 @@ namespace p2p_project.Resources
             var prova = Intent.GetStringExtra("SelectFile");
             var test = JsonConvert.DeserializeObject<dynamic>(prova);
 
-            string getFrom = test.GetFrom;
+            getFrom = test.GetFrom;
 
             string uriString;
             int height;
@@ -111,8 +105,15 @@ namespace p2p_project.Resources
 
         public override void OnBackPressed()
         {
-            Intent chat = new Intent(this, typeof(ChatActivity));
-            this.StartActivity(chat);
+            if (!getFrom.Equals("Received"))
+            {
+                Intent chat = new Intent(this, typeof(ChatActivity));
+                this.StartActivity(chat);
+            }
+            else
+            {
+                base.OnBackPressed();
+            }
         }
 
         protected virtual void OnFirstSendFile(EventArgs args, string uri, string path)

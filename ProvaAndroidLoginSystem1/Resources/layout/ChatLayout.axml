@@ -21,11 +21,19 @@
         android:background="@android:color/black"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="35dp"
         android:layout_above="@+id/llContainer"
-        android:layout_marginBottom="20dp"
-        android:layout_marginTop="40dp"
-        android:transcriptMode="alwaysScroll"
+        android:transcriptMode="normal"
         android:stackFromBottom="true" />
+    <ImageButton
+        android:src="@android:drawable/arrow_down_float"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnBackToBottom"
+        android:layout_alignParentRight="true"
+        android:layout_above="@+id/llContainer"
+        android:visibility="invisible" />
     <LinearLayout
         android:id="@+id/llContainer"
         android:background="#FFFFFF"

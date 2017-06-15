@@ -1,25 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
 using Android.Widget;
 using p2p_project;
 using p2p_project.Resources;
 using p2p_project.Resources.DataHelper;
 using p2p_project.Resources.Model;
-using Android.Telephony;
 using Newtonsoft.Json;
-using Java.Lang;
-using Android.Content.Res;
 using Java.IO;
-using Android.Provider;
-using Android.Graphics;
 
 namespace ProvaAndroidLoginSystem1.Resources
 {
@@ -31,6 +22,7 @@ namespace ProvaAndroidLoginSystem1.Resources
         private ImageButton btnSend;
         private EditText txtChat;
         private TextView txtUsername;
+        private ImageButton btnBackToBottom;
 
         private ChatAdapter chatAdapter;
         private Database database;
@@ -47,10 +39,12 @@ namespace ProvaAndroidLoginSystem1.Resources
             btnFile = FindViewById<ImageButton>(Resource.Id.imgBtnFile);
             txtChat = FindViewById<EditText>(Resource.Id.txtChat);
             txtUsername = FindViewById<TextView>(Resource.Id.txtUser);
-            txtUsername.Text = MainActivity.retrieveLocal("ConnectedUsername");
+            btnBackToBottom = FindViewById<ImageButton>(Resource.Id.btnBackToBottom);
 
+            txtUsername.Text = MainActivity.retrieveLocal("ConnectedUsername");
             btnSend.Click += btnSend_Click;
             btnFile.Click += BtnFile_Click;
+            btnBackToBottom.Click += BtnBackToBottom_Click;
             lstMessage.ItemClick += LstMessage_ItemClick;
             lstMessage.ScrollStateChanged += LstMessage_ScrollStateChanged;
 
@@ -83,16 +77,17 @@ namespace ProvaAndroidLoginSystem1.Resources
                     chat.Add(new Tuple<Registro, bool>(message, false));
                 }
             }
-            /*new AlertDialog.Builder(this)
-                .SetPositiveButton("OK", delegate { })
-                .SetMessage("E' attiva la modalità anonima.\nI dati non verranno salvati nel Database.")
-                .SetTitle("Warning")
-                .Show();*/
-
-                //alert.SetView(LayoutInflater.Inflate(Resource.Layout.dialog_sign_up, null));
 
             chatAdapter = new ChatAdapter(this, chat);
             lstMessage.Adapter = chatAdapter;
+
+            lstMessage.SmoothScrollToPosition(chatAdapter.Count);
+        }
+
+        private void BtnBackToBottom_Click(object sender, EventArgs e)
+        {
+            lstMessage.SmoothScrollToPosition(chatAdapter.Count);
+            btnBackToBottom.Visibility = Android.Views.ViewStates.Invisible;
         }
 
         private void LstMessage_ScrollStateChanged(object sender, AbsListView.ScrollStateChangedEventArgs e)
@@ -113,6 +108,16 @@ namespace ProvaAndroidLoginSystem1.Resources
                     }
                 }
             }
+
+            if(lstMessage.LastVisiblePosition < chatAdapter.Count - 10)
+            {
+                btnBackToBottom.Visibility = Android.Views.ViewStates.Visible;
+            }
+            else
+            {
+                btnBackToBottom.Visibility = Android.Views.ViewStates.Invisible;
+            }
+
         }
 
 

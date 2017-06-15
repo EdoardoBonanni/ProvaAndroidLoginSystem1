@@ -2,7 +2,7 @@
 <xs:schema xmlns:android="http://schemas.android.com/apk/res/android" attributeFormDefault="qualified" targetNamespace="http://schemas.android.com/apk/res/android" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:annotation>
     <xs:documentation>v23</xs:documentation>
-    <xs:documentation>01/06/2017 09:23:36</xs:documentation>
+    <xs:documentation>16/06/2017 00:26:17</xs:documentation>
   </xs:annotation>
   <xs:attribute name="accessibilityLiveRegion">
     <xs:annotation>
@@ -773,6 +773,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:color/background_dark" />
             <xs:enumeration value="@android:color/background_light" />
             <xs:enumeration value="@android:color/black" />
@@ -1404,6 +1409,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -2074,6 +2084,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -2434,6 +2449,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:color/background_dark" />
             <xs:enumeration value="@android:color/background_light" />
             <xs:enumeration value="@android:color/black" />
@@ -2745,6 +2765,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -3366,6 +3391,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -3599,6 +3629,8 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@string/ApplicationName" />
+            <xs:enumeration value="@string/Hello" />
             <xs:enumeration value="@android:string/cancel" />
             <xs:enumeration value="@android:string/copy" />
             <xs:enumeration value="@android:string/copyUrl" />
@@ -3638,6 +3670,8 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@string/ApplicationName" />
+            <xs:enumeration value="@string/Hello" />
             <xs:enumeration value="@android:string/cancel" />
             <xs:enumeration value="@android:string/copy" />
             <xs:enumeration value="@android:string/copyUrl" />
@@ -3677,6 +3711,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -4008,6 +4047,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -4241,6 +4285,8 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@string/ApplicationName" />
+            <xs:enumeration value="@string/Hello" />
             <xs:enumeration value="@android:string/cancel" />
             <xs:enumeration value="@android:string/copy" />
             <xs:enumeration value="@android:string/copyUrl" />
@@ -4280,6 +4326,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -4531,6 +4582,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -4764,6 +4820,8 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@string/ApplicationName" />
+            <xs:enumeration value="@string/Hello" />
             <xs:enumeration value="@android:string/cancel" />
             <xs:enumeration value="@android:string/copy" />
             <xs:enumeration value="@android:string/copyUrl" />
@@ -5098,6 +5156,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -5513,6 +5576,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -5837,6 +5905,8 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@string/ApplicationName" />
+            <xs:enumeration value="@string/Hello" />
             <xs:enumeration value="@android:string/cancel" />
             <xs:enumeration value="@android:string/copy" />
             <xs:enumeration value="@android:string/copyUrl" />
@@ -5892,6 +5962,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -6125,6 +6200,8 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@string/ApplicationName" />
+            <xs:enumeration value="@string/Hello" />
             <xs:enumeration value="@android:string/cancel" />
             <xs:enumeration value="@android:string/copy" />
             <xs:enumeration value="@android:string/copyUrl" />
@@ -6326,6 +6403,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:color/background_dark" />
             <xs:enumeration value="@android:color/background_light" />
             <xs:enumeration value="@android:color/black" />
@@ -6637,6 +6719,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:color/background_dark" />
             <xs:enumeration value="@android:color/background_light" />
             <xs:enumeration value="@android:color/black" />
@@ -6948,6 +7035,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:color/background_dark" />
             <xs:enumeration value="@android:color/background_light" />
             <xs:enumeration value="@android:color/black" />
@@ -7299,6 +7391,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:color/background_dark" />
             <xs:enumeration value="@android:color/background_light" />
             <xs:enumeration value="@android:color/black" />
@@ -7610,6 +7707,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:color/background_dark" />
             <xs:enumeration value="@android:color/background_light" />
             <xs:enumeration value="@android:color/black" />
@@ -8031,6 +8133,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:color/background_dark" />
             <xs:enumeration value="@android:color/background_light" />
             <xs:enumeration value="@android:color/black" />
@@ -8398,6 +8505,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -8673,6 +8785,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:color/background_dark" />
             <xs:enumeration value="@android:color/background_light" />
             <xs:enumeration value="@android:color/black" />
@@ -9106,6 +9223,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -9513,6 +9635,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -10038,6 +10165,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -10501,6 +10633,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:color/background_dark" />
             <xs:enumeration value="@android:color/background_light" />
             <xs:enumeration value="@android:color/black" />
@@ -10812,6 +10949,8 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@string/ApplicationName" />
+            <xs:enumeration value="@string/Hello" />
             <xs:enumeration value="@android:string/cancel" />
             <xs:enumeration value="@android:string/copy" />
             <xs:enumeration value="@android:string/copyUrl" />
@@ -10851,6 +10990,8 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@string/ApplicationName" />
+            <xs:enumeration value="@string/Hello" />
             <xs:enumeration value="@android:string/cancel" />
             <xs:enumeration value="@android:string/copy" />
             <xs:enumeration value="@android:string/copyUrl" />
@@ -10930,6 +11071,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:color/background_dark" />
             <xs:enumeration value="@android:color/background_light" />
             <xs:enumeration value="@android:color/black" />
@@ -11416,6 +11562,8 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@string/ApplicationName" />
+            <xs:enumeration value="@string/Hello" />
             <xs:enumeration value="@android:string/cancel" />
             <xs:enumeration value="@android:string/copy" />
             <xs:enumeration value="@android:string/copyUrl" />
@@ -11455,6 +11603,8 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@string/ApplicationName" />
+            <xs:enumeration value="@string/Hello" />
             <xs:enumeration value="@android:string/cancel" />
             <xs:enumeration value="@android:string/copy" />
             <xs:enumeration value="@android:string/copyUrl" />
@@ -11494,6 +11644,8 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@string/ApplicationName" />
+            <xs:enumeration value="@string/Hello" />
             <xs:enumeration value="@android:string/cancel" />
             <xs:enumeration value="@android:string/copy" />
             <xs:enumeration value="@android:string/copyUrl" />
@@ -11533,6 +11685,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -11766,6 +11923,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -11999,6 +12161,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -12232,6 +12399,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -12465,6 +12637,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -12698,6 +12875,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -12931,6 +13113,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -13164,6 +13351,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -13591,6 +13783,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -13851,6 +14048,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -14084,6 +14286,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -14317,6 +14524,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -14550,6 +14762,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -14823,6 +15040,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -15056,6 +15278,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:color/background_dark" />
             <xs:enumeration value="@android:color/background_light" />
             <xs:enumeration value="@android:color/black" />
@@ -15367,6 +15594,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -15640,6 +15872,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -15964,6 +16201,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -16197,6 +16439,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -16510,6 +16757,8 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@string/ApplicationName" />
+            <xs:enumeration value="@string/Hello" />
             <xs:enumeration value="@android:string/cancel" />
             <xs:enumeration value="@android:string/copy" />
             <xs:enumeration value="@android:string/copyUrl" />
@@ -16647,6 +16896,35 @@
           <xs:restriction base="xs:string">
             <xs:enumeration value="@+id/" />
             <xs:enumeration value="@+id/checkBox1" />
+            <xs:enumeration value="@id/btnBackToBottom" />
+            <xs:enumeration value="@id/btnCancelSearch" />
+            <xs:enumeration value="@id/btnP2pSearch" />
+            <xs:enumeration value="@id/btnSendFile" />
+            <xs:enumeration value="@id/btnSendFileGallery" />
+            <xs:enumeration value="@id/btnSendFileHome" />
+            <xs:enumeration value="@id/btnSendFileNow" />
+            <xs:enumeration value="@id/btnSendMessageHome" />
+            <xs:enumeration value="@id/btnSignIn" />
+            <xs:enumeration value="@id/btnSignUp" />
+            <xs:enumeration value="@id/imageViewSendFile" />
+            <xs:enumeration value="@id/imgBtnFile" />
+            <xs:enumeration value="@id/imgBtnSend" />
+            <xs:enumeration value="@id/llChatAdapter" />
+            <xs:enumeration value="@id/llContainer" />
+            <xs:enumeration value="@id/lstMessages" />
+            <xs:enumeration value="@id/lstPeers" />
+            <xs:enumeration value="@id/txtAdapter" />
+            <xs:enumeration value="@id/txtChat" />
+            <xs:enumeration value="@id/txtConfermaPassword" />
+            <xs:enumeration value="@id/txtGoToSignIn" />
+            <xs:enumeration value="@id/txtNickname" />
+            <xs:enumeration value="@id/txtNicknameSignIn" />
+            <xs:enumeration value="@id/txtOrario" />
+            <xs:enumeration value="@id/txtORHome" />
+            <xs:enumeration value="@id/txtPassword" />
+            <xs:enumeration value="@id/txtPasswordSignIn" />
+            <xs:enumeration value="@id/txtSelectActivity" />
+            <xs:enumeration value="@id/txtUser" />
             <xs:enumeration value="@android:id/accessibilityActionContextClick" />
             <xs:enumeration value="@android:id/accessibilityActionScrollDown" />
             <xs:enumeration value="@android:id/accessibilityActionScrollLeft" />
@@ -16721,6 +16999,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -16972,6 +17255,8 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@string/ApplicationName" />
+            <xs:enumeration value="@string/Hello" />
             <xs:enumeration value="@android:string/cancel" />
             <xs:enumeration value="@android:string/copy" />
             <xs:enumeration value="@android:string/copyUrl" />
@@ -17062,6 +17347,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -17390,6 +17680,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -17951,6 +18246,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -18184,6 +18484,8 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@string/ApplicationName" />
+            <xs:enumeration value="@string/Hello" />
             <xs:enumeration value="@android:string/cancel" />
             <xs:enumeration value="@android:string/copy" />
             <xs:enumeration value="@android:string/copyUrl" />
@@ -18268,6 +18570,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -18661,6 +18968,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -19014,6 +19326,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -19263,6 +19580,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -19496,6 +19818,35 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@id/btnBackToBottom" />
+            <xs:enumeration value="@id/btnCancelSearch" />
+            <xs:enumeration value="@id/btnP2pSearch" />
+            <xs:enumeration value="@id/btnSendFile" />
+            <xs:enumeration value="@id/btnSendFileGallery" />
+            <xs:enumeration value="@id/btnSendFileHome" />
+            <xs:enumeration value="@id/btnSendFileNow" />
+            <xs:enumeration value="@id/btnSendMessageHome" />
+            <xs:enumeration value="@id/btnSignIn" />
+            <xs:enumeration value="@id/btnSignUp" />
+            <xs:enumeration value="@id/imageViewSendFile" />
+            <xs:enumeration value="@id/imgBtnFile" />
+            <xs:enumeration value="@id/imgBtnSend" />
+            <xs:enumeration value="@id/llChatAdapter" />
+            <xs:enumeration value="@id/llContainer" />
+            <xs:enumeration value="@id/lstMessages" />
+            <xs:enumeration value="@id/lstPeers" />
+            <xs:enumeration value="@id/txtAdapter" />
+            <xs:enumeration value="@id/txtChat" />
+            <xs:enumeration value="@id/txtConfermaPassword" />
+            <xs:enumeration value="@id/txtGoToSignIn" />
+            <xs:enumeration value="@id/txtNickname" />
+            <xs:enumeration value="@id/txtNicknameSignIn" />
+            <xs:enumeration value="@id/txtOrario" />
+            <xs:enumeration value="@id/txtORHome" />
+            <xs:enumeration value="@id/txtPassword" />
+            <xs:enumeration value="@id/txtPasswordSignIn" />
+            <xs:enumeration value="@id/txtSelectActivity" />
+            <xs:enumeration value="@id/txtUser" />
             <xs:enumeration value="@android:id/accessibilityActionContextClick" />
             <xs:enumeration value="@android:id/accessibilityActionScrollDown" />
             <xs:enumeration value="@android:id/accessibilityActionScrollLeft" />
@@ -19570,6 +19921,35 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@id/btnBackToBottom" />
+            <xs:enumeration value="@id/btnCancelSearch" />
+            <xs:enumeration value="@id/btnP2pSearch" />
+            <xs:enumeration value="@id/btnSendFile" />
+            <xs:enumeration value="@id/btnSendFileGallery" />
+            <xs:enumeration value="@id/btnSendFileHome" />
+            <xs:enumeration value="@id/btnSendFileNow" />
+            <xs:enumeration value="@id/btnSendMessageHome" />
+            <xs:enumeration value="@id/btnSignIn" />
+            <xs:enumeration value="@id/btnSignUp" />
+            <xs:enumeration value="@id/imageViewSendFile" />
+            <xs:enumeration value="@id/imgBtnFile" />
+            <xs:enumeration value="@id/imgBtnSend" />
+            <xs:enumeration value="@id/llChatAdapter" />
+            <xs:enumeration value="@id/llContainer" />
+            <xs:enumeration value="@id/lstMessages" />
+            <xs:enumeration value="@id/lstPeers" />
+            <xs:enumeration value="@id/txtAdapter" />
+            <xs:enumeration value="@id/txtChat" />
+            <xs:enumeration value="@id/txtConfermaPassword" />
+            <xs:enumeration value="@id/txtGoToSignIn" />
+            <xs:enumeration value="@id/txtNickname" />
+            <xs:enumeration value="@id/txtNicknameSignIn" />
+            <xs:enumeration value="@id/txtOrario" />
+            <xs:enumeration value="@id/txtORHome" />
+            <xs:enumeration value="@id/txtPassword" />
+            <xs:enumeration value="@id/txtPasswordSignIn" />
+            <xs:enumeration value="@id/txtSelectActivity" />
+            <xs:enumeration value="@id/txtUser" />
             <xs:enumeration value="@android:id/accessibilityActionContextClick" />
             <xs:enumeration value="@android:id/accessibilityActionScrollDown" />
             <xs:enumeration value="@android:id/accessibilityActionScrollLeft" />
@@ -19644,6 +20024,35 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@id/btnBackToBottom" />
+            <xs:enumeration value="@id/btnCancelSearch" />
+            <xs:enumeration value="@id/btnP2pSearch" />
+            <xs:enumeration value="@id/btnSendFile" />
+            <xs:enumeration value="@id/btnSendFileGallery" />
+            <xs:enumeration value="@id/btnSendFileHome" />
+            <xs:enumeration value="@id/btnSendFileNow" />
+            <xs:enumeration value="@id/btnSendMessageHome" />
+            <xs:enumeration value="@id/btnSignIn" />
+            <xs:enumeration value="@id/btnSignUp" />
+            <xs:enumeration value="@id/imageViewSendFile" />
+            <xs:enumeration value="@id/imgBtnFile" />
+            <xs:enumeration value="@id/imgBtnSend" />
+            <xs:enumeration value="@id/llChatAdapter" />
+            <xs:enumeration value="@id/llContainer" />
+            <xs:enumeration value="@id/lstMessages" />
+            <xs:enumeration value="@id/lstPeers" />
+            <xs:enumeration value="@id/txtAdapter" />
+            <xs:enumeration value="@id/txtChat" />
+            <xs:enumeration value="@id/txtConfermaPassword" />
+            <xs:enumeration value="@id/txtGoToSignIn" />
+            <xs:enumeration value="@id/txtNickname" />
+            <xs:enumeration value="@id/txtNicknameSignIn" />
+            <xs:enumeration value="@id/txtOrario" />
+            <xs:enumeration value="@id/txtORHome" />
+            <xs:enumeration value="@id/txtPassword" />
+            <xs:enumeration value="@id/txtPasswordSignIn" />
+            <xs:enumeration value="@id/txtSelectActivity" />
+            <xs:enumeration value="@id/txtUser" />
             <xs:enumeration value="@android:id/accessibilityActionContextClick" />
             <xs:enumeration value="@android:id/accessibilityActionScrollDown" />
             <xs:enumeration value="@android:id/accessibilityActionScrollLeft" />
@@ -19718,6 +20127,35 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@id/btnBackToBottom" />
+            <xs:enumeration value="@id/btnCancelSearch" />
+            <xs:enumeration value="@id/btnP2pSearch" />
+            <xs:enumeration value="@id/btnSendFile" />
+            <xs:enumeration value="@id/btnSendFileGallery" />
+            <xs:enumeration value="@id/btnSendFileHome" />
+            <xs:enumeration value="@id/btnSendFileNow" />
+            <xs:enumeration value="@id/btnSendMessageHome" />
+            <xs:enumeration value="@id/btnSignIn" />
+            <xs:enumeration value="@id/btnSignUp" />
+            <xs:enumeration value="@id/imageViewSendFile" />
+            <xs:enumeration value="@id/imgBtnFile" />
+            <xs:enumeration value="@id/imgBtnSend" />
+            <xs:enumeration value="@id/llChatAdapter" />
+            <xs:enumeration value="@id/llContainer" />
+            <xs:enumeration value="@id/lstMessages" />
+            <xs:enumeration value="@id/lstPeers" />
+            <xs:enumeration value="@id/txtAdapter" />
+            <xs:enumeration value="@id/txtChat" />
+            <xs:enumeration value="@id/txtConfermaPassword" />
+            <xs:enumeration value="@id/txtGoToSignIn" />
+            <xs:enumeration value="@id/txtNickname" />
+            <xs:enumeration value="@id/txtNicknameSignIn" />
+            <xs:enumeration value="@id/txtOrario" />
+            <xs:enumeration value="@id/txtORHome" />
+            <xs:enumeration value="@id/txtPassword" />
+            <xs:enumeration value="@id/txtPasswordSignIn" />
+            <xs:enumeration value="@id/txtSelectActivity" />
+            <xs:enumeration value="@id/txtUser" />
             <xs:enumeration value="@android:id/accessibilityActionContextClick" />
             <xs:enumeration value="@android:id/accessibilityActionScrollDown" />
             <xs:enumeration value="@android:id/accessibilityActionScrollLeft" />
@@ -19792,6 +20230,35 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@id/btnBackToBottom" />
+            <xs:enumeration value="@id/btnCancelSearch" />
+            <xs:enumeration value="@id/btnP2pSearch" />
+            <xs:enumeration value="@id/btnSendFile" />
+            <xs:enumeration value="@id/btnSendFileGallery" />
+            <xs:enumeration value="@id/btnSendFileHome" />
+            <xs:enumeration value="@id/btnSendFileNow" />
+            <xs:enumeration value="@id/btnSendMessageHome" />
+            <xs:enumeration value="@id/btnSignIn" />
+            <xs:enumeration value="@id/btnSignUp" />
+            <xs:enumeration value="@id/imageViewSendFile" />
+            <xs:enumeration value="@id/imgBtnFile" />
+            <xs:enumeration value="@id/imgBtnSend" />
+            <xs:enumeration value="@id/llChatAdapter" />
+            <xs:enumeration value="@id/llContainer" />
+            <xs:enumeration value="@id/lstMessages" />
+            <xs:enumeration value="@id/lstPeers" />
+            <xs:enumeration value="@id/txtAdapter" />
+            <xs:enumeration value="@id/txtChat" />
+            <xs:enumeration value="@id/txtConfermaPassword" />
+            <xs:enumeration value="@id/txtGoToSignIn" />
+            <xs:enumeration value="@id/txtNickname" />
+            <xs:enumeration value="@id/txtNicknameSignIn" />
+            <xs:enumeration value="@id/txtOrario" />
+            <xs:enumeration value="@id/txtORHome" />
+            <xs:enumeration value="@id/txtPassword" />
+            <xs:enumeration value="@id/txtPasswordSignIn" />
+            <xs:enumeration value="@id/txtSelectActivity" />
+            <xs:enumeration value="@id/txtUser" />
             <xs:enumeration value="@android:id/accessibilityActionContextClick" />
             <xs:enumeration value="@android:id/accessibilityActionScrollDown" />
             <xs:enumeration value="@android:id/accessibilityActionScrollLeft" />
@@ -20106,6 +20573,35 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@id/btnBackToBottom" />
+            <xs:enumeration value="@id/btnCancelSearch" />
+            <xs:enumeration value="@id/btnP2pSearch" />
+            <xs:enumeration value="@id/btnSendFile" />
+            <xs:enumeration value="@id/btnSendFileGallery" />
+            <xs:enumeration value="@id/btnSendFileHome" />
+            <xs:enumeration value="@id/btnSendFileNow" />
+            <xs:enumeration value="@id/btnSendMessageHome" />
+            <xs:enumeration value="@id/btnSignIn" />
+            <xs:enumeration value="@id/btnSignUp" />
+            <xs:enumeration value="@id/imageViewSendFile" />
+            <xs:enumeration value="@id/imgBtnFile" />
+            <xs:enumeration value="@id/imgBtnSend" />
+            <xs:enumeration value="@id/llChatAdapter" />
+            <xs:enumeration value="@id/llContainer" />
+            <xs:enumeration value="@id/lstMessages" />
+            <xs:enumeration value="@id/lstPeers" />
+            <xs:enumeration value="@id/txtAdapter" />
+            <xs:enumeration value="@id/txtChat" />
+            <xs:enumeration value="@id/txtConfermaPassword" />
+            <xs:enumeration value="@id/txtGoToSignIn" />
+            <xs:enumeration value="@id/txtNickname" />
+            <xs:enumeration value="@id/txtNicknameSignIn" />
+            <xs:enumeration value="@id/txtOrario" />
+            <xs:enumeration value="@id/txtORHome" />
+            <xs:enumeration value="@id/txtPassword" />
+            <xs:enumeration value="@id/txtPasswordSignIn" />
+            <xs:enumeration value="@id/txtSelectActivity" />
+            <xs:enumeration value="@id/txtUser" />
             <xs:enumeration value="@android:id/accessibilityActionContextClick" />
             <xs:enumeration value="@android:id/accessibilityActionScrollDown" />
             <xs:enumeration value="@android:id/accessibilityActionScrollLeft" />
@@ -20180,6 +20676,35 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@id/btnBackToBottom" />
+            <xs:enumeration value="@id/btnCancelSearch" />
+            <xs:enumeration value="@id/btnP2pSearch" />
+            <xs:enumeration value="@id/btnSendFile" />
+            <xs:enumeration value="@id/btnSendFileGallery" />
+            <xs:enumeration value="@id/btnSendFileHome" />
+            <xs:enumeration value="@id/btnSendFileNow" />
+            <xs:enumeration value="@id/btnSendMessageHome" />
+            <xs:enumeration value="@id/btnSignIn" />
+            <xs:enumeration value="@id/btnSignUp" />
+            <xs:enumeration value="@id/imageViewSendFile" />
+            <xs:enumeration value="@id/imgBtnFile" />
+            <xs:enumeration value="@id/imgBtnSend" />
+            <xs:enumeration value="@id/llChatAdapter" />
+            <xs:enumeration value="@id/llContainer" />
+            <xs:enumeration value="@id/lstMessages" />
+            <xs:enumeration value="@id/lstPeers" />
+            <xs:enumeration value="@id/txtAdapter" />
+            <xs:enumeration value="@id/txtChat" />
+            <xs:enumeration value="@id/txtConfermaPassword" />
+            <xs:enumeration value="@id/txtGoToSignIn" />
+            <xs:enumeration value="@id/txtNickname" />
+            <xs:enumeration value="@id/txtNicknameSignIn" />
+            <xs:enumeration value="@id/txtOrario" />
+            <xs:enumeration value="@id/txtORHome" />
+            <xs:enumeration value="@id/txtPassword" />
+            <xs:enumeration value="@id/txtPasswordSignIn" />
+            <xs:enumeration value="@id/txtSelectActivity" />
+            <xs:enumeration value="@id/txtUser" />
             <xs:enumeration value="@android:id/accessibilityActionContextClick" />
             <xs:enumeration value="@android:id/accessibilityActionScrollDown" />
             <xs:enumeration value="@android:id/accessibilityActionScrollLeft" />
@@ -20254,6 +20779,35 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@id/btnBackToBottom" />
+            <xs:enumeration value="@id/btnCancelSearch" />
+            <xs:enumeration value="@id/btnP2pSearch" />
+            <xs:enumeration value="@id/btnSendFile" />
+            <xs:enumeration value="@id/btnSendFileGallery" />
+            <xs:enumeration value="@id/btnSendFileHome" />
+            <xs:enumeration value="@id/btnSendFileNow" />
+            <xs:enumeration value="@id/btnSendMessageHome" />
+            <xs:enumeration value="@id/btnSignIn" />
+            <xs:enumeration value="@id/btnSignUp" />
+            <xs:enumeration value="@id/imageViewSendFile" />
+            <xs:enumeration value="@id/imgBtnFile" />
+            <xs:enumeration value="@id/imgBtnSend" />
+            <xs:enumeration value="@id/llChatAdapter" />
+            <xs:enumeration value="@id/llContainer" />
+            <xs:enumeration value="@id/lstMessages" />
+            <xs:enumeration value="@id/lstPeers" />
+            <xs:enumeration value="@id/txtAdapter" />
+            <xs:enumeration value="@id/txtChat" />
+            <xs:enumeration value="@id/txtConfermaPassword" />
+            <xs:enumeration value="@id/txtGoToSignIn" />
+            <xs:enumeration value="@id/txtNickname" />
+            <xs:enumeration value="@id/txtNicknameSignIn" />
+            <xs:enumeration value="@id/txtOrario" />
+            <xs:enumeration value="@id/txtORHome" />
+            <xs:enumeration value="@id/txtPassword" />
+            <xs:enumeration value="@id/txtPasswordSignIn" />
+            <xs:enumeration value="@id/txtSelectActivity" />
+            <xs:enumeration value="@id/txtUser" />
             <xs:enumeration value="@android:id/accessibilityActionContextClick" />
             <xs:enumeration value="@android:id/accessibilityActionScrollDown" />
             <xs:enumeration value="@android:id/accessibilityActionScrollLeft" />
@@ -20368,6 +20922,35 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@id/btnBackToBottom" />
+            <xs:enumeration value="@id/btnCancelSearch" />
+            <xs:enumeration value="@id/btnP2pSearch" />
+            <xs:enumeration value="@id/btnSendFile" />
+            <xs:enumeration value="@id/btnSendFileGallery" />
+            <xs:enumeration value="@id/btnSendFileHome" />
+            <xs:enumeration value="@id/btnSendFileNow" />
+            <xs:enumeration value="@id/btnSendMessageHome" />
+            <xs:enumeration value="@id/btnSignIn" />
+            <xs:enumeration value="@id/btnSignUp" />
+            <xs:enumeration value="@id/imageViewSendFile" />
+            <xs:enumeration value="@id/imgBtnFile" />
+            <xs:enumeration value="@id/imgBtnSend" />
+            <xs:enumeration value="@id/llChatAdapter" />
+            <xs:enumeration value="@id/llContainer" />
+            <xs:enumeration value="@id/lstMessages" />
+            <xs:enumeration value="@id/lstPeers" />
+            <xs:enumeration value="@id/txtAdapter" />
+            <xs:enumeration value="@id/txtChat" />
+            <xs:enumeration value="@id/txtConfermaPassword" />
+            <xs:enumeration value="@id/txtGoToSignIn" />
+            <xs:enumeration value="@id/txtNickname" />
+            <xs:enumeration value="@id/txtNicknameSignIn" />
+            <xs:enumeration value="@id/txtOrario" />
+            <xs:enumeration value="@id/txtORHome" />
+            <xs:enumeration value="@id/txtPassword" />
+            <xs:enumeration value="@id/txtPasswordSignIn" />
+            <xs:enumeration value="@id/txtSelectActivity" />
+            <xs:enumeration value="@id/txtUser" />
             <xs:enumeration value="@android:id/accessibilityActionContextClick" />
             <xs:enumeration value="@android:id/accessibilityActionScrollDown" />
             <xs:enumeration value="@android:id/accessibilityActionScrollLeft" />
@@ -20884,6 +21467,35 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@id/btnBackToBottom" />
+            <xs:enumeration value="@id/btnCancelSearch" />
+            <xs:enumeration value="@id/btnP2pSearch" />
+            <xs:enumeration value="@id/btnSendFile" />
+            <xs:enumeration value="@id/btnSendFileGallery" />
+            <xs:enumeration value="@id/btnSendFileHome" />
+            <xs:enumeration value="@id/btnSendFileNow" />
+            <xs:enumeration value="@id/btnSendMessageHome" />
+            <xs:enumeration value="@id/btnSignIn" />
+            <xs:enumeration value="@id/btnSignUp" />
+            <xs:enumeration value="@id/imageViewSendFile" />
+            <xs:enumeration value="@id/imgBtnFile" />
+            <xs:enumeration value="@id/imgBtnSend" />
+            <xs:enumeration value="@id/llChatAdapter" />
+            <xs:enumeration value="@id/llContainer" />
+            <xs:enumeration value="@id/lstMessages" />
+            <xs:enumeration value="@id/lstPeers" />
+            <xs:enumeration value="@id/txtAdapter" />
+            <xs:enumeration value="@id/txtChat" />
+            <xs:enumeration value="@id/txtConfermaPassword" />
+            <xs:enumeration value="@id/txtGoToSignIn" />
+            <xs:enumeration value="@id/txtNickname" />
+            <xs:enumeration value="@id/txtNicknameSignIn" />
+            <xs:enumeration value="@id/txtOrario" />
+            <xs:enumeration value="@id/txtORHome" />
+            <xs:enumeration value="@id/txtPassword" />
+            <xs:enumeration value="@id/txtPasswordSignIn" />
+            <xs:enumeration value="@id/txtSelectActivity" />
+            <xs:enumeration value="@id/txtUser" />
             <xs:enumeration value="@android:id/accessibilityActionContextClick" />
             <xs:enumeration value="@android:id/accessibilityActionScrollDown" />
             <xs:enumeration value="@android:id/accessibilityActionScrollLeft" />
@@ -20958,6 +21570,35 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@id/btnBackToBottom" />
+            <xs:enumeration value="@id/btnCancelSearch" />
+            <xs:enumeration value="@id/btnP2pSearch" />
+            <xs:enumeration value="@id/btnSendFile" />
+            <xs:enumeration value="@id/btnSendFileGallery" />
+            <xs:enumeration value="@id/btnSendFileHome" />
+            <xs:enumeration value="@id/btnSendFileNow" />
+            <xs:enumeration value="@id/btnSendMessageHome" />
+            <xs:enumeration value="@id/btnSignIn" />
+            <xs:enumeration value="@id/btnSignUp" />
+            <xs:enumeration value="@id/imageViewSendFile" />
+            <xs:enumeration value="@id/imgBtnFile" />
+            <xs:enumeration value="@id/imgBtnSend" />
+            <xs:enumeration value="@id/llChatAdapter" />
+            <xs:enumeration value="@id/llContainer" />
+            <xs:enumeration value="@id/lstMessages" />
+            <xs:enumeration value="@id/lstPeers" />
+            <xs:enumeration value="@id/txtAdapter" />
+            <xs:enumeration value="@id/txtChat" />
+            <xs:enumeration value="@id/txtConfermaPassword" />
+            <xs:enumeration value="@id/txtGoToSignIn" />
+            <xs:enumeration value="@id/txtNickname" />
+            <xs:enumeration value="@id/txtNicknameSignIn" />
+            <xs:enumeration value="@id/txtOrario" />
+            <xs:enumeration value="@id/txtORHome" />
+            <xs:enumeration value="@id/txtPassword" />
+            <xs:enumeration value="@id/txtPasswordSignIn" />
+            <xs:enumeration value="@id/txtSelectActivity" />
+            <xs:enumeration value="@id/txtUser" />
             <xs:enumeration value="@android:id/accessibilityActionContextClick" />
             <xs:enumeration value="@android:id/accessibilityActionScrollDown" />
             <xs:enumeration value="@android:id/accessibilityActionScrollLeft" />
@@ -21032,6 +21673,35 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@id/btnBackToBottom" />
+            <xs:enumeration value="@id/btnCancelSearch" />
+            <xs:enumeration value="@id/btnP2pSearch" />
+            <xs:enumeration value="@id/btnSendFile" />
+            <xs:enumeration value="@id/btnSendFileGallery" />
+            <xs:enumeration value="@id/btnSendFileHome" />
+            <xs:enumeration value="@id/btnSendFileNow" />
+            <xs:enumeration value="@id/btnSendMessageHome" />
+            <xs:enumeration value="@id/btnSignIn" />
+            <xs:enumeration value="@id/btnSignUp" />
+            <xs:enumeration value="@id/imageViewSendFile" />
+            <xs:enumeration value="@id/imgBtnFile" />
+            <xs:enumeration value="@id/imgBtnSend" />
+            <xs:enumeration value="@id/llChatAdapter" />
+            <xs:enumeration value="@id/llContainer" />
+            <xs:enumeration value="@id/lstMessages" />
+            <xs:enumeration value="@id/lstPeers" />
+            <xs:enumeration value="@id/txtAdapter" />
+            <xs:enumeration value="@id/txtChat" />
+            <xs:enumeration value="@id/txtConfermaPassword" />
+            <xs:enumeration value="@id/txtGoToSignIn" />
+            <xs:enumeration value="@id/txtNickname" />
+            <xs:enumeration value="@id/txtNicknameSignIn" />
+            <xs:enumeration value="@id/txtOrario" />
+            <xs:enumeration value="@id/txtORHome" />
+            <xs:enumeration value="@id/txtPassword" />
+            <xs:enumeration value="@id/txtPasswordSignIn" />
+            <xs:enumeration value="@id/txtSelectActivity" />
+            <xs:enumeration value="@id/txtUser" />
             <xs:enumeration value="@android:id/accessibilityActionContextClick" />
             <xs:enumeration value="@android:id/accessibilityActionScrollDown" />
             <xs:enumeration value="@android:id/accessibilityActionScrollLeft" />
@@ -21106,6 +21776,35 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@id/btnBackToBottom" />
+            <xs:enumeration value="@id/btnCancelSearch" />
+            <xs:enumeration value="@id/btnP2pSearch" />
+            <xs:enumeration value="@id/btnSendFile" />
+            <xs:enumeration value="@id/btnSendFileGallery" />
+            <xs:enumeration value="@id/btnSendFileHome" />
+            <xs:enumeration value="@id/btnSendFileNow" />
+            <xs:enumeration value="@id/btnSendMessageHome" />
+            <xs:enumeration value="@id/btnSignIn" />
+            <xs:enumeration value="@id/btnSignUp" />
+            <xs:enumeration value="@id/imageViewSendFile" />
+            <xs:enumeration value="@id/imgBtnFile" />
+            <xs:enumeration value="@id/imgBtnSend" />
+            <xs:enumeration value="@id/llChatAdapter" />
+            <xs:enumeration value="@id/llContainer" />
+            <xs:enumeration value="@id/lstMessages" />
+            <xs:enumeration value="@id/lstPeers" />
+            <xs:enumeration value="@id/txtAdapter" />
+            <xs:enumeration value="@id/txtChat" />
+            <xs:enumeration value="@id/txtConfermaPassword" />
+            <xs:enumeration value="@id/txtGoToSignIn" />
+            <xs:enumeration value="@id/txtNickname" />
+            <xs:enumeration value="@id/txtNicknameSignIn" />
+            <xs:enumeration value="@id/txtOrario" />
+            <xs:enumeration value="@id/txtORHome" />
+            <xs:enumeration value="@id/txtPassword" />
+            <xs:enumeration value="@id/txtPasswordSignIn" />
+            <xs:enumeration value="@id/txtSelectActivity" />
+            <xs:enumeration value="@id/txtUser" />
             <xs:enumeration value="@android:id/accessibilityActionContextClick" />
             <xs:enumeration value="@android:id/accessibilityActionScrollDown" />
             <xs:enumeration value="@android:id/accessibilityActionScrollLeft" />
@@ -21222,6 +21921,8 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@anim/slide_right" />
+            <xs:enumeration value="@anim/slide_up" />
             <xs:enumeration value="@android:anim/accelerate_decelerate_interpolator" />
             <xs:enumeration value="@android:anim/accelerate_interpolator" />
             <xs:enumeration value="@android:anim/anticipate_interpolator" />
@@ -21280,6 +21981,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -21635,6 +22341,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:color/background_dark" />
             <xs:enumeration value="@android:color/background_light" />
             <xs:enumeration value="@android:color/black" />
@@ -21958,6 +22669,8 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@string/ApplicationName" />
+            <xs:enumeration value="@string/Hello" />
             <xs:enumeration value="@android:string/cancel" />
             <xs:enumeration value="@android:string/copy" />
             <xs:enumeration value="@android:string/copyUrl" />
@@ -22154,6 +22867,8 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@string/ApplicationName" />
+            <xs:enumeration value="@string/Hello" />
             <xs:enumeration value="@android:string/cancel" />
             <xs:enumeration value="@android:string/copy" />
             <xs:enumeration value="@android:string/copyUrl" />
@@ -22407,6 +23122,8 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@string/ApplicationName" />
+            <xs:enumeration value="@string/Hello" />
             <xs:enumeration value="@android:string/cancel" />
             <xs:enumeration value="@android:string/copy" />
             <xs:enumeration value="@android:string/copyUrl" />
@@ -22618,6 +23335,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -22863,6 +23585,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -23096,6 +23823,8 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@string/ApplicationName" />
+            <xs:enumeration value="@string/Hello" />
             <xs:enumeration value="@android:string/cancel" />
             <xs:enumeration value="@android:string/copy" />
             <xs:enumeration value="@android:string/copyUrl" />
@@ -23135,6 +23864,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -23408,6 +24142,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -23641,6 +24380,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -23874,6 +24618,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -24107,6 +24856,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -24340,6 +25094,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -24990,6 +25749,8 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@string/ApplicationName" />
+            <xs:enumeration value="@string/Hello" />
             <xs:enumeration value="@android:string/cancel" />
             <xs:enumeration value="@android:string/copy" />
             <xs:enumeration value="@android:string/copyUrl" />
@@ -25044,6 +25805,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -25294,6 +26060,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:color/background_dark" />
             <xs:enumeration value="@android:color/background_light" />
             <xs:enumeration value="@android:color/black" />
@@ -25605,6 +26376,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:color/background_dark" />
             <xs:enumeration value="@android:color/background_light" />
             <xs:enumeration value="@android:color/black" />
@@ -26309,6 +27085,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:color/background_dark" />
             <xs:enumeration value="@android:color/background_light" />
             <xs:enumeration value="@android:color/black" />
@@ -26660,6 +27441,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -26905,6 +27691,8 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@string/ApplicationName" />
+            <xs:enumeration value="@string/Hello" />
             <xs:enumeration value="@android:string/cancel" />
             <xs:enumeration value="@android:string/copy" />
             <xs:enumeration value="@android:string/copyUrl" />
@@ -27072,6 +27860,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -27415,6 +28208,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -27648,6 +28446,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -27881,6 +28684,8 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@string/ApplicationName" />
+            <xs:enumeration value="@string/Hello" />
             <xs:enumeration value="@android:string/cancel" />
             <xs:enumeration value="@android:string/copy" />
             <xs:enumeration value="@android:string/copyUrl" />
@@ -28423,6 +29228,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -28656,6 +29466,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -28889,6 +29704,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -29122,6 +29942,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -29535,6 +30360,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -29768,6 +30598,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -30169,6 +31004,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -30402,6 +31242,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:color/background_dark" />
             <xs:enumeration value="@android:color/background_light" />
             <xs:enumeration value="@android:color/black" />
@@ -30713,6 +31558,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -31268,6 +32118,8 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@string/ApplicationName" />
+            <xs:enumeration value="@string/Hello" />
             <xs:enumeration value="@android:string/cancel" />
             <xs:enumeration value="@android:string/copy" />
             <xs:enumeration value="@android:string/copyUrl" />
@@ -31387,6 +32239,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:color/background_dark" />
             <xs:enumeration value="@android:color/background_light" />
             <xs:enumeration value="@android:color/black" />
@@ -31913,6 +32770,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:color/background_dark" />
             <xs:enumeration value="@android:color/background_light" />
             <xs:enumeration value="@android:color/black" />
@@ -32282,6 +33144,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -32527,6 +33394,8 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@string/ApplicationName" />
+            <xs:enumeration value="@string/Hello" />
             <xs:enumeration value="@android:string/cancel" />
             <xs:enumeration value="@android:string/copy" />
             <xs:enumeration value="@android:string/copyUrl" />
@@ -32583,6 +33452,7 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@style/dialog_animation" />
             <xs:enumeration value="@style/XamarinDesignerCustomAppliedTheme" />
             <xs:enumeration value="@android:style/Animation" />
             <xs:enumeration value="@android:style/Animation.Activity" />
@@ -33464,6 +34334,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -33697,6 +34572,8 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@string/ApplicationName" />
+            <xs:enumeration value="@string/Hello" />
             <xs:enumeration value="@android:string/cancel" />
             <xs:enumeration value="@android:string/copy" />
             <xs:enumeration value="@android:string/copyUrl" />
@@ -33736,6 +34613,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -34060,6 +34942,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -34373,6 +35260,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -34606,6 +35498,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -34879,6 +35776,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -35112,6 +36014,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -35345,6 +36252,8 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@string/ApplicationName" />
+            <xs:enumeration value="@string/Hello" />
             <xs:enumeration value="@android:string/cancel" />
             <xs:enumeration value="@android:string/copy" />
             <xs:enumeration value="@android:string/copyUrl" />
@@ -35384,6 +36293,8 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@string/ApplicationName" />
+            <xs:enumeration value="@string/Hello" />
             <xs:enumeration value="@android:string/cancel" />
             <xs:enumeration value="@android:string/copy" />
             <xs:enumeration value="@android:string/copyUrl" />
@@ -35488,6 +36399,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -35721,6 +36637,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:color/background_dark" />
             <xs:enumeration value="@android:color/background_light" />
             <xs:enumeration value="@android:color/black" />
@@ -36032,6 +36953,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:color/background_dark" />
             <xs:enumeration value="@android:color/background_light" />
             <xs:enumeration value="@android:color/black" />
@@ -36343,6 +37269,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:color/background_dark" />
             <xs:enumeration value="@android:color/background_light" />
             <xs:enumeration value="@android:color/black" />
@@ -36654,6 +37585,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:color/background_dark" />
             <xs:enumeration value="@android:color/background_light" />
             <xs:enumeration value="@android:color/black" />
@@ -36965,6 +37901,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -37224,6 +38165,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -37457,6 +38403,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -37690,6 +38641,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -37923,6 +38879,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -38156,6 +39117,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -38469,6 +39435,8 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@string/ApplicationName" />
+            <xs:enumeration value="@string/Hello" />
             <xs:enumeration value="@android:string/cancel" />
             <xs:enumeration value="@android:string/copy" />
             <xs:enumeration value="@android:string/copyUrl" />
@@ -38508,6 +39476,8 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@string/ApplicationName" />
+            <xs:enumeration value="@string/Hello" />
             <xs:enumeration value="@android:string/cancel" />
             <xs:enumeration value="@android:string/copy" />
             <xs:enumeration value="@android:string/copyUrl" />
@@ -38559,6 +39529,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -38792,6 +39767,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -39025,6 +40005,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -39314,6 +40299,7 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@style/dialog_animation" />
             <xs:enumeration value="@style/XamarinDesignerCustomAppliedTheme" />
             <xs:enumeration value="@android:style/Animation" />
             <xs:enumeration value="@android:style/Animation.Activity" />
@@ -40195,6 +41181,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -40633,6 +41624,8 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@string/ApplicationName" />
+            <xs:enumeration value="@string/Hello" />
             <xs:enumeration value="@android:string/cancel" />
             <xs:enumeration value="@android:string/copy" />
             <xs:enumeration value="@android:string/copyUrl" />
@@ -40775,6 +41768,8 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@string/ApplicationName" />
+            <xs:enumeration value="@string/Hello" />
             <xs:enumeration value="@android:string/cancel" />
             <xs:enumeration value="@android:string/copy" />
             <xs:enumeration value="@android:string/copyUrl" />
@@ -41014,6 +42009,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -41418,6 +42418,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -41897,6 +42902,8 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@string/ApplicationName" />
+            <xs:enumeration value="@string/Hello" />
             <xs:enumeration value="@android:string/cancel" />
             <xs:enumeration value="@android:string/copy" />
             <xs:enumeration value="@android:string/copyUrl" />
@@ -42164,6 +43171,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:color/background_dark" />
             <xs:enumeration value="@android:color/background_light" />
             <xs:enumeration value="@android:color/black" />
@@ -42623,6 +43635,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -42872,6 +43889,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -43105,6 +44127,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -43338,6 +44365,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:color/background_dark" />
             <xs:enumeration value="@android:color/background_light" />
             <xs:enumeration value="@android:color/black" />
@@ -43649,6 +44681,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:color/background_dark" />
             <xs:enumeration value="@android:color/background_light" />
             <xs:enumeration value="@android:color/black" />
@@ -44012,6 +45049,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />
@@ -44245,6 +45287,11 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@drawable/buttonsigninstyle" />
+            <xs:enumeration value="@drawable/buttonsignupstyle" />
+            <xs:enumeration value="@drawable/edit_text_file" />
+            <xs:enumeration value="@drawable/icon" />
+            <xs:enumeration value="@drawable/p2p_icon" />
             <xs:enumeration value="@android:drawable/alert_dark_frame" />
             <xs:enumeration value="@android:drawable/alert_light_frame" />
             <xs:enumeration value="@android:drawable/arrow_down_float" />

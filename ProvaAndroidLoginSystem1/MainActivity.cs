@@ -2,7 +2,6 @@
 using Android.Widget;
 using Android.OS;
 using System;
-using Java.Lang;
 using ProvaAndroidLoginSystem1.Resources;
 using Android.Content;
 using ProvaAndroidLoginSystem1.Resources.Model;
@@ -11,10 +10,6 @@ using Android.Net.Wifi.P2p;
 using p2p_project.Resources;
 using Android.Net.Wifi;
 using System.Collections.Generic;
-using System.Threading.Tasks;
-using Android.Telephony;
-using p2p_project.Resources.DataHelper;
-using Android.Provider;
 
 namespace ProvaAndroidLoginSystem1
 {
