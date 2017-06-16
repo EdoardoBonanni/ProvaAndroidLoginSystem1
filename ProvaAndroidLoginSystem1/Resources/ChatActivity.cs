@@ -80,8 +80,6 @@ namespace ProvaAndroidLoginSystem1.Resources
 
             chatAdapter = new ChatAdapter(this, chat);
             lstMessage.Adapter = chatAdapter;
-
-            lstMessage.SmoothScrollToPosition(chatAdapter.Count);
         }
 
         private void BtnBackToBottom_Click(object sender, EventArgs e)
@@ -109,11 +107,11 @@ namespace ProvaAndroidLoginSystem1.Resources
                 }
             }
 
-            if(lstMessage.LastVisiblePosition < chatAdapter.Count - 10)
+            if(lstMessage.LastVisiblePosition <= chatAdapter.Count - Database.count && btnBackToBottom.Visibility == Android.Views.ViewStates.Invisible)
             {
                 btnBackToBottom.Visibility = Android.Views.ViewStates.Visible;
             }
-            else
+            else if(lstMessage.LastVisiblePosition > chatAdapter.Count - Database.count && btnBackToBottom.Visibility == Android.Views.ViewStates.Visible)
             {
                 btnBackToBottom.Visibility = Android.Views.ViewStates.Invisible;
             }
@@ -206,6 +204,7 @@ namespace ProvaAndroidLoginSystem1.Resources
                     Intent main = new Intent(this, typeof(MainActivity));
                     main.PutExtra("isConnected", true);
                     this.StartActivity(main);
+                    Finish();
                 })
                 .SetNegativeButton("NO", delegate { })
                 .SetMessage("In questo modo verrai disconnesso dalla chat.\nSei sicuro di voler uscire?")

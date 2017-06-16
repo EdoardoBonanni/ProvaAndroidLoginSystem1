@@ -114,6 +114,7 @@ namespace p2p_project.Resources
             {
                 base.OnBackPressed();
             }
+            Finish();
         }
 
         protected virtual void OnFirstSendFile(EventArgs args, string uri, string path)

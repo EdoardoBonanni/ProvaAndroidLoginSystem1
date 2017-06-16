@@ -10,9 +10,9 @@ namespace p2p_project.Resources.DataHelper
     delegate void DatabaseEventHandler(object sender, EventArgs e, Registro registro, bool mine);
     class Database
     {
+        public static int count = 15;
         string folder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
         public static event DatabaseEventHandler databaseUpdated;
-        private int count = 10;
         private void OnDatabaseUpdated(EventArgs e, Registro registro, bool mine)
         {
             databaseUpdated?.Invoke(this, e, registro, mine);

@@ -39,12 +39,12 @@ namespace p2p_project
 
             var Chat = view.FindViewById<TextView>(Resource.Id.txtAdapter);
             var Orario = view.FindViewById<TextView>(Resource.Id.txtOrario);
-            var llChatAdapter = view.FindViewById<LinearLayout>(Resource.Id.llChatAdapter);
+            //var llChatAdapter = view.FindViewById<LinearLayout>(Resource.Id.llChatAdapter);
 
             if (chat[position] != null)
             {
                 Chat.Text = chat[position].Item1.Messaggio;
-                Orario.Text = chat[position].Item1.Orario.ToString("dd/MM/yyy hh:mm");
+                Orario.Text = chat[position].Item1.Orario.ToString("dd/MM/yyy HH:mm");
 
                 if(chat[position].Item2)
                 {
