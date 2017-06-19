@@ -21,7 +21,7 @@ namespace p2p_project.Resources
             serverSocket = new TcpListener(IPAddress.Any, port);
             serverSocket.Start();
             var result = serverSocket.BeginAcceptTcpClient(null, null);
-            bool success = result.AsyncWaitHandle.WaitOne(20000, true);
+            bool success = result.AsyncWaitHandle.WaitOne(10000, true);
             if (!success)
             {
                 return -1;
@@ -43,9 +43,6 @@ namespace p2p_project.Resources
         public void Receive()
         {
             byte[] data = new byte[10000];
-            /*int responseCount = await networkStream.ReadAsync(data, 0, data.Length);
-            string responseData = System.Text.Encoding.ASCII.GetString(data, 0, responseCount);
-            Toast.MakeText(Application.Context, responseData, ToastLength.Long);*/
             networkStream.BeginRead(data, 0, data.Length, new AsyncCallback(receiveCallback), data);
         }
 

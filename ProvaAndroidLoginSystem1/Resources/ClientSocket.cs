@@ -54,9 +54,6 @@ namespace p2p_project.Resources
         public void Receive()
         {
             byte[] data = new byte[10000];
-            /*int responseCount = await networkStream.ReadAsync(data, 0, data.Length);
-            string responseData = System.Text.Encoding.ASCII.GetString(data, 0, responseCount);
-            Toast.MakeText(Application.Context, responseData, ToastLength.Long);*/
             networkStream.BeginRead(data, 0, data.Length, new AsyncCallback(receiveCallback), data);
         }
 

@@ -14,6 +14,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:hint="Username"
+        android:textColorHint="@android:color/holo_orange_dark"
         android:textColor="#000" />
     <EditText
         android:inputType="textPassword"
@@ -25,6 +26,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:hint="Password"
+        android:textColorHint="@android:color/holo_orange_dark"
         android:textColor="#000"
         android:layout_below="@id/txtNickname" />
     <EditText
@@ -37,6 +39,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:hint="Conferma Password"
+        android:textColorHint="@android:color/holo_orange_dark"
         android:textColor="#000"
         android:layout_below="@id/txtPassword" />
     <Button

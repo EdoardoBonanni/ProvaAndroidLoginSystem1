@@ -251,7 +251,6 @@ namespace p2p_project.Resources
             return newPath;
         }
 
-        #region pack
         public static string PackUsername(string username)
         {
             return JsonConvert.SerializeObject(new
@@ -322,7 +321,6 @@ namespace p2p_project.Resources
                 Path = path
             });
         }
-        #endregion pack
 
         public byte[] readBytes(Android.Net.Uri uri, int number)
         {
