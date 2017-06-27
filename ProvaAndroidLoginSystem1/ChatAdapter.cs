@@ -7,6 +7,7 @@ using Android.Views;
 using Android.Widget;
 using p2p_project.Resources.Model;
 using Android.Graphics;
+using p2p_project.Resources;
 
 namespace p2p_project
 {
@@ -43,7 +44,7 @@ namespace p2p_project
 
             if (chat[position] != null)
             {
-                Chat.Text = chat[position].Item1.Messaggio;
+                Chat.Text = chat[position].Item1.isFile ? System.IO.Path.GetFileName(chat[position].Item1.Messaggio) : chat[position].Item1.Messaggio;
                 Orario.Text = chat[position].Item1.Orario.ToString("dd/MM/yyy HH:mm");
 
                 if(chat[position].Item2)
@@ -65,23 +66,19 @@ namespace p2p_project
             return view;
         }
 
-        public void update(string message, bool mine, string path, bool isFile, DateTime orario)
+        public void update(string message, bool mine, bool isFile, DateTime orario)
         {
             if (isFile)
             {
+                //Tuple<Registro, bool> receivingFile = null;
 
-                var receivingFile = chat.Where(a => a.Item1.Path == path).FirstOrDefault();
-
-                if (receivingFile != null)
-                {
-                    chat.Remove(receivingFile);
-                }
+                var mess = message.Split('%')[0];
+                remove(mess);
             }
 
             chat.Add(new Tuple<Registro, bool>(new Registro {
                 Messaggio = message,
                 Orario = orario,
-                Path = path,
                 isFile = isFile
             }, mine));
 
@@ -91,7 +88,7 @@ namespace p2p_project
 
         public void remove(string path)
         {
-            var receivingFile = chat.Where(a => a.Item1.Path == path).FirstOrDefault();
+            var receivingFile = chat.Where(a => a.Item1.Messaggio.Contains(path) && a.Item1.Messaggio.Contains('%')).FirstOrDefault();
 
             if (receivingFile != null)
             {

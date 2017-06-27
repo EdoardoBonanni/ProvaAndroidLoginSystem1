@@ -68,7 +68,7 @@ namespace p2p_project.Resources
             }
         }
 
-        private string[] split(string buffer, char separator)
+        public static string[] split(string buffer, char separator)
         {
             var chars = buffer.ToCharArray();
             List<string> token = new List<string>();

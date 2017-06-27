@@ -55,7 +55,7 @@ namespace ProvaAndroidLoginSystem1.Resources
             {
                 RunOnUiThread(() =>
                 {
-                    updateChat(reg.Messaggio, mine, reg.isFile, reg.Orario, reg.Path);
+                    updateChat(reg.Messaggio, mine, reg.isFile, reg.Orario);
                 });
             };
 
@@ -102,7 +102,7 @@ namespace ProvaAndroidLoginSystem1.Resources
                     foreach (var message in chatUpdate)
                     {
                         bool mine = message.UsernameMittente == MainActivity.retrieveLocal("Username");
-                        chatAdapter.update(message.Messaggio, mine, message.Path, message.isFile, message.Orario);
+                        chatAdapter.update(message.Messaggio, mine, message.isFile, message.Orario);
                     }
                 }
             }
@@ -119,16 +119,16 @@ namespace ProvaAndroidLoginSystem1.Resources
         }
 
 
-        private void PacketManager_partFileReceived(object sender, EventArgs e, string fileName, string path, bool mine, int number, int totalNumber)
+        private void PacketManager_partFileReceived(object sender, EventArgs e, string path, bool mine, int number, int totalNumber)
         {
             if (number < totalNumber)
             {
                 RunOnUiThread(() =>
                 {
-                    updateChat(fileName + " " + Convert.ToInt32(decimal.Divide(number, totalNumber) * 100) + "%", mine, true, DateTime.Now, path);
+                    updateChat(path + " %" + Convert.ToInt32(decimal.Divide(number, totalNumber) * 100), mine, true, DateTime.Now);
                 });
             }
-            if(number == totalNumber)
+            if(number == totalNumber && !mine)
             {
                 chatAdapter.remove(path);
             }
@@ -141,7 +141,7 @@ namespace ProvaAndroidLoginSystem1.Resources
             {
                 if(!itemClicked.Messaggio.Contains("%"))
                 {
-                    File f = new File(itemClicked.Path);
+                    File f = new File(itemClicked.Messaggio);
                     string uri = Android.Net.Uri.FromFile(f).ToString();
                     Intent SendFileNow = new Intent(this, typeof(SendFileActivity));
 
@@ -149,7 +149,7 @@ namespace ProvaAndroidLoginSystem1.Resources
                     {
                         GetFrom = "Received",
                         Uri = uri, 
-                        Path = itemClicked.Path
+                        Path = itemClicked.Messaggio
                     };
                     string obj = JsonConvert.SerializeObject(gallery);
                     SendFileNow.PutExtra("SelectFile", obj);
@@ -164,7 +164,7 @@ namespace ProvaAndroidLoginSystem1.Resources
             this.StartActivity(SelectFile);
         }
 
-        public void updateChat(string text, bool mine, bool isFile, DateTime orario, string path = "")
+        public void updateChat(string text, bool mine, bool isFile, DateTime orario)
         {
             if (mine && !isFile)
             {
@@ -174,12 +174,11 @@ namespace ProvaAndroidLoginSystem1.Resources
                     UsernameDestinatario = mine == false ? MainActivity.retrieveLocal("Username") : MainActivity.retrieveLocal("ConnectedUsername"),
                     isFile = false,
                     Messaggio = text,
-                    Path = "",
                     Orario = orario
                 });
             }
 
-            chatAdapter.update(text, mine, path, isFile, orario);
+            chatAdapter.update(text, mine, isFile, orario);
         }
 
         void btnSend_Click(object sender, EventArgs e)

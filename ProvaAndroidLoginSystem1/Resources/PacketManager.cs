@@ -10,9 +10,9 @@ using System.IO;
 namespace p2p_project.Resources
 {
     public delegate void MessageEventHandler(object sender, EventArgs e, string message);
-    public delegate void FileEventHandler(object sender, EventArgs e, string fileName, string path, bool mine);
+    public delegate void FileEventHandler(object sender, EventArgs e, string path, bool mine);
     public delegate void UsernameEventHandler(object sender, EventArgs e);
-    public delegate void PartFileEventHandler(object sender, EventArgs e, string fileName, string path, bool mine, int number, int totalNumber);
+    public delegate void PartFileEventHandler(object sender, EventArgs e, string path, bool mine, int number, int totalNumber);
 
     class PacketManager
     {
@@ -54,14 +54,14 @@ namespace p2p_project.Resources
             usernameReceived?.Invoke(this, e);
         }
 
-        protected virtual void OnFileReceived(EventArgs e , string fileName, string path, bool mine)
+        protected virtual void OnFileReceived(EventArgs e, string path, bool mine)
         {
-            fileReceived?.Invoke(this, e, fileName, path, mine);
+            fileReceived?.Invoke(this, e, path, mine);
         }
 
-        protected virtual void OnPartFileReceived(EventArgs e, string fileName, string path, bool mine, int number, int totalNumber)
+        protected virtual void OnPartFileReceived(EventArgs e, string path, bool mine, int number, int totalNumber)
         {
-            partFileReceived?.Invoke(this, e, fileName, path, mine, number, totalNumber);
+            partFileReceived?.Invoke(this, e, path, mine, number, totalNumber);
         }
 
         public void Unpack(string packet)
@@ -102,7 +102,7 @@ namespace p2p_project.Resources
                             }
                             byte[] buffer = a.Buffer;
                             var totalNumber = getTotalNumber(path, false);
-                            OnPartFileReceived(EventArgs.Empty, System.IO.Path.GetFileName(path), path, false, number, totalNumber);
+                            OnPartFileReceived(EventArgs.Empty, path, false, number, totalNumber);
                             int num = appendToFile(path, buffer);
                             string pack = PackAck(num, path);
                             socket.Send(pack);
@@ -112,7 +112,7 @@ namespace p2p_project.Resources
                             string pathAck = a.Path;
                             string pathDestinatario = a.Buffer;
                             var totalNumberAck = this.getTotalNumber(pathAck, true);
-                            OnPartFileReceived(EventArgs.Empty, System.IO.Path.GetFileName(pathAck), pathAck, true, numberAck, totalNumberAck);
+                            OnPartFileReceived(EventArgs.Empty, pathAck, true, numberAck, totalNumberAck);
                             addDestinatario(pathAck, pathDestinatario);
 
                             byte[] bufferAck = readBytes(Android.Net.Uri.Parse(mittente[pathAck].Item1), numberAck);
@@ -120,7 +120,7 @@ namespace p2p_project.Resources
                             {
                                 if (bufferAck.Length == 0)
                                 {
-                                    OnFileReceived(EventArgs.Empty, System.IO.Path.GetFileName(pathAck), pathAck, true);
+                                    OnFileReceived(EventArgs.Empty, pathAck, true);
                                     socket.Send(PackEnd(pathDestinatario));
                                     mittente.Remove(pathAck);
                                 }
@@ -141,7 +141,7 @@ namespace p2p_project.Resources
                         case "End":
                             string pathEndDestinatario = a.Path;
                             string newPath = saveFile(pathEndDestinatario);
-                            OnFileReceived(EventArgs.Empty, System.IO.Path.GetFileName(newPath), newPath, false);
+                            OnFileReceived(EventArgs.Empty, newPath, false);
                             break;
                         default:
                             //Errore

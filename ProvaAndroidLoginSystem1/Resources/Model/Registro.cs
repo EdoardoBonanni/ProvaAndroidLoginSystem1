@@ -17,7 +17,7 @@ namespace p2p_project.Resources.Model
         public string Messaggio { get; set; }
 
         public DateTime Orario { get; set; }
-
-        public string Path { get; set; }
+        /*
+        public string Path { get; set; }*/
     }
 }

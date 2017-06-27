@@ -17,15 +17,14 @@ namespace p2p_project.Resources
             PacketManager.fileReceived += PacketManager_fileReceived;
         }
 
-        private void PacketManager_fileReceived(object sender, EventArgs e, string fileName, string path, bool mine)
+        private void PacketManager_fileReceived(object sender, EventArgs e, string path, bool mine)
         {
             database.InsertIntoTable(new Registro
             {
                 UsernameMittente = mine == true ? MainActivity.retrieveLocal("Username") : MainActivity.retrieveLocal("ConnectedUsername"),
                 UsernameDestinatario = mine == false ? MainActivity.retrieveLocal("Username") : MainActivity.retrieveLocal("ConnectedUsername"),
                 isFile = true,
-                Messaggio = fileName,
-                Path = path,
+                Messaggio = path,
                 Orario = DateTime.Now
             });
         }
@@ -38,7 +37,6 @@ namespace p2p_project.Resources
                 UsernameDestinatario = MainActivity.retrieveLocal("Username"),
                 isFile = false,
                 Messaggio = message,
-                Path = "",
                 Orario = DateTime.Now
             });
         }
