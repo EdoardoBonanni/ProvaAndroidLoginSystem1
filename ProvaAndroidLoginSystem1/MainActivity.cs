@@ -147,13 +147,18 @@ namespace ProvaAndroidLoginSystem1
             UnregisterReceiver(receiver);
         }
 
+        public override void OnBackPressed()
+        {
+            FinishAffinity();
+        }
+
         public void DisconnectP2p()
         {
             ConnectionInfoListener.Socket.End();
             manager.RemoveGroup(channel, new ActionListener("Chiusura della connessione..."));
             IsConnected = false;
             deleteLocal("ConnectedUsername");
-            manager.StopPeerDiscovery(channel, new ActionListener(""));
+            manager.StopPeerDiscovery(channel, null);
             mBtnCancel.Visibility = Android.Views.ViewStates.Invisible;
             mBtnSearch.Visibility = Android.Views.ViewStates.Visible;
         }

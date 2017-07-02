@@ -139,9 +139,19 @@ namespace p2p_project.Resources
 
                             break;
                         case "End":
-                            string pathEndDestinatario = a.Path;
-                            string newPath = saveFile(pathEndDestinatario);
-                            OnFileReceived(EventArgs.Empty, newPath, false);
+                            if (a.Number == 2)
+                            {
+                                string pathEndDestinatario = a.Path;
+                                string newPath = saveFile(pathEndDestinatario);
+                                OnFileReceived(EventArgs.Empty, newPath, false);
+                            }
+                            else
+                            {
+                                Intent main = new Intent(Application.Context, typeof(MainActivity));
+                                main.AddFlags(ActivityFlags.NewTask);
+                                main.PutExtra("isConnected", true);
+                                Application.Context.StartActivity(main);
+                            }
                             break;
                         default:
                             //Errore
@@ -311,15 +321,27 @@ namespace p2p_project.Resources
             });
         }
 
-        public string PackEnd(string path)
+        public static string PackEnd(string path = "")
         {
-            return JsonConvert.SerializeObject(new
+            if (path.Equals(""))
             {
-                Type = "File",
-                Command = "End",
-                Number = 2,
-                Path = path
-            });
+                return JsonConvert.SerializeObject(new
+                {
+                    Type = "File",
+                    Command = "End",
+                    Number = 1
+                });
+            }
+            else
+            {
+                return JsonConvert.SerializeObject(new
+                {
+                    Type = "File",
+                    Command = "End",
+                    Number = 2,
+                    Path = path
+                });
+            }
         }
 
         public byte[] readBytes(Android.Net.Uri uri, int number)

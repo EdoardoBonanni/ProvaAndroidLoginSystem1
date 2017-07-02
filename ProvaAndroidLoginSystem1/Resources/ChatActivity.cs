@@ -27,6 +27,7 @@ namespace ProvaAndroidLoginSystem1.Resources
         private ChatAdapter chatAdapter;
         private Database database;
         private bool dataLoaded = true;
+        private ISocket socket;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -80,6 +81,8 @@ namespace ProvaAndroidLoginSystem1.Resources
 
             chatAdapter = new ChatAdapter(this, chat);
             lstMessage.Adapter = chatAdapter;
+
+            socket = ConnectionInfoListener.Socket;
         }
 
         private void BtnBackToBottom_Click(object sender, EventArgs e)
@@ -185,8 +188,6 @@ namespace ProvaAndroidLoginSystem1.Resources
         {
             if (!txtChat.Text.Equals(""))
             {
-                ISocket socket = ConnectionInfoListener.Socket;
-
                 string packet = PacketManager.PackMessage(txtChat.Text);
                 socket.Send(packet);
 
@@ -200,9 +201,10 @@ namespace ProvaAndroidLoginSystem1.Resources
         {
             new AlertDialog.Builder(this)
                 .SetPositiveButton("Sì", delegate {
+                    socket.Send(PacketManager.PackEnd());
                     Intent main = new Intent(this, typeof(MainActivity));
                     main.PutExtra("isConnected", true);
-                    this.StartActivity(main);
+                    StartActivity(main);
                     Finish();
                 })
                 .SetNegativeButton("NO", delegate { })

@@ -4,6 +4,9 @@ using System.Text;
 using Java.Lang;
 using System.Net.Sockets;
 using System.Net;
+using Android.Content;
+using ProvaAndroidLoginSystem1;
+using Android.App;
 
 namespace p2p_project.Resources
 {
@@ -36,8 +39,18 @@ namespace p2p_project.Resources
 
         public async void Send(string packet)
         {
-            byte[] data = Encoding.UTF8.GetBytes(packet);
-            await networkStream.WriteAsync(data, 0, data.Length);
+            if (client.Connected)
+            {
+                byte[] data = Encoding.UTF8.GetBytes(packet);
+                await networkStream.WriteAsync(data, 0, data.Length);
+            }
+            else
+            {
+                Intent main = new Intent(Application.Context, typeof(MainActivity));
+                main.AddFlags(ActivityFlags.NewTask);
+                main.PutExtra("isConnected", true);
+                Application.Context.StartActivity(main);
+            }
         }
 
         public void Receive()
@@ -48,23 +61,33 @@ namespace p2p_project.Resources
 
         public void receiveCallback(IAsyncResult res)
         {
-            byte[] data = (byte[])res.AsyncState;
-            int responseCount = networkStream.EndRead(res);
-            if (responseCount > 0)
+            try
             {
-                string buff = Encoding.UTF8.GetString(data, 0, responseCount);
-                var token = split(buff, '}');
-
-                foreach (var tok in token)
+                byte[] data = (byte[])res.AsyncState;
+                int responseCount = networkStream.EndRead(res);
+                if (responseCount > 0)
                 {
-                    appendBuff += tok;
-                    if (appendBuff.Contains("{") && appendBuff.Contains("}"))
+                    string buff = Encoding.UTF8.GetString(data, 0, responseCount);
+                    var token = split(buff, '}');
+
+                    foreach (var tok in token)
                     {
-                        packetManager.Unpack(appendBuff);
-                        appendBuff = "";
+                        appendBuff += tok;
+                        if (appendBuff.Contains("{") && appendBuff.Contains("}"))
+                        {
+                            packetManager.Unpack(appendBuff);
+                            appendBuff = "";
+                        }
                     }
+                    networkStream.BeginRead(data, 0, data.Length, new AsyncCallback(receiveCallback), data);
                 }
-                networkStream.BeginRead(data, 0, data.Length, new AsyncCallback(receiveCallback), data);
+            }
+            catch (System.Exception ex)
+            {
+                Intent main = new Intent(Application.Context, typeof(MainActivity));
+                main.AddFlags(ActivityFlags.NewTask);
+                main.PutExtra("isConnected", true);
+                Application.Context.StartActivity(main);
             }
         }
 
